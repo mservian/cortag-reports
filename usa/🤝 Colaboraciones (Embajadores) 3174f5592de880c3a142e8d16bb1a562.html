@@ -1,0 +1,747 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>🤝 Colaboraciones (Embajadores)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3174f559-2de8-80c3-a142-e8d16bb1a562" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_4.png" style="object-position:center 90%"/><h1 class="page-title" dir="auto">🤝 Colaboraciones (Embajadores)</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="3174f559-2de8-814b-8ba2-fe597645fd21" class="">Gestión de colaboraciones con marcas, influencers y socios estratégicos.</p></div><div style="display:contents" dir="ltr"><figure id="33e4f559-2de8-8067-ac6f-ef1c0a976ac3" class="link-to-page"><a href="https://www.notion.so/Influencers-Colaboraci-n-T2-2026-33e4f5592de88067ac6fef1c0a976ac3?pvs=21">Influencers Colaboración T2-2026</a></figure></div><div style="display:contents" dir="ltr"><figure id="3174f559-2de8-8126-8e6b-ca8c050baa16" class="link-to-page"><a href="https://www.notion.so/Lista-posibles-influencers-colaboradores-3174f5592de881268e6bca8c050baa16?pvs=21">⭐ Lista posibles influencers colaboradores</a></figure></div><div style="display:contents" dir="ltr"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="3214f559-2de8-8065-b80c-c550d8d8b64c"><div style="font-size:1.5em"><span class="icon">📊</span></div><div style="width:100%"><div style="display:contents" dir="auto"><p id="3214f559-2de8-80b1-90c5-f894f60d1689" class=""><strong>Resultados T1 - Resumen:</strong></p></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-80fe-b96b-e09740709452" class="">Las colaboraciones con embajadores USA están funcionando como <strong>fuente de contenido técnico básico sin inversión monetaria</strong> (solo producto), pero con <strong>resultados muy desiguales</strong> en <strong>compromiso</strong>, <strong>calidad </strong>y <strong>consistencia</strong>. </p></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-8035-882c-dab383ad9dea" class="">No es comparable con una colaboración profesional pagada que tienen incentivos económicos para cumplir plazos y mantener calidad. </p></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-80f6-baaf-e8b4cabdf1c1" class=""><strong><span style="border-bottom:0.05em solid">Contexto de alcance real:</span></strong></p></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-8036-8846-ee9056d097a3" class="">Con una base combinada de ~30K seguidores (Phillip 1,261 + Daniel 14,300 + Dumitru 14,700), los 3 embajadores han generado en T1 un total de <strong>26.424 views </strong>distribuidas en 8 reels totales, con un promedio de <strong>3.303 views/reel.</strong></p></div></div></figure></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-80ea-b714-efd2e6c003c2" class=""><strong>Valoración por embajador:</strong><br/></p></div><div style="display:contents" dir="ltr"><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="3214f559-2de8-8087-b38c-c46c9f9904b1"><div style="font-size:1.5em"><span class="icon">🟡</span></div><div style="width:100%"><div style="display:contents" dir="auto"><p id="3214f559-2de8-800e-a9ea-fba837681622" class=""><strong>Dumitru Guleac (@dg_pro_remodeling_llc) - EL MÁS CONSISTENTE</strong></p></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80df-b4e7-ddc9885a98e5" class="bulleted-list"><li style="list-style-type:disc"><strong>Alcance:</strong> 14,700 seguidores (el mayor de los 3)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-809f-8888-daeef013bb1b" class="bulleted-list"><li style="list-style-type:disc"><strong>Contenido:</strong> 2 reels cumplidos (mínimo requerido) + 2 extra (el último solo sale Cortag apenas pocos segundos, sin mención)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80c5-ac25-fa13ddee3181" class="bulleted-list"><li style="list-style-type:disc"><strong>Performance:</strong> 17,072 views totales (promedio 5,691 views/reel) - <strong>el mejor ratio</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80c7-8814-f01bf13bb281" class="bulleted-list"><li style="list-style-type:disc"><strong>Calidad:</strong> Contenido profesional, buena edición, ángulos técnicos aprovechables</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-8025-8a7a-c8d6e723dfc3" class="bulleted-list"><li style="list-style-type:disc"><strong>Compromiso:</strong> Cumple entregas, mantiene comunicación, pendiente asistencia a Coverings</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80c5-9001-cc433b7c2ac3" class="bulleted-list"><li style="list-style-type:disc"><strong>RECOMENDACIÓN: MANTENER y priorizar en Q2 ? (acabar de concretar)</strong></li></ul></div></div></figure></div><div style="display:contents" dir="ltr"><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="3214f559-2de8-80c3-b208-d79f4617504c"><div style="font-size:1.5em"><span class="icon">🟠</span></div><div style="width:100%"><div style="display:contents" dir="auto"><p id="3214f559-2de8-806a-a952-d8b4d1179797" class=""><strong>Phillip Harms (@versatile_llc) - ACTIVO PERO BAJA CALIDAD</strong></p></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-8075-9b2b-d289b9cae440" class="bulleted-list"><li style="list-style-type:disc"><strong>Alcance</strong>: 1,261 seguidores (muy limitado)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80d8-bb2c-f30b2b70f199" class="bulleted-list"><li style="list-style-type:disc"><strong>Contenido:</strong> 4 reels (supera mínimo + contenido extra voluntario)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-8045-aec4-f3a515a2fbc1" class="bulleted-list"><li style="list-style-type:disc"><strong>Performance:</strong> 7,264 views totales (promedio 1,816 views/reel)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-8080-9633-d28121dcf89c" class="bulleted-list"><li style="list-style-type:disc"><strong>Calidad:</strong> Baja - edición deficiente, velocidades raras, ángulos poco profesionales, contenido no reutilizable tal cual</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80ec-886d-db5b4245011a" class="bulleted-list"><li style="list-style-type:disc"><strong>Compromiso:</strong> MUY alto (hace contenido extra sin pedirlo), motivado, usa productos realmente, pendiente asistencia en Coverings pero puede fallar por falta de presupuesto</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-803b-aed3-c606747b893a" class="bulleted-list"><li style="list-style-type:disc"><strong>VALORACIÓN:</strong> Es el más activo pero el contenido no es aprovechable. Perfil de &quot;fan de la marca&quot; más que embajador profesional</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-809e-9b37-d7fd30027ed8" class="bulleted-list"><li style="list-style-type:disc"><strong>RECOMENDACIÓN: MANTENER solo si Q2 mejora calidad con feedback directo</strong> o podemos aprovechar con él el tema de las Formaciones - Si no mejora, discontinuar (acabar de concretar)</li></ul></div></div></figure></div><div style="display:contents" dir="ltr"><figure class="block-color-red_background callout" style="white-space:pre-wrap;display:flex" id="3214f559-2de8-8020-acce-dc09279d9aa1"><div style="font-size:1.5em"><span class="icon">🔴</span></div><div style="width:100%"><div style="display:contents" dir="auto"><p id="3214f559-2de8-80d3-b9c2-d42ee8b404df" class=""><strong>Daniel Becerra (@yourtiledesignguy) - PROMETEDOR PERO NO COMPROMETIDO</strong></p></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-8084-8712-f97f2ab3d07a" class="bulleted-list"><li style="list-style-type:disc"><strong>Alcance:</strong> 14,300 seguidores (<strong>el perfil con más potencial)</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80ee-8992-fc0b216503eb" class="bulleted-list"><li style="list-style-type:disc"><strong>Contenido:</strong> 1 reel cumplido de 2 mínimos requeridos (<strong>50% incumplimiento</strong>)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-805e-9b90-d74d02fcc98d" class="bulleted-list"><li style="list-style-type:disc"><strong>Performance:</strong> 2,082 views (solo 1 reel) - <strong>ratio bajo: 0,14 views/seguidor</strong> (debería estar en 1K-2K views mínimo con esa base) </li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80ae-8bd5-c81a7a8f3ea7" class="bulleted-list"><li style="list-style-type:disc"><strong>Calidad: </strong>El unboxing inicial fue <strong>bueno</strong> (mejor calidad visual de los 3), el contenido puede ser aprovechable para ads </li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80b1-9ff2-e1c81672d6ee" class="bulleted-list"><li style="list-style-type:disc"><strong>Compromiso:</strong> Nulo por el momento. No responde mensajes desde hace semanas, no entrega segundo contenido comprometido, aún pendiente de confirmar su astiencia en Coerings (en principio comentó que iría pero no hemos logrado que nos conteste a los útlimos mensajes para organizar mejor la visita al booth de Cortag)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-802e-b888-cbaf2c4f8c15" class="bulleted-list"><li style="list-style-type:disc"><strong>VALORACIÓN:</strong> Es el perfil con mayores epectativas pero con <strong>peor aprovechamiento real</strong>. Tiene el alcance pero no el compromiso. Su único reel tuvo performance muy por debajo de lo esperado para 14K seguidores. Podríamos valorar post-Coverings si la siutación se revierte y conseguimos obtener más contenido de él.</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80f5-b98d-ed801e9bed19" class="bulleted-list"><li style="list-style-type:disc"><strong>RECOMENDACIÓN: A no ser que se revierta la situación post- Coverings discontinuar </strong>- No cumple compromisos básicos pese a tener la mayor audiencia. El alcance no sirve de nada sin contenido</li></ul></div></div></figure></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-80bf-a17c-d2eb356fd7a1" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="3214f559-2de8-8067-ae2e-eb6c599b5b85"><div class="source"><a href="https://docs.google.com/spreadsheets/d/16U8Eq_jnoXco4t4LMMBzC3UgMrmQArBufhYnWmYXxQ0/preview?usp=sharing">https://docs.google.com/spreadsheets/d/16U8Eq_jnoXco4t4LMMBzC3UgMrmQArBufhYnWmYXxQ0/preview?usp=sharing</a></div></figure></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-8091-8034-d86a5d037f86" class=""><strong>PROPUESTA ESTRATÉGICA T2:</strong></p></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-8057-82e2-efe0246326b0" class="">Vista la situación actual, proponemos <strong>dos líneas de acción complementarias</strong> para T2:</p></div><div style="display:contents" dir="auto"><div id="3214f559-2de8-80bc-8ebb-d7fe5bb39fca" class="column-list"><div style="display:contents" dir="auto"><div id="3214f559-2de8-8053-acb8-e023fcb4382b" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3214f559-2de8-80bc-8a81-d7b4d3647eee"><div style="font-size:1.5em"><span class="icon">🔸</span></div><div style="width:100%"><div style="display:contents" dir="auto"><p id="3214f559-2de8-80d8-a254-fa75e561faa8" class=""><strong>1. Mantener máximo 1-2 embajadores actuales (modelo producto por contenido):</strong></p></div></div></figure></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80b0-bc04-fc89012d0617" class="bulleted-list"><li style="list-style-type:disc"><strong>Discontinuar:</strong> Daniel (a menos que post-Coverings se reactive)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-8076-91e0-f5ff9306e185" class="bulleted-list"><li style="list-style-type:disc"><strong>Priorizar:</strong> Dumitru (único con cumplimiento + calidad consistentes)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80cf-93ed-c17d7b9e1164" class="bulleted-list"><li style="list-style-type:disc"><strong>Evaluar:</strong> Phillip solo si mejora calidad o se aprovecha para formaciones presenciales en Florida</li></ul></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-80e4-a26b-f4fd4fc3de60" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="3214f559-2de8-8044-a610-cb6c728cc63b" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3214f559-2de8-8033-9357-e47b1f7ac1e6"><div style="font-size:1.5em"><span class="icon">🔸</span></div><div style="width:100%"><div style="display:contents" dir="auto"><p id="3214f559-2de8-80ee-b083-c6d33c6a426c" class=""><strong>2. Explorar colaboración piloto con creador profesional pagado (NUEVA PROPUESTA):</strong></p></div></div></figure></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-805c-bf26-c46835936724" class=""><strong>Justificación:</strong><br/>El modelo actual &quot;gratis por producto&quot; tiene un límite estructural de compromiso y calidad. La realidad es que necesitamos contenido dedicado para la comunidad estadounidense que sea:</p></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80d1-a09c-e30ce5fd7329" class="bulleted-list"><li style="list-style-type:disc">Profesionalmente ejecutado (edición, audio, ángulos)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80b9-b7e3-fe9c6407d2d3" class="bulleted-list"><li style="list-style-type:disc">Constante y predecible (no depender de disponibilidad esporádica)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-8023-b196-fb76e66dca01" class="bulleted-list"><li style="list-style-type:disc">Con contexto y comunicación (no solo haciendo demostración, hablando del producto y sus ventajas)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-809c-a7f1-ea3b9985663f" class="bulleted-list"><li style="list-style-type:disc">Reutilizable para ads, web, y otros canales</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-800b-9113-c40024dbd393" class="bulleted-list"><li style="list-style-type:disc">Con presentación a cámara y demostraciones claras de producto</li></ul></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-8038-b00d-e4d29bb740f1" class="">
+</p></div></div></div></div></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3214f559-2de8-8066-9737-cae9607162ea"><div style="font-size:1.5em"><span class="icon">🔸</span></div><div style="width:100%"><div style="display:contents" dir="auto"><blockquote id="3214f559-2de8-8054-82ad-eabd1c579004" class=""><strong>Propuesta piloto T2:</strong></blockquote></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80dc-869f-d93d6e9d0a32" class="bulleted-list"><li style="list-style-type:disc">Buscar 1 creador profesional USA (15K-50K seguidores, contenido técnico construcción/renovación)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80bc-ba72-ce4eb5a7d905" class="bulleted-list"><li style="list-style-type:disc">Modelo híbrido: producto + compensación económica ajustada (no tarifas influencer completas)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-8060-8fc2-dae493d4f367" class="bulleted-list"><li style="list-style-type:disc">Compromiso: 1 reel mensuales de calidad garantizada durante 3 meses (piloto Q2)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-800f-bb82-d9e4c4ea45a4" class="bulleted-list"><li style="list-style-type:disc">Presupuesto objetivo: $400-600/mes (vs tarifas estándar $800-1200/mes) - negociable según perfil (acabar de concretar)</li></ul></div></div></figure></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-808e-8e4b-f0240c3bbe5d" class=""><strong>Beneficios del modelo híbrido:</strong></p></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-8011-8891-e24ffcc7a420" class="bulleted-list"><li style="list-style-type:disc">Mayor compromiso que modelo solo-producto (incentivo económico)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-802f-8557-cabed8e18459" class="bulleted-list"><li style="list-style-type:disc">Coste más asumible que tarifas influencer estándar USA (ajuste por colaboración a largo plazo)</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-80e1-8f0a-d3c1404a5f74" class="bulleted-list"><li style="list-style-type:disc">Contenido profesional predecible vs depender de micro-embajadores inconsistentes</li></ul></div><div style="display:contents" dir="auto"><ul id="3214f559-2de8-801f-88a2-f759ea71ab31" class="bulleted-list"><li style="list-style-type:disc">Solución escalable: si funciona el piloto, se mantiene; si no, solo 3 meses de inversión</li></ul></div><div style="display:contents" dir="auto"><p id="3214f559-2de8-8000-838e-d5a9035e4b0f" class="">Esta propuesta permitiría evaluar si una inversión moderada en 1 perfil profesional genera mejor retorno que gestionar 3 embajadores gratis con resultados inconsistentes, mientras mantenemos paralelamente a dos embajadores como base de contenido &quot;sin coste adicional&quot; que ya funciona.</p></div><div style="display:contents" dir="auto"><p id="33e4f559-2de8-8027-8197-fc4a1504b41d" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

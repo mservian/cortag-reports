@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Read(//c/Program Files \\(x86\\)/Google/Chrome/Application/**)",
+      "Read(//c/Program Files \\(x86\\)/Microsoft/Edge/Application/**)",
+      "Read(//c/Program Files/Microsoft/Edge/Application/**)",
+      "Bash(bash generate_pdf.sh)",
+      "Bash(pip --version)",
+      "Bash(grep -oE '[A-Za-z0-9áéíóúÁÉÍÓÚñÑ ,.;:_%@€$+\\\\-]{6,}')",
+      "Bash(grep -v \"^[0-9 ]*$\")",
+      "Bash(ls -lh \"C:/Users/mserv/Desktop/Marta/Github/cortag-report-T12026/\"*.pdf)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --version)",
+      "Bash(wmic datafile:*)",
+      "Bash(grep -E \"[A-Za-z]{5,}\")",
+      "Bash(grep -E \"^[A-Za-záéíóúÁÉÍÓÚñÑ].{10,}\")",
+      "Bash(grep -oE '[A-Za-z][a-z]{4,}[^<>]{0,60}')",
+      "Bash(powershell.exe:*)",
+      "Bash(python3 -c ':*)",
+      "Bash(python -c \"import openpyxl; wb = openpyxl.load_workbook\\('C:/Users/mserv/Desktop/Marta/Github/cortag-report-T12026/usa/Calendario Publicaciones RRSS Cortag USA \\(3\\).xlsx', data_only=True\\); print\\('Sheets:', wb.sheetnames\\)\")",
+      "Bash(py -3 -c \"import openpyxl; wb = openpyxl.load_workbook\\('C:/Users/mserv/Desktop/Marta/Github/cortag-report-T12026/usa/Calendario Publicaciones RRSS Cortag USA \\(3\\).xlsx', data_only=True\\); print\\('Sheets:', wb.sheetnames\\)\")",
+      "Bash(cd /tmp)",
+      "Bash(cp \"/c/Users/mserv/Desktop/Marta/Github/cortag-report-T12026/usa/Calendario Publicaciones RRSS Cortag USA \\(3\\).xlsx\" cortag_usa.xlsx)",
+      "Bash(unzip -o cortag_usa.xlsx -d cortag_usa_xl)",
+      "Read(//tmp/cortag_usa_xl/xl/**)",
+      "Bash(sed 's/<[^>]*>//g')",
+      "Bash(python3:*)"
+    ]
+  }
+}

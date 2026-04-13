@@ -85,7 +85,7 @@
   .chart-wrap { background: var(--card-bg); border: 1px solid var(--gray-light); border-radius: 8px; padding: 22px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(29,113,185,0.06); }
   .chart-title { font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 2px; }
   .chart-sub { font-size: 11px; color: var(--gray-mid); margin-bottom: 16px; }
-  .chart-wrap canvas { max-height: 210px; }
+  .chart-wrap canvas { max-height: 210px; height: 210px; }
 
   /* TABLE */
   table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 24px; background: var(--card-bg); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(29,113,185,0.06); border: 1px solid var(--gray-light); }
@@ -129,7 +129,87 @@
   footer .ft-brand { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 2px; }
   footer .ft-note { font-size: 11px; color: rgba(255,255,255,0.35); }
 
-  @media print { body { background: white; } section { padding: 40px; } .cover { min-height: auto; padding: 40px; } }
+  @media print {
+    @page { size: A4; margin: 7mm 15mm; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: white !important; font-size: 11px !important; line-height: 1.4 !important; }
+
+    /* ── COVER ─────────────────────────────── */
+    .cover { height: 283mm !important; min-height: unset !important; padding: 26px 4px !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; }
+    .cover::before, .cover::after { display: none !important; }
+    .cover h1 { font-size: 50px !important; margin-bottom: 14px !important; letter-spacing: -2px !important; }
+    .cover-main { flex: 1 !important; padding: 16px 0 !important; justify-content: center !important; }
+    .cover-sub { font-size: 13px !important; max-width: 440px !important; }
+    .cover-meta { padding-top: 14px !important; gap: 20px !important; }
+    .cover-tag { margin-bottom: 16px !important; padding: 6px 12px !important; }
+
+    /* ── SECTIONS ───────────────────────────── */
+    section { padding: 6px 0 !important; border-bottom: none !important; background: white !important; }
+    .section-title { font-size: 17px !important; margin-bottom: 5px !important; letter-spacing: -0.5px !important; }
+    .section-label { margin-bottom: 3px !important; font-size: 9px !important; }
+
+    /* ── STAT CARDS ─────────────────────────── */
+    .stat-grid { gap: 4px !important; margin-bottom: 5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .stat-card { padding: 5px !important; gap: 2px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .stat-value { font-size: 17px !important; line-height: 1 !important; }
+    .stat-label { font-size: 7.5px !important; }
+    .stat-sub { font-size: 9.5px !important; }
+
+    /* ── CHARTS ─────────────────────────────── */
+    .chart-wrap { padding: 5px !important; margin-bottom: 4px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .chart-wrap canvas { height: 55px !important; max-height: 55px !important; width: 100% !important; }
+    .chart-title { font-size: 9.5px !important; margin-bottom: 0 !important; }
+    .chart-sub { font-size: 8.5px !important; margin-bottom: 2px !important; }
+
+    /* ── LAYOUT ─────────────────────────────── */
+    .two-col { gap: 7px !important; }
+    .two-col > div { page-break-inside: avoid !important; break-inside: avoid !important; }
+
+    /* ── INFO BLOCKS ────────────────────────── */
+    .info-block { padding: 6px !important; margin-bottom: 4px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .info-block h4 { font-size: 10px !important; margin-bottom: 3px !important; }
+    .info-block p { font-size: 10px !important; line-height: 1.3 !important; }
+
+    /* ── ALERTS ─────────────────────────────── */
+    .alert { padding: 6px 10px !important; margin-bottom: 5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .alert p { font-size: 10px !important; line-height: 1.3 !important; }
+    .alert-label { font-size: 8px !important; margin-bottom: 2px !important; }
+
+    /* ── TABLES ─────────────────────────────── */
+    table { margin-bottom: 7px !important; font-size: 9.5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    th { padding: 5px 7px !important; font-size: 7.5px !important; }
+    td { padding: 1px 7px !important; font-size: 9px !important; }
+    tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+
+    /* ── MISC ────────────────────────────────── */
+    .divider { margin: 4px 0 !important; }
+    .info-block br { display: none !important; line-height: 0 !important; }
+    h3 { font-size: 12px !important; margin-bottom: 8px !important; page-break-after: avoid !important; break-after: avoid !important; }
+    .tags { margin-top: 6px !important; }
+    .tag { font-size: 9px !important; padding: 2px 6px !important; }
+    .badge { font-size: 8.5px !important; padding: 1px 5px !important; }
+
+    /* ── PENDING LIST ────────────────────────── */
+    .pending-list { gap: 5px !important; }
+    .pending-item { padding: 7px 10px !important; gap: 10px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .pending-item .text strong { font-size: 10px !important; margin-bottom: 1px !important; }
+    .pending-item .text span { font-size: 9.5px !important; }
+    .pending-item .icon { width: 18px !important; height: 18px !important; font-size: 9px !important; flex-shrink: 0 !important; }
+
+    /* ── FOOTER ──────────────────────────────── */
+    footer { display: none !important; }
+
+    /* ── RESUMEN intro text override ─────────── */
+    section > p[style] { font-size: 11px !important; margin-bottom: 10px !important; line-height: 1.45 !important; }
+
+    /* ── INLINE-STYLED MINI-CARDS (IG/FB summary) ── */
+    .info-block > div[style*="grid-template-columns"] { margin-bottom: 4px !important; gap: 5px !important; }
+    .info-block > div[style*="grid-template-columns"] > div[style*="padding"] { padding: 5px 7px !important; }
+    .info-block [style*="font-size:22px"], .info-block [style*="font-size: 22px"] { font-size: 13px !important; line-height: 1 !important; }
+    .info-block [style*="letter-spacing:2px"], .info-block [style*="letter-spacing: 2px"] { font-size: 8px !important; margin-bottom: 4px !important; }
+    .info-block [style*="font-size:11px"], .info-block [style*="font-size: 11px"] { font-size: 9px !important; }
+    .info-block [style*="margin-top:6px"], .info-block [style*="margin-top: 6px"] { margin-top: 3px !important; }
+  }
   @media (max-width: 768px) { .cover, section { padding: 32px 20px; } .two-col { grid-template-columns: 1fr; } .cover-meta { flex-direction: column; gap: 24px; } .stat-grid { grid-template-columns: 1fr 1fr; } }
 </style>
 </head>
@@ -266,8 +346,20 @@
         <canvas id="chartFBViews"></canvas>
       </div>
       <div class="info-block">
-        <h4><span class="dot"></span>Facebook · Seguidores y engagement</h4>
-        <p>Crecimiento constante: <strong>1.063 → 1.069 → 1.076</strong> en enero, febrero y marzo. <span class="badge badge-up">+3,3%</span> vs T4 2025. Engagement rate medio en FB: <strong>0,63%</strong>. El canal funciona principalmente como amplificador de los reels de Rubén Baz mediante reposts. La caída de visualizaciones en marzo refleja la falta de ads ese mes.</p>
+        <h4 style="margin-bottom:14px;"><span class="dot dot-green"></span>Instagram · Facebook — Resumen T1 2026</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+          <div style="background:var(--blue-light);border-radius:6px;padding:12px 14px;">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:6px;">Instagram</div>
+            <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">2.532 <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">seguidores</span></div>
+            <div style="margin-top:6px;"><span class="badge badge-up">+3,3% vs T4</span></div>
+          </div>
+          <div style="background:#f0fdf4;border-radius:6px;padding:12px 14px;">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#15803d;font-weight:700;margin-bottom:6px;">Facebook</div>
+            <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">1.076 <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">seguidores</span></div>
+            <div style="margin-top:6px;"><span class="badge badge-up">+3,3% vs T4</span></div>
+          </div>
+        </div>
+        <p>Ambas plataformas registran <strong>crecimiento de seguidores y mejoras en engagement rate e interacciones</strong> respecto al trimestre anterior. El engagement de Instagram alcanza una media de <strong>7,28%</strong> y las interacciones totales suben un <strong>+26,1%</strong>. Las visualizaciones son menores que en T4 2025, efecto directamente vinculado a la <strong>menor inversión en ads durante T1</strong> —sin recargas en enero ni en marzo— y no a un deterioro del contenido orgánico.</p>
       </div>
     </div>
   </div>
@@ -279,11 +371,13 @@
       </tr>
     </thead>
     <tbody>
+      <tr style="background:var(--blue-light);"><td colspan="6" style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700;padding:8px 14px;border-bottom:1px solid rgba(29,113,185,0.2);">Instagram</td></tr>
       <tr><td><strong>IG Seguidores</strong></td><td>2.439</td><td>2.472</td><td><strong>2.532</strong></td><td>2.532 (cierre T1)</td><td><span class="badge badge-up">+3,3%</span></td></tr>
       <tr><td><strong>IG Visualizaciones</strong></td><td>10.737</td><td>42.534</td><td>29.761</td><td>83.032</td><td><span class="badge badge-down">−61,2%</span></td></tr>
       <tr><td><strong>IG Alcance</strong></td><td>3.555</td><td>11.538</td><td>3.764</td><td>18.857</td><td><span class="badge badge-down">−90,1%</span></td></tr>
       <tr><td><strong>IG Interacciones</strong></td><td>141</td><td>380</td><td>851</td><td>1.372</td><td><span class="badge badge-up">+26,1%</span></td></tr>
       <tr><td><strong>IG Engagement Rate</strong></td><td>3,97%</td><td>3,29%</td><td>22,6%</td><td><strong>7,28% media</strong></td><td><span class="badge badge-up">+6,71 pp</span></td></tr>
+      <tr style="background:#f0fdf4;"><td colspan="6" style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#15803d;font-weight:700;padding:8px 14px;border-bottom:1px solid rgba(21,128,61,0.2);border-top:2px solid rgba(21,128,61,0.15);">Facebook</td></tr>
       <tr><td><strong>FB Seguidores</strong></td><td>1.063</td><td>1.069</td><td><strong>1.076</strong></td><td>1.076 (cierre T1)</td><td><span class="badge badge-up">+3,3%</span></td></tr>
       <tr><td><strong>FB Visualizaciones</strong></td><td>33.373</td><td>63.160</td><td>7.722</td><td>104.255</td><td><span class="badge badge-down">−92,0%</span></td></tr>
       <tr><td><strong>FB Interacciones</strong></td><td>133</td><td>183</td><td>166</td><td>482</td><td><span class="badge badge-down">−47,4%</span></td></tr>
@@ -353,11 +447,10 @@
       <tr class="highlight"><td><strong>Veces compartido</strong></td><td>3</td><td>4</td><td>5</td><td>0</td><td>0</td></tr>
     </tbody>
   </table>
-  <p style="font-size:11px;color:#9CA3AF;margin-top:-16px;margin-bottom:0">* Hasta finales de febrero 2025 no se empezó a gestionar la cuenta de LinkedIn de Cortag Europe.</p>
 </section>
 
 <!-- 04 FRANCE + PORTUGAL -->
-<section class="page-break">
+<section>
   <div class="section-label">04</div>
   <h2 class="section-title">Francia &amp; Portugal — Facebook</h2>
 
@@ -396,10 +489,12 @@
       <tr><th>Métrica</th><th>T2 2025</th><th>T3 2025</th><th>T4 2025</th><th>T1 2026</th></tr>
     </thead>
     <tbody>
+      <tr style="background:var(--blue-light);"><td colspan="5" style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700;padding:8px 14px;border-bottom:1px solid rgba(29,113,185,0.2);">Francia</td></tr>
       <tr><td><strong>FR Seguidores</strong></td><td>100</td><td>116</td><td>138</td><td>165</td></tr>
       <tr><td><strong>FR Visualizaciones</strong></td><td>444.801</td><td>548.968</td><td>259.402</td><td>7.892</td></tr>
       <tr><td><strong>FR Alcance</strong></td><td>369.945</td><td>427.432</td><td>217.547</td><td>5.862</td></tr>
       <tr><td><strong>FR Interacciones</strong></td><td>127</td><td>139</td><td>106</td><td>74</td></tr>
+      <tr style="background:#f0fdf4;"><td colspan="5" style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#15803d;font-weight:700;padding:8px 14px;border-bottom:1px solid rgba(21,128,61,0.2);border-top:2px solid rgba(21,128,61,0.15);">Portugal</td></tr>
       <tr><td><strong>PT Seguidores</strong></td><td>13</td><td>14</td><td>15</td><td>17</td></tr>
       <tr><td><strong>PT Visualizaciones</strong></td><td>240</td><td>229</td><td>697</td><td>676</td></tr>
       <tr><td><strong>PT Alcance</strong></td><td>106</td><td>107</td><td>529</td><td>506</td></tr>
@@ -472,7 +567,7 @@
 
   <div class="info-block">
     <h4><span class="dot dot-green"></span>Q2 2026 — Campaña activa</h4>
-    <p>A fecha del informe: <strong>Sorteo Cortag Expert</strong> activo (8 abril – 8 mayo, ≈R$1.100–1.200). Fondos aumentados recargados. Próxima campaña prevista: <strong>Rubén Baz + Zapp Titan</strong> en la primera quincena de abril.</p>
+    <p>A fecha del informe: <strong>Sorteo Cortag Expert</strong> activo (8 abril – 8 mayo, ≈R$1.100–1.200). Fondos aumentados recargados. Próxima campaña prevista: <strong>Rubén Baz + Zapp Titan</strong> en la segunda quincena de abril.</p>
   </div>
 </section>
 
@@ -510,8 +605,8 @@
           <div class="stat-sub">sobre views totales</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Coste/1.000 views</div>
-          <div class="stat-value gold">4,2€</div>
+          <div class="stat-label">Coste/view</div>
+          <div class="stat-value gold">0,0042€</div>
           <div class="stat-sub">Altamente eficiente</div>
         </div>
       </div>
@@ -634,14 +729,14 @@
     <tbody>
       <tr><td><strong>Ganador Sorteo Cortag Expert</strong></td><td>Cortag Expert</td><td><span class="badge badge-up">24,05%</span></td><td>2,12%</td></tr>
       <tr><td><strong>Newsletter General Enero</strong></td><td>Cortag Expert / Distribución</td><td><span class="badge badge-neutral">16,67%</span></td><td>2,85%</td></tr>
-      <tr><td><strong>Newsletter ExpoCofersa</strong></td><td>Distribución EHLIS</td><td><span class="badge badge-neutral">19,54%</span></td><td>0,88%</td></tr>
-      <tr><td><strong>Newsletter ExpoCofersa (Recordatorio)</strong></td><td>Distribución EHLIS</td><td><span class="badge badge-neutral">23,68%</span></td><td>0,48%</td></tr>
+      <tr><td><strong>Newsletter Expocecofersa</strong></td><td>Distribución EHLIS</td><td><span class="badge badge-neutral">19,54%</span></td><td>0,88%</td></tr>
+      <tr><td><strong>Newsletter Expocecofersa (Recordatorio)</strong></td><td>Distribución EHLIS</td><td><span class="badge badge-neutral">23,68%</span></td><td>0,48%</td></tr>
       <tr><td><strong>Feria Jarama Industrial Pro</strong></td><td>Industrial Pro</td><td><span class="badge badge-up">44%</span></td><td>0,9%</td></tr>
-      <tr><td><strong>Virtual Ibrix Experience</strong></td><td>Distribución</td><td><span class="badge badge-up">28,72%</span></td><td>4,10%</td></tr>
-      <tr><td><strong>ExpoCofersa (17/03)</strong></td><td>Distribución / Cecofersa</td><td><span class="badge badge-up">25,71%</span></td><td>6,67%</td></tr>
+      <tr><td><strong>Virtual Ibricks Experience</strong></td><td>Distribución</td><td><span class="badge badge-up">28,72%</span></td><td>4,10%</td></tr>
+      <tr><td><strong>Expocecofersa (17/03)</strong></td><td>Distribución / Cecofersa</td><td><span class="badge badge-up">25,71%</span></td><td>6,67%</td></tr>
       <tr><td><strong>Newsletter Programa de Garantía</strong></td><td>Clientes garantía</td><td><span class="badge badge-up">28,40%</span></td><td>2,47%</td></tr>
       <tr><td><strong>Newsletter Virtual Connect Neopro</strong></td><td>Neopro</td><td><span class="badge badge-up">27,91%</span></td><td>1,97%</td></tr>
-      <tr><td><strong>Recordatorio ExpoCofersa</strong></td><td>Distribución / Cecofersa</td><td><span class="badge badge-up">27,18%</span></td><td>2,91%</td></tr>
+      <tr><td><strong>Recordatorio Expocecofersa</strong></td><td>Distribución / Cecofersa</td><td><span class="badge badge-up">27,18%</span></td><td>2,91%</td></tr>
       <tr><td><strong>Reactivación leads Campaña SMART</strong></td><td>Leads SMART (España)</td><td><span class="badge badge-up">35,85%</span></td><td>16,98%</td></tr>
       <tr><td><strong>Newsletter Marzo Cortag Expert</strong></td><td>Cortag Expert</td><td><span class="badge badge-up">27,99%</span></td><td>1,85%</td></tr>
       <tr class="highlight"><td><strong>Feria presencial BDB (25–26 mar)</strong></td><td>Distribución BDB</td><td><span class="badge badge-up">28,57%</span></td><td>2,72%</td></tr>
@@ -656,7 +751,7 @@
 </section>
 
 <!-- 09 PENDIENTES -->
-<section class="page-break">
+<section>
   <div class="section-label">09</div>
   <h2 class="section-title">Próximas acciones Q2</h2>
 
@@ -721,7 +816,7 @@
   function baseOptions(yLabel) {
     return {
       responsive: true,
-      maintainAspectRatio: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
         tooltip: { backgroundColor: '#29235C', borderColor: 'rgba(29,113,185,0.3)', borderWidth: 1, titleColor: '#ffffff', bodyColor: '#9CA3AF', padding: 12, cornerRadius: 6 }
@@ -847,7 +942,7 @@
       datasets: [{ data: [351,111,52,3,7,2], backgroundColor: ['rgba(29,113,185,0.9)','rgba(29,113,185,0.55)','rgba(217,119,6,0.7)','rgba(156,163,175,0.5)','rgba(22,163,74,0.55)','rgba(156,163,175,0.3)'], borderColor: '#ffffff', borderWidth: 2 }]
     },
     options: {
-      responsive: true, maintainAspectRatio: true,
+      responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: true, position: 'right', labels: { color: '#6B7280', font: { size: 11 }, boxWidth: 12, padding: 10 } }, tooltip: { backgroundColor: '#29235C', borderColor: 'rgba(29,113,185,0.3)', borderWidth: 1, titleColor: '#ffffff', bodyColor: '#9CA3AF', padding: 12, cornerRadius: 6 } }
     }
   });
@@ -856,7 +951,7 @@
   new Chart(document.getElementById('chartNewsletters'), {
     type: 'bar',
     data: {
-      labels: ['SMART\nReactivación','Industrial\nPro','ExpoCofersa\n17/03','Prog.\nGarantía','Virtual\nIbrix','BDB\nMarzo','Recordatorio\nExpoCofersa','NL Virtual\nNeopro','NL Marzo\nExpert','Ganador\nSorteo','Media\nSector'],
+      labels: ['SMART\nReactivación','Industrial\nPro','Expocecofersa\n17/03','Prog.\nGarantía','Virtual\nIbricks','BDB\nMarzo','Recordatorio\nExpocecofersa','NL Virtual\nNeopro','NL Marzo\nExpert','Ganador\nSorteo','Media\nSector'],
       datasets: [{ data: [35.85,44,25.71,28.40,28.72,28.57,27.18,27.91,27.99,24.05,21], backgroundColor: (ctx) => ctx.dataIndex === 10 ? 'rgba(156,163,175,0.4)' : 'rgba(29,113,185,0.75)', borderRadius: 4 }]
     },
     options: { ...baseOptions('%'), plugins: { ...baseOptions().plugins, tooltip: { ...baseOptions().plugins.tooltip, callbacks: { label: (c) => c.parsed.y.toFixed(2) + '%' } } } }

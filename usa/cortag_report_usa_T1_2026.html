@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report T1 2026 — Cortag USA</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --black: #29235C;
+    --blue: #1d71b9;
+    --blue-dark: #155a94;
+    --blue-light: #e8f2fb;
+    --blue-mid: rgba(29,113,185,0.12);
+    --white: #ffffff;
+    --page-bg: #F4F6FA;
+    --red: #C0392B;
+    --warning: #D97706;
+    --green: #16a34a;
+    --gray-mid: #6B7280;
+    --gray-light: #E5E7EB;
+    --border: rgba(29,113,185,0.2);
+    --text: #1e1b4b;
+    --card-bg: #ffffff;
+    --cover-bg: #29235C;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--page-bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; line-height: 1.6; font-size: 15px; }
+
+  /* COVER */
+  .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 60px; background: var(--cover-bg); position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; top: -100px; right: -150px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(29,113,185,0.25) 0%, transparent 70%); pointer-events: none; }
+  .cover::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(29,113,185,0.15) 0%, transparent 70%); pointer-events: none; }
+  .cover-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 600; }
+  .cover-main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 80px 0; }
+  .cover-tag { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(29,113,185,0.5); background: rgba(29,113,185,0.15); padding: 8px 16px; border-radius: 4px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7ec3f5; margin-bottom: 40px; width: fit-content; }
+  .cover-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #7ec3f5; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .cover h1 { font-size: clamp(56px, 8vw, 96px); font-weight: 800; line-height: 0.92; letter-spacing: -3px; color: #ffffff; margin-bottom: 30px; }
+  .cover h1 span { color: #7ec3f5; display: block; }
+  .cover-sub { font-size: 18px; color: rgba(255,255,255,0.55); font-weight: 400; max-width: 540px; line-height: 1.5; }
+  .cover-meta { display: flex; gap: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.1); }
+  .cover-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .cover-meta-item .label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .cover-meta-item .value { font-size: 15px; color: #ffffff; font-weight: 600; }
+  .cover-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+  .cover-logo { font-size: 13px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,0.4); }
+
+  /* SECTIONS */
+  .page-break { page-break-before: always; }
+  section { padding: 60px; border-bottom: 1px solid var(--gray-light); background: var(--page-bg); position: relative; }
+  .section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; font-weight: 600; }
+  .section-label::before { content: ''; width: 24px; height: 2px; background: var(--blue); }
+  .section-title { font-size: clamp(26px, 3.5vw, 40px); font-weight: 800; line-height: 1.1; margin-bottom: 40px; letter-spacing: -1px; color: var(--black); }
+
+  /* ALERTS */
+  .alert { border-left: 3px solid var(--red); background: #fef2f2; padding: 20px 24px; border-radius: 0 6px 6px 0; margin-bottom: 24px; }
+  .alert-warning { border-left-color: var(--warning); background: #fffbeb; }
+  .alert-info { border-left-color: var(--blue); background: var(--blue-light); }
+  .alert-success { border-left-color: var(--green); background: #f0fdf4; }
+  .alert-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 8px; font-weight: 700; }
+  .alert-warning .alert-label { color: var(--warning); }
+  .alert-info .alert-label { color: var(--blue); }
+  .alert-success .alert-label { color: var(--green); }
+  .alert p { font-size: 14px; color: #374151; line-height: 1.7; }
+  .alert strong { color: #111827; font-weight: 600; }
+
+  /* STAT GRID */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 32px; }
+  .stat-card { background: var(--card-bg); border: 1px solid var(--gray-light); border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 1px 4px rgba(29,113,185,0.06); }
+  .stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-mid); font-weight: 600; }
+  .stat-value { font-size: 32px; font-weight: 800; line-height: 1; color: var(--black); letter-spacing: -1px; }
+  .stat-value.gold { color: var(--blue); }
+  .stat-value.red { color: var(--red); }
+  .stat-value.warn { color: var(--warning); }
+  .stat-value.green { color: var(--green); }
+  .stat-sub { font-size: 12px; color: var(--gray-mid); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .badge { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; }
+  .badge-up { background: #dcfce7; color: #15803d; }
+  .badge-down { background: #fee2e2; color: var(--red); }
+  .badge-neutral { background: var(--blue-light); color: var(--blue); }
+  .badge-warn { background: #fef3c7; color: var(--warning); }
+
+  /* LAYOUT */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: start; }
+
+  /* CHARTS */
+  .chart-wrap { background: var(--card-bg); border: 1px solid var(--gray-light); border-radius: 8px; padding: 22px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(29,113,185,0.06); }
+  .chart-title { font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 2px; }
+  .chart-sub { font-size: 11px; color: var(--gray-mid); margin-bottom: 16px; }
+  .chart-wrap canvas { max-height: 210px; height: 210px; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 24px; background: var(--card-bg); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(29,113,185,0.06); border: 1px solid var(--gray-light); }
+  thead tr { background: var(--black); }
+  th { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.85); padding: 12px 14px; text-align: left; font-weight: 700; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--gray-light); color: #374151; vertical-align: top; }
+  td strong { color: var(--black); font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #fafbff; }
+  tr.highlight td { background: rgba(29,113,185,0.05); }
+
+  /* INFO BLOCKS */
+  .info-block { background: var(--card-bg); border: 1px solid var(--gray-light); border-radius: 8px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(29,113,185,0.06); }
+  .info-block h4 { font-size: 13px; font-weight: 700; margin-bottom: 10px; color: var(--black); display: flex; align-items: center; gap: 10px; }
+  .info-block h4 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+  .info-block h4 .dot-red { background: var(--red); }
+  .info-block h4 .dot-green { background: var(--green); }
+  .info-block h4 .dot-warn { background: var(--warning); }
+  .info-block p { font-size: 13px; color: var(--gray-mid); line-height: 1.7; }
+  .info-block p strong { color: #374151; font-weight: 600; }
+
+  /* EMBAJADOR CARDS */
+  .emb-card { background: var(--card-bg); border: 1px solid var(--gray-light); border-radius: 10px; padding: 22px; box-shadow: 0 1px 4px rgba(29,113,185,0.06); position: relative; overflow: hidden; }
+  .emb-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .emb-card.green::before { background: var(--green); }
+  .emb-card.warn::before { background: var(--warning); }
+  .emb-card.red::before { background: var(--red); }
+  .emb-handle { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--blue); margin-bottom: 4px; }
+  .emb-name { font-size: 16px; font-weight: 800; color: var(--black); margin-bottom: 14px; letter-spacing: -0.3px; }
+  .emb-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .emb-stat { background: var(--page-bg); border-radius: 6px; padding: 10px 12px; }
+  .emb-stat-label { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-mid); font-weight: 600; margin-bottom: 3px; }
+  .emb-stat-value { font-size: 20px; font-weight: 800; color: var(--black); letter-spacing: -0.5px; line-height: 1; }
+  .emb-verdict { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 12px; border-radius: 4px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+  .emb-verdict.mantener { background: #dcfce7; color: #15803d; }
+  .emb-verdict.condicional { background: #fef3c7; color: var(--warning); }
+  .emb-verdict.discontinuar { background: #fee2e2; color: var(--red); }
+  .emb-note { font-size: 12px; color: var(--gray-mid); line-height: 1.6; }
+
+  /* TAGS */
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; border: 1px solid var(--blue-light); background: var(--blue-light); color: var(--blue); font-weight: 500; }
+  .tag-warn { border-color: #fef3c7; background: #fef3c7; color: var(--warning); }
+  .tag-green { border-color: #dcfce7; background: #dcfce7; color: var(--green); }
+  .tag-red { border-color: #fee2e2; background: #fee2e2; color: var(--red); }
+
+  /* PENDIENTES */
+  .pending-list { display: flex; flex-direction: column; gap: 8px; }
+  .pending-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 18px; background: var(--card-bg); border: 1px solid var(--gray-light); border-radius: 8px; }
+  .pending-item .icon { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .icon-crit { background: #fee2e2; color: var(--red); }
+  .icon-med { background: #fef3c7; color: var(--warning); }
+  .icon-low { background: var(--blue-light); color: var(--blue); }
+  .icon-green { background: #dcfce7; color: var(--green); }
+  .pending-item .text { flex: 1; }
+  .pending-item .text strong { display: block; font-size: 13px; color: var(--black); font-weight: 600; margin-bottom: 2px; }
+  .pending-item .text span { font-size: 12px; color: var(--gray-mid); }
+
+  .divider { height: 1px; background: var(--gray-light); margin: 36px 0; }
+
+  /* FOOTER */
+  footer { padding: 28px 60px; border-top: 1px solid var(--gray-light); background: var(--black); display: flex; justify-content: space-between; align-items: center; }
+  footer .ft-brand { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 2px; }
+  footer .ft-note { font-size: 11px; color: rgba(255,255,255,0.35); }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box { background: linear-gradient(135deg, rgba(29,113,185,0.08) 0%, rgba(29,113,185,0.03) 100%); border: 1px solid rgba(29,113,185,0.2); border-radius: 10px; padding: 24px; margin-bottom: 24px; }
+  .highlight-box h3 { font-size: 15px; font-weight: 800; color: var(--black); margin-bottom: 10px; }
+  .highlight-box p { font-size: 13px; color: #374151; line-height: 1.7; }
+
+  @media print {
+    @page { size: A4; margin: 7mm 15mm; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: white !important; font-size: 11px !important; line-height: 1.4 !important; }
+    .cover { height: 283mm !important; min-height: unset !important; padding: 26px 4px !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; }
+    .cover::before, .cover::after { display: none !important; }
+    .cover h1 { font-size: 50px !important; margin-bottom: 14px !important; letter-spacing: -2px !important; }
+    .cover-main { flex: 1 !important; padding: 16px 0 !important; justify-content: center !important; }
+    .cover-sub { font-size: 13px !important; max-width: 440px !important; }
+    .cover-meta { padding-top: 14px !important; gap: 20px !important; }
+    .cover-tag { margin-bottom: 16px !important; padding: 6px 12px !important; }
+    section { padding: 6px 0 !important; border-bottom: none !important; background: white !important; }
+    .section-title { font-size: 17px !important; margin-bottom: 5px !important; letter-spacing: -0.5px !important; }
+    .section-label { margin-bottom: 3px !important; font-size: 9px !important; }
+    .stat-grid { gap: 4px !important; margin-bottom: 5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .stat-card { padding: 5px !important; gap: 2px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .stat-value { font-size: 17px !important; line-height: 1 !important; }
+    .stat-label { font-size: 7.5px !important; }
+    .stat-sub { font-size: 9.5px !important; }
+    .chart-wrap { padding: 5px !important; margin-bottom: 4px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .chart-wrap canvas { height: 55px !important; max-height: 55px !important; width: 100% !important; }
+    .chart-title { font-size: 9.5px !important; margin-bottom: 0 !important; }
+    .chart-sub { font-size: 8.5px !important; margin-bottom: 2px !important; }
+    .two-col { gap: 7px !important; }
+    .three-col { gap: 7px !important; }
+    .two-col > div, .three-col > div { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .info-block { padding: 6px !important; margin-bottom: 4px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .info-block h4 { font-size: 10px !important; margin-bottom: 3px !important; }
+    .info-block p { font-size: 10px !important; line-height: 1.3 !important; }
+    .alert { padding: 6px 10px !important; margin-bottom: 5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .alert p { font-size: 10px !important; line-height: 1.3 !important; }
+    .alert-label { font-size: 8px !important; margin-bottom: 2px !important; }
+    table { margin-bottom: 7px !important; font-size: 9.5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    th { padding: 5px 7px !important; font-size: 7.5px !important; }
+    td { padding: 1px 7px !important; font-size: 9px !important; }
+    tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .divider { margin: 4px 0 !important; }
+    .emb-card { padding: 8px !important; margin-bottom: 4px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .emb-stat-value { font-size: 13px !important; }
+    .emb-name { font-size: 11px !important; margin-bottom: 6px !important; }
+    .pending-list { gap: 5px !important; }
+    .pending-item { padding: 7px 10px !important; gap: 10px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .pending-item .text strong { font-size: 10px !important; margin-bottom: 1px !important; }
+    .pending-item .text span { font-size: 9.5px !important; }
+    .pending-item .icon { width: 18px !important; height: 18px !important; font-size: 9px !important; flex-shrink: 0 !important; }
+    footer { display: none !important; }
+    section > p[style] { font-size: 11px !important; margin-bottom: 10px !important; line-height: 1.45 !important; }
+    h3 { font-size: 12px !important; margin-bottom: 8px !important; page-break-after: avoid !important; break-after: avoid !important; }
+    .tags { margin-top: 6px !important; }
+    .tag { font-size: 9px !important; padding: 2px 6px !important; }
+    .badge { font-size: 8.5px !important; padding: 1px 5px !important; }
+    .highlight-box { padding: 8px !important; margin-bottom: 6px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .highlight-box p { font-size: 10px !important; }
+    .emb-stats { gap: 5px !important; }
+    .emb-stat { padding: 5px 7px !important; }
+    .emb-stat-label { font-size: 7px !important; }
+    .emb-note { font-size: 10px !important; }
+  }
+  @media (max-width: 768px) {
+    .cover, section { padding: 32px 20px; }
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .cover-meta { flex-direction: column; gap: 24px; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Cortag USA · Team4Digital Solutions</div>
+  <div class="cover-main">
+    <div class="cover-tag">Q1 · January–March 2026</div>
+    <h1>Report<span>Marketing</span>Digital</h1>
+    <p class="cover-sub">Rendimiento de redes sociales (Instagram & Facebook), contexto de Meta Ads, y resultados del Plan de Embajadores USA T1 2026.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="label">Mercado</span>
+        <span class="value">USA — Nationwide</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Periodo</span>
+        <span class="value">Enero – Marzo 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Preparado por</span>
+        <span class="value">Team4Digital Solutions</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-logo">CORTAG USA</div>
+  </div>
+</div>
+
+<!-- 01 RESUMEN EJECUTIVO -->
+<section class="page-break">
+  <div class="section-label">01</div>
+  <h2 class="section-title">Resumen ejecutivo</h2>
+
+  <div class="info-block" style="margin-bottom:28px;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;">
+    <p style="font-size:14px;color:#374151;line-height:1.8">El T1 de 2026 en USA ha estado marcado por <strong>dos condicionantes principales</strong>: la ausencia total de inversión en Meta Ads —el presupuesto disponible de $50/mes se mantuvo en reserva para una acción estratégica— y una gestión de embajadores con <strong>resultados muy desiguales</strong>. A pesar de ello, tanto Instagram como Facebook han mantenido <strong>crecimiento orgánico constante en seguidores</strong>, y los 3 embajadores activos generaron <strong>26.418 views en 8 reels</strong> a lo largo del trimestre. El punto álgido del periodo fue <strong>Coverings 2026</strong> (Las Vegas, 30 mar – 2 abr), con la presencia activa de Dumitru Guleac en el booth de Cortag y contenido generado en directo. La situación actual evidencia la necesidad estructural de una <strong>fuente estable y profesional de contenido USA</strong>, lo que sustenta la propuesta de pilotar una colaboración remunerada en T2 2026.</p>
+  </div>
+
+  <div class="alert alert-warning">
+    <div class="alert-label">⚡ Ausencia total de Meta Ads en T1 2026</div>
+    <p>El presupuesto disponible ($50/mes) se mantuvo en reserva durante todo T1. <strong>Las caídas de -94,2% en visualizaciones de Instagram y -99,5% en Facebook no reflejan deterioro del contenido orgánico, sino la ausencia de inversión en paid media</strong>. Los datos confirman que la visibilidad de la cuenta depende en gran medida del apoyo publicitario. Para T2 se propone retomar ads con presupuesto analizado para amplificar contenido clave.</p>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">Seguidores IG</div>
+      <div class="stat-value gold">2.310</div>
+      <div class="stat-sub"><span class="badge badge-up">+5,0%</span> vs T4 2025</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Seguidores FB</div>
+      <div class="stat-value gold">391</div>
+      <div class="stat-sub"><span class="badge badge-up">+2,4%</span> vs T4 2025</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Engagement IG</div>
+      <div class="stat-value gold">14,7%</div>
+      <div class="stat-sub">Media T1 · Audiencia orgánica activa</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Engagement FB</div>
+      <div class="stat-value">3,75%</div>
+      <div class="stat-sub">Media T1 · Crecimiento sostenido</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Views embajadores</div>
+      <div class="stat-value warn">26.418</div>
+      <div class="stat-sub">8 reels · 3 embajadores activos</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Reels publicados</div>
+      <div class="stat-value">8</div>
+      <div class="stat-sub">Dumitru 3 · Phillip 4 · Daniel 1</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Meta Ads T1</div>
+      <div class="stat-value red">$0</div>
+      <div class="stat-sub">Sin inversión · Presupuesto reservado</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Coverings 2026</div>
+      <div class="stat-value green">✓</div>
+      <div class="stat-sub">Las Vegas · Booth #6079 · Dumitru</div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 REDES SOCIALES -->
+<section class="page-break">
+  <div class="section-label">02</div>
+  <h2 class="section-title">Redes sociales — Instagram & Facebook USA</h2>
+
+  <div class="alert alert-warning" style="margin-bottom:32px;">
+    <div class="alert-label">⚡ Contexto clave para interpretar los datos</div>
+    <p>Las visualizaciones y el alcance de T1 2026 muestran caídas drásticas respecto a trimestres anteriores. Esto es <strong>100% consecuencia de la ausencia de Meta Ads</strong>, que en trimestres anteriores multiplicaban el reach de forma exponencial. El crecimiento orgánico de seguidores e interacciones es real y positivo. La comparativa histórica refleja claramente el impacto del paid media en los trimestres que sí tuvieron inversión.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Instagram · Seguidores 2024–2026</div>
+        <div class="chart-sub">Crecimiento trimestral · @cortagusa</div>
+        <canvas id="chartIGSeg"></canvas>
+      </div>
+    </div>
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Facebook · Seguidores 2024–2026</div>
+        <div class="chart-sub">Crecimiento trimestral · Cortag USA</div>
+        <canvas id="chartFBSeg"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Instagram · Visualizaciones por trimestre</div>
+        <div class="chart-sub">Impacto directo del paid media</div>
+        <canvas id="chartIGViews"></canvas>
+      </div>
+    </div>
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Facebook · Visualizaciones por trimestre</div>
+        <div class="chart-sub">Impacto directo del paid media</div>
+        <canvas id="chartFBViews"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col" style="margin-bottom:32px;">
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Instagram · Visualizaciones mensuales T1 2026</div>
+        <div class="chart-sub">Enero · Febrero · Marzo — Sin ads</div>
+        <canvas id="chartIGViewsT1"></canvas>
+      </div>
+      <div class="info-block">
+        <h4><span class="dot dot-green"></span>Instagram · Resumen T1 2026</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+          <div style="background:var(--blue-light);border-radius:6px;padding:12px 14px;">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:6px;">Seguidores</div>
+            <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">2.310 <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">end T1</span></div>
+            <div style="margin-top:6px;"><span class="badge badge-up">+5,0% vs T4</span></div>
+          </div>
+          <div style="background:#f0fdf4;border-radius:6px;padding:12px 14px;">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#15803d;font-weight:700;margin-bottom:6px;">Interacciones</div>
+            <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">947 <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">T1 total</span></div>
+            <div style="margin-top:6px;"><span class="badge badge-down">-18,6% vs T4</span></div>
+          </div>
+        </div>
+        <p>Instagram mantiene un <strong>crecimiento constante de seguidores</strong> a pesar de la ausencia de ads. Las interacciones (947 en T1) son sólidas dado el alcance mínimo. El <strong>engagement rate del 14,7%</strong> refleja la alta calidad de la audiencia orgánica: quienes ven el contenido, interactúan.</p>
+      </div>
+    </div>
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Facebook · Visualizaciones mensuales T1 2026</div>
+        <div class="chart-sub">Enero · Febrero · Marzo — Sin ads</div>
+        <canvas id="chartFBViewsT1"></canvas>
+      </div>
+      <div class="info-block">
+        <h4><span class="dot dot-green"></span>Facebook · Resumen T1 2026</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+          <div style="background:var(--blue-light);border-radius:6px;padding:12px 14px;">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:6px;">Seguidores</div>
+            <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">391 <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">end T1</span></div>
+            <div style="margin-top:6px;"><span class="badge badge-up">+2,4% vs T4</span></div>
+          </div>
+          <div style="background:#f0fdf4;border-radius:6px;padding:12px 14px;">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#15803d;font-weight:700;margin-bottom:6px;">Engagement Rate</div>
+            <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">3,75% <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">media T1</span></div>
+            <div style="margin-top:6px;"><span class="badge badge-up">muy por encima de media</span></div>
+          </div>
+        </div>
+        <p>Facebook mantiene un <strong>crecimiento sostenido de seguidores</strong> (391, +2,4% vs T4). Las visualizaciones caen a 3.314 sin inversión publicitaria, pero el <strong>engagement rate orgánico del 3,75%</strong> es notablemente alto, indicando audiencia de calidad. La cuenta funciona como canal de acompañamiento al IG principal.</p>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Métrica</th><th>T4 2024</th><th>T1 2025</th><th>T2 2025</th><th>T3 2025</th><th>T4 2025</th><th>T1 2026</th><th>vs T4 2025</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:var(--blue-light);"><td colspan="8" style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700;padding:8px 14px;border-bottom:1px solid rgba(29,113,185,0.2);">Instagram @cortagusa</td></tr>
+      <tr><td><strong>Seguidores (cierre)</strong></td><td>1.754</td><td>1.792</td><td>1.903</td><td>2.045</td><td>2.200</td><td><strong>2.310</strong></td><td><span class="badge badge-up">+5,0%</span></td></tr>
+      <tr><td><strong>Visualizaciones</strong></td><td>12.445</td><td>216.832</td><td>202.231</td><td>402.336</td><td>490.842</td><td><strong>28.427</strong></td><td><span class="badge badge-down">−94,2%</span></td></tr>
+      <tr><td><strong>Alcance</strong></td><td>3.416</td><td>132.139</td><td>103.551</td><td>211.316</td><td>290.786</td><td><strong>6.448</strong></td><td><span class="badge badge-down">−97,8%</span></td></tr>
+      <tr><td><strong>Interacciones</strong></td><td>276</td><td>689</td><td>916</td><td>797</td><td>1.164</td><td><strong>947</strong></td><td><span class="badge badge-down">−18,6%</span></td></tr>
+      <tr><td><strong>Visitas al perfil</strong></td><td>350</td><td>593</td><td>719</td><td>1.805</td><td>1.286</td><td><strong>742</strong></td><td><span class="badge badge-down">−42,3%</span></td></tr>
+      <tr><td><strong>Engagement Rate</strong></td><td>17,0%</td><td>0,52%</td><td>0,88%</td><td>0,38%</td><td>0,40%</td><td><strong>14,7%</strong></td><td><span class="badge badge-up">+14,3 pp</span></td></tr>
+      <tr style="background:#f0fdf4;"><td colspan="8" style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#15803d;font-weight:700;padding:8px 14px;border-bottom:1px solid rgba(21,128,61,0.2);border-top:2px solid rgba(21,128,61,0.15);">Facebook — Cortag USA</td></tr>
+      <tr><td><strong>Seguidores (cierre)</strong></td><td>298</td><td>309</td><td>318</td><td>330</td><td>382</td><td><strong>391</strong></td><td><span class="badge badge-up">+2,4%</span></td></tr>
+      <tr><td><strong>Visualizaciones</strong></td><td>106.545</td><td>925.583</td><td>529.850</td><td>990.262</td><td>706.057</td><td><strong>3.314</strong></td><td><span class="badge badge-down">−99,5%</span></td></tr>
+      <tr><td><strong>Alcance</strong></td><td>50.259</td><td>341.360</td><td>330.591</td><td>701.229</td><td>408.064</td><td><strong>1.548</strong></td><td><span class="badge badge-down">−99,6%</span></td></tr>
+      <tr><td><strong>Interacciones</strong></td><td>117</td><td>259</td><td>281</td><td>332</td><td>708</td><td><strong>58</strong></td><td><span class="badge badge-down">−91,8%</span></td></tr>
+      <tr><td><strong>Engagement Rate</strong></td><td>0,45%</td><td>0,076%</td><td>0,085%</td><td>0,047%</td><td>0,17%</td><td><strong>3,75%</strong></td><td><span class="badge badge-up">+3,58 pp</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="info-block">
+    <h4><span class="dot dot-warn"></span>Nota sobre el Engagement Rate — cómo interpretar los datos</h4>
+    <p>Los engagement rates de T4 2024 y T1 2026 son visiblemente superiores al resto de trimestres. Esto se debe a que el cálculo se realiza sobre el <strong>alcance real</strong>: sin inversión publicitaria, el contenido llega a una audiencia más pequeña pero más afín a la marca, generando un porcentaje de interacción mayor. Con ads activos (T1-T4 2025), el alcance se dispara pero el porcentaje de interacción sobre ese universo ampliado es menor. <strong>Ambos escenarios son valiosos</strong>: ads para visibilidad masiva, orgánico para engagement de calidad.</p>
+  </div>
+</section>
+
+<!-- 03 META ADS -->
+<section class="page-break">
+  <div class="section-label">03</div>
+  <h2 class="section-title">Meta Ads — Contexto & Campañas previas</h2>
+
+  <div class="alert">
+    <div class="alert-label">⚠ Sin actividad en T1 2026</div>
+    <p>El presupuesto mensual aprobado para Meta Ads USA es de <strong>$50/mes</strong> (extremadamente limitado). Durante T1 2026, este presupuesto <strong>no se activó</strong> en ninguna campaña, reservándolo para una acción de mayor impacto. La estrategia de lead generation a través de Meta Ads (Juan deriva leads a distribuidores locales) queda por tanto pausada hasta nuevo presupuesto aprobado.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="info-block">
+        <h4><span class="dot dot-warn"></span>Modelo de negocio y limitaciones</h4>
+        <p>Cortag USA opera en modelo <strong>B2B exclusivo sin e-commerce</strong>. La venta se realiza 100% vía distribuidores autorizados. Meta Ads en USA tiene como objetivo principal la <strong>generación de leads</strong> que Juan Arronte (National Sales Manager) redirige a distribuidores por zona geográfica. Con solo $50/mes disponibles, el presupuesto es <strong>insuficiente para campañas sostenidas</strong>. El equipo ha optado por acumular el presupuesto para acciones puntuales de mayor impacto.</p>
+      </div>
+      <div class="info-block">
+        <h4><span class="dot dot-warn"></span>Solicitud de aumento presupuestario</h4>
+        <p>La solicitud de aumento de presupuesto fue <strong>denegada por la dirección en Brasil</strong>. La situación limita significativamente la capacidad de amplificación del contenido orgánico y el alcance a nuevos instaladores profesionales en USA. <strong>Para T2 2026 se propone retomar la solicitud</strong> con un análisis de ROI fundamentado en los resultados históricos de campañas anteriores, especialmente la MEGA 125 (102 leads con R$683 invertidos).</p>
+      </div>
+    </div>
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Historial de campañas Meta Ads USA</div>
+        <div class="chart-sub">Inversión vs Leads generados (campañas anteriores)</div>
+        <canvas id="chartAds"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Campaña</th><th>Periodo</th><th>Presupuesto</th><th>Visualizaciones</th><th>Alcance</th><th>Clicks</th><th>Leads / Result.</th><th>CPR</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Manual Cutter PRIME Giveaway</strong></td><td>Oct 2025</td><td>R$333,50</td><td>28.788</td><td>23.852</td><td>162</td><td>—</td><td>R$16,73</td></tr>
+      <tr><td><strong>MEGA 125 Awareness</strong></td><td>Oct–Nov 2025</td><td>R$683,86</td><td>1.444</td><td>1.105</td><td>162</td><td><strong>102 leads</strong></td><td>R$6,70/lead</td></tr>
+      <tr><td><strong>Zapp Titan Awareness</strong></td><td>Dic 2025</td><td>R$172,03</td><td>1.445</td><td>2.391</td><td>80</td><td><strong>10 leads</strong></td><td>R$21,50/lead</td></tr>
+      <tr class="highlight"><td><strong>T1 2026</strong></td><td>Ene–Mar 2026</td><td colspan="6" style="color:var(--gray-mid);font-style:italic;">Sin actividad · presupuesto en reserva</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert alert-success">
+    <div class="alert-label">✓ Propuesta T2 2026 — Retoma de Ads</div>
+    <p>Para T2 se propone <strong>retomar Meta Ads con presupuesto analizado</strong>, aprovechando el aprendizaje de campañas anteriores. La campaña MEGA 125 demostró un CPR competitivo de R$6,70/lead con inversión contenida. Se priorizará la amplificación de <strong>contenido de embajadores</strong> (especialmente Coverings y nuevo contenido de calidad) y el apoyo a las <strong>nuevas referencias del catálogo 2026</strong> (Remendadores Carsco MDD). Objetivo: presentar propuesta de presupuesto revisado a dirección Brasil con proyección de leads y ROI estimado.</p>
+  </div>
+</section>
+
+<!-- 04 COLABORACIONES -->
+<section class="page-break">
+  <div class="section-label">04</div>
+  <h2 class="section-title">Colaboraciones — Plan Embajadores T1 2026</h2>
+
+  <div class="info-block" style="margin-bottom:28px;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;">
+    <p style="font-size:14px;color:#374151;line-height:1.8">El programa de embajadores USA opera bajo un modelo <strong>producto gratuito por contenido</strong> (sin inversión monetaria). Con una base combinada de <strong>~30.261 seguidores</strong> entre los 3 embajadores activos, se generaron en T1 2026 un total de <strong>26.418 views en 8 reels</strong>. Los resultados son <strong>muy desiguales</strong> en compromiso, calidad y consistencia, evidenciando la limitación estructural del modelo actual y la necesidad de una fuente de contenido más estable y profesional.</p>
+  </div>
+
+  <!-- Stat overview embajadores -->
+  <div class="stat-grid" style="margin-bottom:36px;">
+    <div class="stat-card">
+      <div class="stat-label">Total views T1</div>
+      <div class="stat-value gold">26.418</div>
+      <div class="stat-sub">8 reels · 3 embajadores</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Seguidores combinados</div>
+      <div class="stat-value">30.261</div>
+      <div class="stat-sub">Alcance potencial total</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Views / reel promedio</div>
+      <div class="stat-value warn">3.302</div>
+      <div class="stat-sub">Media global T1 2026</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Cumplimiento real</div>
+      <div class="stat-value red">~75%</div>
+      <div class="stat-sub">Considerando calidad aprovechable</div>
+    </div>
+  </div>
+
+  <div class="chart-wrap" style="margin-bottom:32px;">
+    <div class="chart-title">Embajadores · Comparativa performance T1 2026</div>
+    <div class="chart-sub">Views totales y views/reel promedio por embajador</div>
+    <canvas id="chartEmbajadores" style="max-height:180px;"></canvas>
+  </div>
+
+  <!-- Embajador cards -->
+  <div class="three-col" style="margin-bottom:36px;">
+
+    <!-- Dumitru -->
+    <div class="emb-card green">
+      <div class="emb-handle">@dg_pro_remodeling_llc</div>
+      <div class="emb-name">Dumitru Guleac</div>
+      <div class="emb-verdict mantener">✓ MANTENER · Prioritario</div>
+      <div class="emb-stats">
+        <div class="emb-stat">
+          <div class="emb-stat-label">Seguidores</div>
+          <div class="emb-stat-value">14.700</div>
+        </div>
+        <div class="emb-stat">
+          <div class="emb-stat-label">Reels T1</div>
+          <div class="emb-stat-value">3</div>
+        </div>
+        <div class="emb-stat">
+          <div class="emb-stat-label">Total Views</div>
+          <div class="emb-stat-value">17.072</div>
+        </div>
+        <div class="emb-stat">
+          <div class="emb-stat-label">Avg Views/reel</div>
+          <div class="emb-stat-value">5.691</div>
+        </div>
+      </div>
+      <div class="emb-note">2 reels mínimos requeridos + 1 extra. <strong>Mejor ratio views/seguidor (0,39x)</strong>. Contenido profesional, buena edición, aprovechable para repost. Cumple plazos y mantiene comunicación activa. Asistió a Coverings. <strong>Único consistente en T1.</strong></div>
+      <div class="tags">
+        <span class="tag tag-green">Alto rendimiento</span>
+        <span class="tag tag-green">Calidad profesional</span>
+        <span class="tag tag-green">Coverings 2026</span>
+      </div>
+    </div>
+
+    <!-- Phillip -->
+    <div class="emb-card warn">
+      <div class="emb-handle">@versatile_llc</div>
+      <div class="emb-name">Phillip Harms</div>
+      <div class="emb-verdict condicional">~ CONDICIONAL</div>
+      <div class="emb-stats">
+        <div class="emb-stat">
+          <div class="emb-stat-label">Seguidores</div>
+          <div class="emb-stat-value">1.261</div>
+        </div>
+        <div class="emb-stat">
+          <div class="emb-stat-label">Reels T1</div>
+          <div class="emb-stat-value">4</div>
+        </div>
+        <div class="emb-stat">
+          <div class="emb-stat-label">Total Views</div>
+          <div class="emb-stat-value">7.264</div>
+        </div>
+        <div class="emb-stat">
+          <div class="emb-stat-label">Avg Views/reel</div>
+          <div class="emb-stat-value">1.816</div>
+        </div>
+      </div>
+      <div class="emb-note">4 reels (supera mínimo voluntariamente). <strong>Mejor engagement relativo (1,44x views/seguidor)</strong>, pero base de audiencia muy pequeña. Calidad deficiente: edición básica, ángulos poco profesionales. Muy comprometido y proactivo. Candidato para Formaciones Neolith Florida (junio).</div>
+      <div class="tags">
+        <span class="tag tag-warn">Baja calidad</span>
+        <span class="tag tag-warn">Alto compromiso</span>
+        <span class="tag tag-warn">Formaciones Florida</span>
+      </div>
+    </div>
+
+    <!-- Daniel -->
+    <div class="emb-card red">
+      <div class="emb-handle">@yourtiledesignguy</div>
+      <div class="emb-name">Daniel Becerra</div>
+      <div class="emb-verdict discontinuar">✗ DISCONTINUAR</div>
+      <div class="emb-stats">
+        <div class="emb-stat">
+          <div class="emb-stat-label">Seguidores</div>
+          <div class="emb-stat-value">14.300</div>
+        </div>
+        <div class="emb-stat">
+          <div class="emb-stat-label">Reels T1</div>
+          <div class="emb-stat-value">1/2</div>
+        </div>
+        <div class="emb-stat">
+          <div class="emb-stat-label">Total Views</div>
+          <div class="emb-stat-value">2.082</div>
+        </div>
+        <div class="emb-stat">
+          <div class="emb-stat-label">Avg Views/reel</div>
+          <div class="emb-stat-value">2.082</div>
+        </div>
+      </div>
+      <div class="emb-note">Solo 1 reel de 2 requeridos (<strong>50% incumplimiento</strong>). Ghosting total: 3+ intentos de contacto sin respuesta. Bajo rendimiento (0,14x views/seguidor). Pese a tener el mayor potencial teórico (14.300 seguidores), el alcance sin compromiso no genera valor real. Pendiente de revisión post-Coverings.</div>
+      <div class="tags">
+        <span class="tag tag-red">Incumplimiento 50%</span>
+        <span class="tag tag-red">Sin respuesta</span>
+        <span class="tag tag-red">0,14x ratio</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detalle resultados -->
+  <table>
+    <thead>
+      <tr><th>Embajador</th><th>Seguidores</th><th>Reels cumplidos</th><th>Views totales</th><th>Views/reel</th><th>Views/seguidor</th><th>Calidad</th><th>Compromiso</th></tr>
+    </thead>
+    <tbody>
+      <tr class="highlight"><td><strong>Dumitru Guleac</strong></td><td>14.700</td><td>3 <span class="badge badge-up">✓</span></td><td><strong>17.072</strong></td><td><strong>5.691</strong></td><td>0,39x</td><td><span class="badge badge-up">Alta</span></td><td><span class="badge badge-up">Excelente</span></td></tr>
+      <tr><td><strong>Phillip Harms</strong></td><td>1.261</td><td>4 <span class="badge badge-up">+2 extra</span></td><td>7.264</td><td>1.816</td><td><strong>1,44x</strong></td><td><span class="badge badge-down">Baja</span></td><td><span class="badge badge-up">Muy alto</span></td></tr>
+      <tr><td><strong>Daniel Becerra</strong></td><td>14.300</td><td>1 <span class="badge badge-down">50% ✗</span></td><td>2.082</td><td>2.082</td><td>0,14x</td><td><span class="badge badge-neutral">Media</span></td><td><span class="badge badge-down">Nulo</span></td></tr>
+      <tr style="background:var(--blue-light);"><td><strong>TOTALES</strong></td><td><strong>30.261</strong></td><td><strong>8 reels</strong></td><td><strong>26.418</strong></td><td><strong>3.302 avg</strong></td><td>0,87x avg</td><td>—</td><td>~75% cumpl.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="divider"></div>
+
+  <!-- Análisis y propuesta -->
+  <h3 style="font-size:22px;font-weight:800;margin-bottom:20px;letter-spacing:-0.5px;color:var(--black);">¿Por qué necesitamos una fuente estable de contenido?</h3>
+
+  <div class="highlight-box">
+    <h3>El modelo "producto por contenido" tiene un límite estructural</h3>
+    <p>La ausencia de incentivo económico genera compromiso irregular, calidad inconsistente y dependencia de la voluntad del embajador en cada momento. En T1, solo 1 de los 3 embajadores cumplió completamente y con calidad aprovechable. Para una estrategia de contenido B2B USA que compita con marcas que invierten en webinars y creadores dedicados, <strong>necesitamos contenido predecible, profesional y reutilizable para ads, web y distribuidores</strong>.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="info-block">
+        <h4><span class="dot dot-warn"></span>Gap identificado · Comparativa con España</h4>
+        <p><strong>Rubén Baz (España, €600/mes):</strong> 76.100 seguidores, 3 reels en T1 → 141.783 views, 100% cumplimiento, calidad excepcional, contenido reutilizable para ads. <strong>CPR: 0,0042€/view.</strong><br><br>
+        <strong>3 embajadores USA (sin pago):</strong> 30.261 seguidores combinados, 8 reels → 26.418 views, ~75% cumplimiento, calidad mixta. La comparativa evidencia que una inversión moderada en un perfil profesional USA generaría un retorno muy superior al modelo gratuito multi-embajador actual.</p>
+      </div>
+    </div>
+    <div>
+      <div class="info-block">
+        <h4><span class="dot dot-green"></span>Estudio de nuevos perfiles — En proceso</h4>
+        <p>Vista la evolución de los embajadores actuales, se ha iniciado un <strong>estudio independiente de nuevos perfiles</strong> de instaladores profesionales USA con potencial para una colaboración más estable. Criterios de búsqueda: 5K–50K seguidores, contenido técnico de construcción/renovación, audiencia USA verificada, capacidad de presentación a cámara y demostración de producto. El estudio se presentará junto con propuesta de colaboración piloto para T2 2026.</p>
+        <div class="tags">
+          <span class="tag">Perfil técnico instalación</span>
+          <span class="tag">5K–50K followers</span>
+          <span class="tag">Contenido USA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-info">
+    <div class="alert-label">→ Propuesta Piloto T2 2026 — Creador profesional pagado</div>
+    <p>Se propone buscar <strong>1 creador profesional USA</strong> (15K–50K seguidores, contenido técnico instalación) para un piloto de <strong>modelo híbrido: producto + compensación económica ajustada ($400–600/mes)</strong>, por debajo de las tarifas de mercado ($800–1.200/mes), a cambio de exclusividad y compromiso durante 3 meses (Q2 piloto). Objetivo: <strong>2–3 reels/mes de calidad garantizada</strong>, profesionalmente editados, con presentación a cámara, reutilizables para ads y web. Si el piloto funciona, se mantiene; si no, solo 3 meses de inversión moderada.</p>
+  </div>
+
+  <!-- Eventos T1 -->
+  <div class="divider"></div>
+
+  <h3 style="font-size:20px;font-weight:800;margin-bottom:20px;letter-spacing:-0.5px;color:var(--black);">Coverings 2026 — Las Vegas · 30 mar – 2 abr</h3>
+
+  <div class="two-col">
+    <div class="info-block">
+      <h4><span class="dot dot-green"></span>Activación en feria · Booth #6079</h4>
+      <p>Coverings 2026 fue el evento clave de Q1. <strong>Dumitru Guleac</strong> estuvo presente durante los 4 días del evento generando contenido desde el booth de Cortag. El CEO <strong>Leandro Pitzeta</strong> también estuvo presente. Se organizó un <strong>raffle con Cortadora PRIME + merch</strong> (gorra/camiseta), con mecánica de papeletas físicas y seguimiento de @cortagusa en Instagram. Promoción mediante stories y cartel A4 físico en booth (sin inversión en ads).</p>
+      <div class="tags">
+        <span class="tag tag-green">Dumitru presente todos los días</span>
+        <span class="tag tag-green">Raffle PRIME</span>
+        <span class="tag">Demos en vivo</span>
+      </div>
+    </div>
+    <div class="info-block">
+      <h4><span class="dot dot-warn"></span>Formación Neolith GPTP · Florida · 8–10 jun</h4>
+      <p><strong>Hands-on training Large Format Tile</strong> en Pembroke Park, Florida. Al finalizar, los asistentes reciben <strong>certificación ANSI + Neolith</strong>. Se está valorando la participación de <strong>Phillip Harms</strong> (días 9–10) como oportunidad de: <em>(1)</em> generar contenido formativo de calidad, <em>(2)</em> encuentro presencial para feedback de mejora de calidad, y <em>(3)</em> aprovechar su ubicación estratégica en Florida. Respuesta pendiente de confirmación (contexto duelo familiar).</p>
+      <div class="tags">
+        <span class="tag tag-warn">Pendiente confirmación Phillip</span>
+        <span class="tag">Certificación ANSI + Neolith</span>
+        <span class="tag">Contenido formativo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 PRÓXIMAS ACCIONES T2 2026 -->
+<section>
+  <div class="section-label">05</div>
+  <h2 class="section-title">Próximas acciones — T2 2026</h2>
+
+  <p style="color:#374151;font-size:14px;margin-bottom:28px;max-width:720px;line-height:1.8">El T2 2026 se articula en <strong>cuatro ejes estratégicos</strong> que buscan superar las limitaciones identificadas en T1: activar paid media con criterio, profesionalizar el modelo de embajadores, capitalizar las nuevas referencias de catálogo y aprovechar los eventos del trimestre.</p>
+
+  <div class="pending-list">
+    <div class="pending-item">
+      <div class="icon icon-crit">!</div>
+      <div class="text">
+        <strong>Retoma de Meta Ads con presupuesto analizado</strong>
+        <span>Preparar propuesta de presupuesto revisado con proyección de leads y ROI basada en historial de campañas (MEGA 125: 102 leads / R$683). Objetivo: obtener aprobación de Brasil para presupuesto ampliado. Priorizar amplificación de contenido embajadores de calidad (Coverings, Dumitru) y soporte a nuevas referencias de catálogo 2026.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-crit">!</div>
+      <div class="text">
+        <strong>Ampliación Plan Embajadores — Nuevos perfiles + piloto remunerado</strong>
+        <span>Presentar resultados del estudio de nuevos perfiles USA (5K–50K seguidores, contenido técnico instalación). Proponer piloto colaboración híbrida pagada ($400–600/mes · 3 meses Q2). Decisión sobre Daniel Becerra post-Coverings. Evaluación condicional de Phillip según mejora de calidad o participación en Formaciones Florida. Mantener y priorizar a Dumitru como embajador principal.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-med">·</div>
+      <div class="text">
+        <strong>Implementación y apoyo a nuevas referencias catálogo 2026</strong>
+        <span>Pendiente recepción de specs técnicas del equipo de Brasil para los Remendadores Eléctricos Carsco MDD (lanzamiento previsto abril 2026). Creación de contenido de presentación, integración en calendario RRSS y posible soporte de ads para el lanzamiento. Coordinación con Juan y Raúl para material comercial disponible.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-med">·</div>
+      <div class="text">
+        <strong>Formación Neolith GPTP — Pembroke Park, Florida (8–10 jun)</strong>
+        <span>Confirmar participación de Phillip Harms (días 9–10). En caso de asistencia: briefing de contenido previo, acompañamiento en objetivos de grabación, feedback directo sobre calidad. Oportunidad para contenido formativo certificado (ANSI + Neolith) aprovechable en canales Cortag USA y posibles ads.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-low">·</div>
+      <div class="text">
+        <strong>Activación red de distribuidores para UGC y testimonios</strong>
+        <span>Explorar la red de distribuidores USA como fuente de contenido orgánico (testimonios, demos en instalaciones reales). Aprovechar perfiles como @dbtile, @americas_supplies, @rigotile (Florida) para menciones y repost. Sin coste adicional, refuerza la credibilidad B2B en el mercado americano.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-green">✓</div>
+      <div class="text">
+        <strong>Continuidad de contenido orgánico — Calendario publicaciones Q2</strong>
+        <span>Mantener el ritmo de publicación semanal en Instagram y Facebook con mix de contenido: reels de producto, repost de embajadores, carruseles técnicos y stories de activación. Priorizar contenido reutilizable de Coverings y generar teasers para lanzamiento Carsco MDD. Monitorización mensual de métricas IG + FB para ajuste de estrategia.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-brand">CORTAG USA · TEAM4DIGITAL</div>
+  <div class="ft-note">Report T1 2026 · Enero–Marzo · @cortagusa</div>
+</footer>
+
+<script>
+  Chart.defaults.font.family = "'Plus Jakarta Sans', sans-serif";
+  Chart.defaults.color = '#6B7280';
+
+  const gridColor = 'rgba(29,113,185,0.06)';
+  const blue = '#1d71b9';
+  const blueMid = 'rgba(29,113,185,0.15)';
+  const navy = '#29235C';
+  const red = '#C0392B';
+  const warn = '#D97706';
+  const green = '#16a34a';
+  const grayMid = '#9CA3AF';
+
+  function baseOptions(yLabel) {
+    return {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#29235C',
+          borderColor: 'rgba(29,113,185,0.3)',
+          borderWidth: 1,
+          titleColor: '#ffffff',
+          bodyColor: '#9CA3AF',
+          padding: 12,
+          cornerRadius: 6
+        }
+      },
+      scales: {
+        x: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 11 } } },
+        y: {
+          grid: { color: gridColor },
+          ticks: { color: '#9CA3AF', font: { size: 11 } },
+          beginAtZero: true,
+          title: yLabel ? { display: true, text: yLabel, color: '#9CA3AF', font: { size: 10 } } : undefined
+        }
+      }
+    };
+  }
+
+  // IG Seguidores
+  new Chart(document.getElementById('chartIGSeg'), {
+    type: 'line',
+    data: {
+      labels: ['T4 2024','T1 2025','T2 2025','T3 2025','T4 2025','T1 2026'],
+      datasets: [{
+        data: [1754, 1792, 1903, 2045, 2200, 2310],
+        borderColor: blue,
+        backgroundColor: blueMid,
+        borderWidth: 2,
+        fill: true,
+        tension: 0.4,
+        pointBackgroundColor: [blue, blue, blue, blue, blue, navy],
+        pointRadius: [3,3,3,3,3,6]
+      }]
+    },
+    options: baseOptions()
+  });
+
+  // FB Seguidores
+  new Chart(document.getElementById('chartFBSeg'), {
+    type: 'line',
+    data: {
+      labels: ['T4 2024','T1 2025','T2 2025','T3 2025','T4 2025','T1 2026'],
+      datasets: [{
+        data: [298, 309, 318, 330, 382, 391],
+        borderColor: green,
+        backgroundColor: 'rgba(22,163,74,0.1)',
+        borderWidth: 2,
+        fill: true,
+        tension: 0.4,
+        pointBackgroundColor: [green, green, green, green, green, navy],
+        pointRadius: [3,3,3,3,3,6]
+      }]
+    },
+    options: baseOptions()
+  });
+
+  // IG Views por trimestre
+  new Chart(document.getElementById('chartIGViews'), {
+    type: 'bar',
+    data: {
+      labels: ['T4 2024','T1 2025','T2 2025','T3 2025','T4 2025','T1 2026'],
+      datasets: [{
+        data: [12445, 216832, 202231, 402336, 490842, 28427],
+        backgroundColor: (ctx) => ctx.dataIndex === 5
+          ? 'rgba(192,57,43,0.7)'
+          : ctx.dataIndex === 4
+          ? 'rgba(29,113,185,0.85)'
+          : 'rgba(29,113,185,0.35)',
+        borderRadius: 4
+      }]
+    },
+    options: baseOptions()
+  });
+
+  // FB Views por trimestre
+  new Chart(document.getElementById('chartFBViews'), {
+    type: 'bar',
+    data: {
+      labels: ['T4 2024','T1 2025','T2 2025','T3 2025','T4 2025','T1 2026'],
+      datasets: [{
+        data: [106545, 925583, 529850, 990262, 706057, 3314],
+        backgroundColor: (ctx) => ctx.dataIndex === 5
+          ? 'rgba(192,57,43,0.7)'
+          : ctx.dataIndex === 2 || ctx.dataIndex === 4
+          ? 'rgba(22,163,74,0.6)'
+          : 'rgba(22,163,74,0.3)',
+        borderRadius: 4
+      }]
+    },
+    options: baseOptions()
+  });
+
+  // IG Views T1 2026 mensual
+  new Chart(document.getElementById('chartIGViewsT1'), {
+    type: 'bar',
+    data: {
+      labels: ['Enero', 'Febrero', 'Marzo'],
+      datasets: [{
+        data: [9578, 5706, 13143],
+        backgroundColor: ['rgba(29,113,185,0.55)', 'rgba(29,113,185,0.4)', 'rgba(29,113,185,0.75)'],
+        borderRadius: 4
+      }]
+    },
+    options: baseOptions()
+  });
+
+  // FB Views T1 2026 mensual
+  new Chart(document.getElementById('chartFBViewsT1'), {
+    type: 'bar',
+    data: {
+      labels: ['Enero', 'Febrero', 'Marzo'],
+      datasets: [{
+        data: [897, 792, 1625],
+        backgroundColor: ['rgba(22,163,74,0.5)', 'rgba(22,163,74,0.4)', 'rgba(22,163,74,0.75)'],
+        borderRadius: 4
+      }]
+    },
+    options: baseOptions()
+  });
+
+  // Embajadores comparativa
+  new Chart(document.getElementById('chartEmbajadores'), {
+    type: 'bar',
+    data: {
+      labels: ['Dumitru Guleac\n(14.700 seg.)', 'Phillip Harms\n(1.261 seg.)', 'Daniel Becerra\n(14.300 seg.)'],
+      datasets: [
+        {
+          label: 'Views totales',
+          data: [17072, 7264, 2082],
+          backgroundColor: ['rgba(22,163,74,0.75)', 'rgba(217,119,6,0.65)', 'rgba(192,57,43,0.65)'],
+          borderRadius: 4,
+          yAxisID: 'y'
+        },
+        {
+          label: 'Views/reel promedio',
+          data: [5691, 1816, 2082],
+          backgroundColor: ['rgba(22,163,74,0.3)', 'rgba(217,119,6,0.3)', 'rgba(192,57,43,0.3)'],
+          borderRadius: 4,
+          yAxisID: 'y'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          labels: { color: '#6B7280', font: { size: 11 }, boxWidth: 12, padding: 16 }
+        },
+        tooltip: {
+          backgroundColor: '#29235C',
+          borderColor: 'rgba(29,113,185,0.3)',
+          borderWidth: 1,
+          titleColor: '#ffffff',
+          bodyColor: '#9CA3AF',
+          padding: 12,
+          cornerRadius: 6
+        }
+      },
+      scales: {
+        x: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 11 } } },
+        y: {
+          grid: { color: gridColor },
+          ticks: { color: '#9CA3AF', font: { size: 11 } },
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  // Ads historial
+  new Chart(document.getElementById('chartAds'), {
+    type: 'bar',
+    data: {
+      labels: ['Manual Cutter\nPRIME Giveaway', 'MEGA 125\nAwareness', 'Zapp Titan\nAwareness'],
+      datasets: [
+        {
+          label: 'Visualizaciones',
+          data: [28788, 1444, 1445],
+          backgroundColor: ['rgba(29,113,185,0.6)', 'rgba(29,113,185,0.8)', 'rgba(29,113,185,0.5)'],
+          borderRadius: 3,
+          yAxisID: 'y'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#29235C',
+          borderColor: 'rgba(29,113,185,0.3)',
+          borderWidth: 1,
+          titleColor: '#ffffff',
+          bodyColor: '#9CA3AF',
+          padding: 12,
+          cornerRadius: 6,
+          callbacks: {
+            afterLabel: function(ctx) {
+              const leads = [null, 102, 10];
+              const budgets = ['R$333,50', 'R$683,86', 'R$172,03'];
+              let lines = ['Presupuesto: ' + budgets[ctx.dataIndex]];
+              if (leads[ctx.dataIndex]) lines.push('Leads: ' + leads[ctx.dataIndex]);
+              return lines;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 10 } } },
+        y: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 11 } }, beginAtZero: true }
+      }
+    }
+  });
+</script>
+</body>
+</html>
