@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report T1 2026 — Cortag Europe</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --black: #29235C;
+    --blue: #1d71b9;
+    --blue-dark: #155a94;
+    --blue-light: #e8f2fb;
+    --blue-mid: rgba(29,113,185,0.12);
+    --white: #ffffff;
+    --page-bg: #F4F6FA;
+    --red: #C0392B;
+    --warning: #D97706;
+    --green: #16a34a;
+    --gray-mid: #6B7280;
+    --gray-light: #E5E7EB;
+    --border: rgba(29,113,185,0.2);
+    --text: #1e1b4b;
+    --card-bg: #ffffff;
+    --cover-bg: #29235C;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--page-bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; line-height: 1.6; font-size: 15px; }
+
+  /* COVER */
+  .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 60px; background: var(--cover-bg); position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; top: -100px; right: -150px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(29,113,185,0.25) 0%, transparent 70%); pointer-events: none; }
+  .cover::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(29,113,185,0.15) 0%, transparent 70%); pointer-events: none; }
+  .cover-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 600; }
+  .cover-main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 80px 0; }
+  .cover-tag { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(29,113,185,0.5); background: rgba(29,113,185,0.15); padding: 8px 16px; border-radius: 4px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7ec3f5; margin-bottom: 40px; width: fit-content; }
+  .cover-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #7ec3f5; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .cover h1 { font-size: clamp(56px, 8vw, 96px); font-weight: 800; line-height: 0.92; letter-spacing: -3px; color: #ffffff; margin-bottom: 30px; }
+  .cover h1 span { color: #7ec3f5; display: block; }
+  .cover-sub { font-size: 18px; color: rgba(255,255,255,0.55); font-weight: 400; max-width: 540px; line-height: 1.5; }
+  .cover-meta { display: flex; gap: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.1); }
+  .cover-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .cover-meta-item .label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .cover-meta-item .value { font-size: 15px; color: #ffffff; font-weight: 600; }
+  .cover-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+  .cover-logo { font-size: 13px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,0.4); }
+
+  /* SECTIONS */
+  .page-break { page-break-before: always; }
+  section { padding: 60px; border-bottom: 1px solid var(--gray-light); background: var(--page-bg); position: relative; }
+  .section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; font-weight: 600; }
+  .section-label::before { content: ''; width: 24px; height: 2px; background: var(--blue); }
+  .section-title { font-size: clamp(26px, 3.5vw, 40px); font-weight: 800; line-height: 1.1; margin-bottom: 40px; letter-spacing: -1px; color: var(--black); }
+
+  /* ALERTS */
+  .alert { border-left: 3px solid var(--red); background: #fef2f2; padding: 20px 24px; border-radius: 0 6px 6px 0; margin-bottom: 24px; }
+  .alert-warning { border-left-color: var(--warning); background: #fffbeb; }
+  .alert-info { border-left-color: var(--blue); background: var(--blue-light); }
+  .alert-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 8px; font-weight: 700; }
+  .alert-warning .alert-label { color: var(--warning); }
+  .alert-info .alert-label { color: var(--blue); }
+  .alert p { font-size: 14px; color: #374151; line-height: 1.7; }
+  .alert strong { color: #111827; font-weight: 600; }
+
+  /* STAT GRID */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 32px; }
+  .stat-card { background: var(--card-bg); border: 1px solid var(--gray-light); border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 1px 4px rgba(29,113,185,0.06); }
+  .stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-mid); font-weight: 600; }
+  .stat-value { font-size: 32px; font-weight: 800; line-height: 1; color: var(--black); letter-spacing: -1px; }
+  .stat-value.gold { color: var(--blue); }
+  .stat-value.red { color: var(--red); }
+  .stat-value.warn { color: var(--warning); }
+  .stat-sub { font-size: 12px; color: var(--gray-mid); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .badge { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; }
+  .badge-up { background: #dcfce7; color: #15803d; }
+  .badge-down { background: #fee2e2; color: var(--red); }
+  .badge-neutral { background: var(--blue-light); color: var(--blue); }
+
+  /* LAYOUT */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+
+  /* CHARTS */
+  .chart-wrap { background: var(--card-bg); border: 1px solid var(--gray-light); border-radius: 8px; padding: 22px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(29,113,185,0.06); }
+  .chart-title { font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 2px; }
+  .chart-sub { font-size: 11px; color: var(--gray-mid); margin-bottom: 16px; }
+  .chart-wrap canvas { max-height: 210px; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 24px; background: var(--card-bg); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(29,113,185,0.06); border: 1px solid var(--gray-light); }
+  thead tr { background: var(--black); }
+  th { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.85); padding: 12px 14px; text-align: left; font-weight: 700; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--gray-light); color: #374151; vertical-align: top; }
+  td strong { color: var(--black); font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #fafbff; }
+  tr.highlight td { background: rgba(29,113,185,0.05); }
+
+  /* INFO BLOCKS */
+  .info-block { background: var(--card-bg); border: 1px solid var(--gray-light); border-radius: 8px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(29,113,185,0.06); }
+  .info-block h4 { font-size: 13px; font-weight: 700; margin-bottom: 10px; color: var(--black); display: flex; align-items: center; gap: 10px; }
+  .info-block h4 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+  .info-block h4 .dot-red { background: var(--red); }
+  .info-block h4 .dot-green { background: var(--green); }
+  .info-block h4 .dot-warn { background: var(--warning); }
+  .info-block p { font-size: 13px; color: var(--gray-mid); line-height: 1.7; }
+  .info-block p strong { color: #374151; font-weight: 600; }
+
+  /* TAGS */
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; border: 1px solid var(--blue-light); background: var(--blue-light); color: var(--blue); font-weight: 500; }
+
+  /* PENDIENTES */
+  .pending-list { display: flex; flex-direction: column; gap: 8px; }
+  .pending-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 18px; background: var(--card-bg); border: 1px solid var(--gray-light); border-radius: 8px; }
+  .pending-item .icon { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .icon-crit { background: #fee2e2; color: var(--red); }
+  .icon-med { background: #fef3c7; color: var(--warning); }
+  .icon-low { background: var(--blue-light); color: var(--blue); }
+  .pending-item .text { flex: 1; }
+  .pending-item .text strong { display: block; font-size: 13px; color: var(--black); font-weight: 600; margin-bottom: 2px; }
+  .pending-item .text span { font-size: 12px; color: var(--gray-mid); }
+
+  .divider { height: 1px; background: var(--gray-light); margin: 36px 0; }
+
+  /* FOOTER */
+  footer { padding: 28px 60px; border-top: 1px solid var(--gray-light); background: var(--black); display: flex; justify-content: space-between; align-items: center; }
+  footer .ft-brand { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 2px; }
+  footer .ft-note { font-size: 11px; color: rgba(255,255,255,0.35); }
+
+  @media print { body { background: white; } section { padding: 40px; } .cover { min-height: auto; padding: 40px; } }
+  @media (max-width: 768px) { .cover, section { padding: 32px 20px; } .two-col { grid-template-columns: 1fr; } .cover-meta { flex-direction: column; gap: 24px; } .stat-grid { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Cortag Europe · Team4Digital Solutions</div>
+  <div class="cover-main">
+    <div class="cover-tag">Trimestre 1 · Enero–Marzo 2026</div>
+    <h1>Report<span>Marketing</span>Digital</h1>
+    <p class="cover-sub">Rendimiento de redes sociales, campañas de ads, colaboraciones con influencers, comunidad Cortag Expert y newsletters.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="label">Mercados</span>
+        <span class="value">España · Portugal · Francia</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Periodo</span>
+        <span class="value">Enero – Marzo 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Preparado por</span>
+        <span class="value">Team4Digital Solutions</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-logo">CORTAG EUROPE</div>
+  </div>
+</div>
+
+<!-- 01 RESUMEN EJECUTIVO -->
+<section class="page-break">
+  <div class="section-label">01</div>
+  <h2 class="section-title">Resumen ejecutivo</h2>
+
+  <div class="info-block" style="margin-bottom:28px;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;">
+    <p style="font-size:14px;color:#374151;line-height:1.8">El T1 de 2026 ha sido un trimestre con resultados modestos condicionados por factores externos a la estrategia: la <strong>falta de fondos de ads</strong> durante prácticamente todo el trimestre ha limitado el alcance y las visualizaciones, y una <strong>incidencia en RD Station a finales de marzo</strong> ha supuesto la <strong>pérdida de la mayor parte de los contactos de la comunidad Cortag Expert</strong> que habíamos conseguido recuperar. A pesar de ello, <strong>Instagram y Facebook han seguido creciendo de forma orgánica</strong>, la colaboración con Rubén Baz ha mantenido una presencia técnica sólida y constante, y se han producido y enviado <strong>13 newsletters</strong> a lo largo del trimestre dirigidas a distribución, ferias, grupos específicos y la comunidad Expert.</p>
+  </div>
+
+  <div class="alert">
+    <div class="alert-label">⚠ Incidencia crítica — RD Station</div>
+    <p>El 17 de marzo, modificaciones no comunicadas realizadas en RD Station por la agencia Desafío eliminaron entre otras la lista <strong>Cortag Expert T4D</strong>, que contaba con aproximadamente <strong>829 contactos</strong>, incluyendo ~630 leads captados mediante campañas de Meta Ads entre diciembre 2025 y febrero 2026. A 9 de abril, el equipo de Brasil y la agencia Desafío trabajan en la recuperación sin confirmación de éxito. Esta pérdida impacta directamente en los esfuerzos invertidos en reconstruir la comunidad —que ya se perdió una vez con anterioridad— y en la inversión realizada en campañas de captación durante los últimos meses.</p>
+  </div>
+
+  <div class="alert alert-warning">
+    <div class="alert-label">⚡ Fondos de ads con retraso</div>
+    <p>Durante T1 no hubo recarga de fondos en enero (retraso de inicio) ni se activó el aumento de presupuesto aprobado a cierre de T4 2025. Tampoco Cortag Brasil realizó ads de forma regular en Europa durante estos meses. <strong>Las métricas de visualizaciones y alcance reflejan este déficit combinado de inversión.</strong> Los fondos ya están recargados y aumentados desde el 1 de abril, con campaña activa a fecha del informe.</p>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">Seguidores IG</div>
+      <div class="stat-value gold">2.532</div>
+      <div class="stat-sub"><span class="badge badge-up">+3,3%</span> vs T4 2025</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Seguidores FB</div>
+      <div class="stat-value gold">1.076</div>
+      <div class="stat-sub"><span class="badge badge-up">+3,3%</span> vs T4 2025</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Engagement IG</div>
+      <div class="stat-value gold">7,28%</div>
+      <div class="stat-sub">Media T1 · Excepcional</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Views Rubén Baz</div>
+      <div class="stat-value">141.783</div>
+      <div class="stat-sub">3 reels · IG + FB</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Coste/1.000 views</div>
+      <div class="stat-value gold">4,2€</div>
+      <div class="stat-sub">Altamente eficiente</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Leads Meta Ads T1</div>
+      <div class="stat-value warn">222</div>
+      <div class="stat-sub">CPR: R$0,83 · 1 campaña activa</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Cortag Expert (actual)</div>
+      <div class="stat-value red">303</div>
+      <div class="stat-sub">Recuperando tras pérdida del 17/03</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Newsletters enviadas</div>
+      <div class="stat-value">13</div>
+      <div class="stat-sub">Distribución, ferias y Expert</div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 REDES SOCIALES CORTAG EUROPE -->
+<section class="page-break">
+  <div class="section-label">02</div>
+  <h2 class="section-title">Redes sociales — Cortag Europe (España)</h2>
+
+  <div class="two-col">
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Instagram · Seguidores 2024–2026</div>
+        <div class="chart-sub">Crecimiento trimestral acumulado</div>
+        <canvas id="chartIGSeg"></canvas>
+      </div>
+    </div>
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Instagram · Engagement Rate</div>
+        <div class="chart-sub">Calculado sobre interacciones / alcance</div>
+        <canvas id="chartIGEng"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Instagram · Visualizaciones mensuales T1</div>
+        <div class="chart-sub">Enero–Marzo 2026</div>
+        <canvas id="chartIGViews"></canvas>
+      </div>
+      <div class="info-block">
+        <h4><span class="dot dot-warn"></span>Apoyo de ads muy limitado en T1</h4>
+        <p>Durante T1 ha habido una falta generalizada de inversión en ads tanto por nuestra parte como por parte de Cortag Brasil. En enero prácticamente no hubo ninguna campaña activa. En febrero sí hubo apoyo puntual con el sorteo PRIME. En marzo, de nuevo sin inversión. Esto explica directamente las variaciones en visualizaciones mes a mes.</p>
+      </div>
+    </div>
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Facebook · Visualizaciones T1 2026</div>
+        <div class="chart-sub">Tendencia mensual</div>
+        <canvas id="chartFBViews"></canvas>
+      </div>
+      <div class="info-block">
+        <h4><span class="dot"></span>Facebook · Seguidores y engagement</h4>
+        <p>Crecimiento constante: <strong>1.063 → 1.069 → 1.076</strong> en enero, febrero y marzo. <span class="badge badge-up">+3,3%</span> vs T4 2025. Engagement rate medio en FB: <strong>0,63%</strong>. El canal funciona principalmente como amplificador de los reels de Rubén Baz mediante reposts. La caída de visualizaciones en marzo refleja la falta de ads ese mes.</p>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Métrica</th><th>Enero</th><th>Febrero</th><th>Marzo</th><th>Total T1</th><th>vs T4 2025</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>IG Seguidores</strong></td><td>2.439</td><td>2.472</td><td><strong>2.532</strong></td><td>2.532 (cierre T1)</td><td><span class="badge badge-up">+3,3%</span></td></tr>
+      <tr><td><strong>IG Visualizaciones</strong></td><td>10.737</td><td>42.534</td><td>29.761</td><td>83.032</td><td><span class="badge badge-down">−61,2%</span></td></tr>
+      <tr><td><strong>IG Alcance</strong></td><td>3.555</td><td>11.538</td><td>3.764</td><td>18.857</td><td><span class="badge badge-down">−90,1%</span></td></tr>
+      <tr><td><strong>IG Interacciones</strong></td><td>141</td><td>380</td><td>851</td><td>1.372</td><td><span class="badge badge-up">+26,1%</span></td></tr>
+      <tr><td><strong>IG Engagement Rate</strong></td><td>3,97%</td><td>3,29%</td><td>22,6%</td><td><strong>7,28% media</strong></td><td><span class="badge badge-up">+6,71 pp</span></td></tr>
+      <tr><td><strong>FB Seguidores</strong></td><td>1.063</td><td>1.069</td><td><strong>1.076</strong></td><td>1.076 (cierre T1)</td><td><span class="badge badge-up">+3,3%</span></td></tr>
+      <tr><td><strong>FB Visualizaciones</strong></td><td>33.373</td><td>63.160</td><td>7.722</td><td>104.255</td><td><span class="badge badge-down">−92,0%</span></td></tr>
+      <tr><td><strong>FB Interacciones</strong></td><td>133</td><td>183</td><td>166</td><td>482</td><td><span class="badge badge-down">−47,4%</span></td></tr>
+      <tr><td><strong>FB Engagement Rate</strong></td><td>0,63%</td><td>0,59%</td><td>3,59%</td><td><strong>0,63% media</strong></td><td><span class="badge badge-up">+0,52 pp</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 03 LINKEDIN -->
+<section class="page-break">
+  <div class="section-label">03</div>
+  <h2 class="section-title">LinkedIn — Cortag Europe</h2>
+
+  <div class="two-col">
+    <div>
+      <div class="stat-grid" style="grid-template-columns:1fr 1fr">
+        <div class="stat-card">
+          <div class="stat-label">Seguidores</div>
+          <div class="stat-value gold">450</div>
+          <div class="stat-sub"><span class="badge badge-up">+8,7%</span> vs T4 2025</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Impresiones</div>
+          <div class="stat-value">13.005</div>
+          <div class="stat-sub">Mejor trimestre registrado</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Reacciones</div>
+          <div class="stat-value">545</div>
+          <div class="stat-sub">vs 177 en T4 2025</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Contenido publicado</div>
+          <div class="stat-value gold">23</div>
+          <div class="stat-sub">posts en T1 2026</div>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h4><span class="dot dot-green"></span>LinkedIn en máximos históricos</h4>
+        <p>T1 2026 es el trimestre con <strong>mayor número de impresiones registrado</strong> desde que gestionamos la cuenta (13.005 vs 5.171 en T4 2025). Las reacciones también han crecido muy significativamente. El contenido ha incluido cobertura de ferias y eventos comerciales, publicaciones técnicas de producto y una publicación especialmente destacada de la <strong>reunión anual de Cortag en el estadio del RC Español</strong>, que generó mucha interacción. El mix de contenido B2B enfocado en posicionamiento de marca y distribución está funcionando mejor que en cualquier trimestre anterior.</p>
+      </div>
+    </div>
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">LinkedIn · Evolución seguidores 2025–T1 2026</div>
+        <div class="chart-sub">Crecimiento trimestral</div>
+        <canvas id="chartLISeguidores"></canvas>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-title">LinkedIn · Impresiones por trimestre</div>
+        <div class="chart-sub">Comparativa 2025 vs T1 2026</div>
+        <canvas id="chartLIImpresiones"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Métrica</th><th>T1 2025*</th><th>T2 2025</th><th>T3 2025</th><th>T4 2025</th><th>T1 2026</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Seguidores</strong></td><td>349</td><td>373</td><td>390</td><td>414</td><td>450</td></tr>
+      <tr><td><strong>Impresiones</strong></td><td>10.574</td><td>5.763</td><td>6.729</td><td>5.171</td><td>13.005</td></tr>
+      <tr><td><strong>Reacciones</strong></td><td>477</td><td>303</td><td>261</td><td>177</td><td>545</td></tr>
+      <tr><td><strong>Visitas al perfil</strong></td><td>262</td><td>164</td><td>128</td><td>103</td><td>183</td></tr>
+      <tr class="highlight"><td><strong>Veces compartido</strong></td><td>3</td><td>4</td><td>5</td><td>0</td><td>0</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:#9CA3AF;margin-top:-16px;margin-bottom:0">* Hasta finales de febrero 2025 no se empezó a gestionar la cuenta de LinkedIn de Cortag Europe.</p>
+</section>
+
+<!-- 04 FRANCE + PORTUGAL -->
+<section class="page-break">
+  <div class="section-label">04</div>
+  <h2 class="section-title">Francia &amp; Portugal — Facebook</h2>
+
+  <div class="alert alert-warning">
+    <div class="alert-label">⚡ Situación de contenidos</div>
+    <p>La producción de contenido adaptado para ambos mercados sigue siendo muy limitada y se trabaja principalmente con reposts desde la cuenta principal de España. Se propuso en T4 2025 una estrategia de <strong>unificación de las tres cuentas</strong> (España, Portugal, Francia) bajo una gestión coordinada, pero su ejecución queda pendiente de que Cortag Brasil resuelva antes problemas operativos prioritarios: reestructuración de la web, errores críticos en descripciones y categorías de producto, falta de catálogo 2026 adaptado para Francia y Portugal, coordinación de los esfuerzos de las cuentas de Francia, cierre de perfiles duplicados y aprobación formal de la estrategia.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Francia · FB Seguidores 2025–T1 2026</div>
+        <div class="chart-sub">Crecimiento trimestral</div>
+        <canvas id="chartFRSeg"></canvas>
+      </div>
+      <div class="info-block">
+        <h4><span class="dot dot-warn"></span>Francia · T1 2026</h4>
+        <p>Seguidores: <strong>165</strong> <span class="badge badge-up">+19,6%</span> vs T4 2025. Visualizaciones: <strong>7.892</strong> — caída muy significativa vs T4 2025 (259.402), directamente relacionada con la ausencia de inversión en ads. Interacciones: 74. Alcance: 5.862. La cuenta de Instagram de Francia la gestiona directamente Cortag Brasil, por lo que no incluimos sus datos en este informe.</p>
+      </div>
+    </div>
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Portugal · FB Seguidores 2025–T1 2026</div>
+        <div class="chart-sub">Crecimiento trimestral</div>
+        <canvas id="chartPTSeg"></canvas>
+      </div>
+      <div class="info-block">
+        <h4><span class="dot dot-warn"></span>Portugal · T1 2026</h4>
+        <p>Seguidores: <strong>17</strong>. Visualizaciones: 676. Alcance: 506. Esta página de Facebook funciona únicamente como canal de repost sin estrategia ni contenido propio. Los resultados son consecuencia directa de la falta de acciones específicas. Continuar alimentando esta página de forma independiente no aporta valor suficiente; <strong>la estrategia pasa por la unificación</strong> de cuentas con una gestión coordinada.</p>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Métrica</th><th>T2 2025</th><th>T3 2025</th><th>T4 2025</th><th>T1 2026</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>FR Seguidores</strong></td><td>100</td><td>116</td><td>138</td><td>165</td></tr>
+      <tr><td><strong>FR Visualizaciones</strong></td><td>444.801</td><td>548.968</td><td>259.402</td><td>7.892</td></tr>
+      <tr><td><strong>FR Alcance</strong></td><td>369.945</td><td>427.432</td><td>217.547</td><td>5.862</td></tr>
+      <tr><td><strong>FR Interacciones</strong></td><td>127</td><td>139</td><td>106</td><td>74</td></tr>
+      <tr><td><strong>PT Seguidores</strong></td><td>13</td><td>14</td><td>15</td><td>17</td></tr>
+      <tr><td><strong>PT Visualizaciones</strong></td><td>240</td><td>229</td><td>697</td><td>676</td></tr>
+      <tr><td><strong>PT Alcance</strong></td><td>106</td><td>107</td><td>529</td><td>506</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 05 CAMPAÑAS ADS -->
+<section class="page-break">
+  <div class="section-label">05</div>
+  <h2 class="section-title">Campañas Meta Ads</h2>
+
+  <div class="alert alert-warning">
+    <div class="alert-label">⚡ Contexto presupuestario T1</div>
+    <p>Enero sin fondos. Febrero y marzo sin la recarga del aumento aprobado a cierre de T4 2025. La única campaña ejecutada fue el <strong>Sorteo Cortadora PRIME</strong> (2 feb – 2 mar) con el presupuesto disponible en ese momento (R$749,67 ≈ 122€). El aumento de fondos se ha activado a partir del 1 de abril de 2026, con campaña activa a fecha del informe.</p>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">Inversión T1</div>
+      <div class="stat-value warn">R$749</div>
+      <div class="stat-sub">≈ 122€ · única campaña</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Visualizaciones</div>
+      <div class="stat-value">87.373</div>
+      <div class="stat-sub">Sorteo Cortadora PRIME</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Alcance</div>
+      <div class="stat-value">40.513</div>
+      <div class="stat-sub">Usuarios únicos</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Leads captados</div>
+      <div class="stat-value gold">222</div>
+      <div class="stat-sub">Formulario Cortag Expert España</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">CTR</div>
+      <div class="stat-value">1,55%</div>
+      <div class="stat-sub">1.355 clicks totales</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">CPR</div>
+      <div class="stat-value gold">R$0,83</div>
+      <div class="stat-sub">Coste por resultado · muy eficiente</div>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Leads captados por campaña — histórico</div>
+    <div class="chart-sub">T1 2025 → T1 2026</div>
+    <canvas id="chartAdsLeads" style="max-height:190px"></canvas>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Campaña</th><th>Periodo</th><th>Inversión</th><th>Visualizaciones</th><th>Leads</th><th>CPR</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Sorteo T1 2025</strong></td><td>Ene–Mar 25</td><td>R$402</td><td>34.475</td><td>221</td><td>—</td></tr>
+      <tr><td><strong>Sorteo T2 (Expert)</strong></td><td>May 25</td><td>R$650</td><td>78.231</td><td>93</td><td>R$0,64</td></tr>
+      <tr><td><strong>Campaña SMART</strong></td><td>Jul–Ago 25</td><td>R$240</td><td>37.262</td><td>2.148 visitas</td><td>R$0,08</td></tr>
+      <tr><td><strong>Sorteo T3 (Expert)</strong></td><td>Sep 25</td><td>R$318</td><td>17.932</td><td>81</td><td>R$0,16</td></tr>
+      <tr><td><strong>Sorteo T4 (PRIME)</strong></td><td>Nov 25</td><td>R$995</td><td>131.410</td><td>422</td><td>R$0,51</td></tr>
+      <tr class="highlight"><td><strong>Sorteo T1 2026 (PRIME)</strong></td><td>Feb–Mar 26</td><td>R$749</td><td>87.373</td><td>222</td><td><strong>R$0,83</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="info-block">
+    <h4><span class="dot dot-green"></span>Q2 2026 — Campaña activa</h4>
+    <p>A fecha del informe: <strong>Sorteo Cortag Expert</strong> activo (8 abril – 8 mayo, ≈R$1.100–1.200). Fondos aumentados recargados. Próxima campaña prevista: <strong>Rubén Baz + Zapp Titan</strong> en la primera quincena de abril.</p>
+  </div>
+</section>
+
+<!-- 06 INFLUENCERS -->
+<section class="page-break">
+  <div class="section-label">06</div>
+  <h2 class="section-title">Colaboraciones — Influencers</h2>
+
+  <div class="two-col">
+    <div>
+      <div class="info-block">
+        <h4><span class="dot dot-green"></span>Rubén Baz · Activo · Renovado hasta final de 2026</h4>
+        <p>Instagram: <strong>@guardesadecocinas</strong>. Instalador profesional de porcelánico gran formato. <strong>76.100 seguidores</strong> a cierre de T1 (desde 71.600 en enero). Contrato renovado en <strong>Opción 2: 1 reel + 2 stories/mes · 600€ + IVA</strong>, confirmado hasta final de 2026.</p>
+        <div class="tags">
+          <span class="tag">Técnico · Obra real</span>
+          <span class="tag">Español</span>
+          <span class="tag">Sin fricciones operativas</span>
+        </div>
+      </div>
+
+      <div class="stat-grid" style="grid-template-columns:1fr 1fr;margin-top:4px">
+        <div class="stat-card">
+          <div class="stat-label">Views T1 totales</div>
+          <div class="stat-value gold">141.783</div>
+          <div class="stat-sub">3 reels · IG + FB</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Promedio / reel</div>
+          <div class="stat-value">47.261</div>
+          <div class="stat-sub">views por publicación</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Engagement medio</div>
+          <div class="stat-value">0,77%</div>
+          <div class="stat-sub">sobre views totales</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Coste/1.000 views</div>
+          <div class="stat-value gold">4,2€</div>
+          <div class="stat-sub">Altamente eficiente</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Rubén Baz · Views por reel T1 2026</div>
+        <div class="chart-sub">Crecimiento publicación a publicación</div>
+        <canvas id="chartRuben"></canvas>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-title">Rubén Baz · Interacciones por reel</div>
+        <div class="chart-sub">Likes + Shares + Comentarios</div>
+        <canvas id="chartRubenEng"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Reel</th><th>Fecha</th><th>Views IG+FB</th><th>Alcance</th><th>Likes</th><th>Shares</th><th>Coments</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>EasySpin (Enero)</strong></td><td>08/01/26</td><td>33.283</td><td>8.444</td><td>296</td><td>42</td><td>16</td></tr>
+      <tr><td><strong>Baño gran formato (Feb)</strong></td><td>11/02/26</td><td>45.800</td><td>10.563</td><td>314</td><td>46</td><td>7</td></tr>
+      <tr><td><strong>Ingletes (Marzo)</strong></td><td>02/03/26</td><td>62.700</td><td>15.771</td><td>287</td><td>74</td><td>9</td></tr>
+      <tr class="highlight"><td><strong>TOTALES</strong></td><td>—</td><td><strong>141.783</strong></td><td><strong>34.778</strong></td><td><strong>897</strong></td><td><strong>162</strong></td><td><strong>32</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="divider"></div>
+
+  <h3 style="font-size:20px;font-weight:800;margin-bottom:20px;letter-spacing:-0.5px;color:#29235C">Propuesta formaciones online · Pendiente aprobación</h3>
+
+  <div class="info-block">
+    <h4><span class="dot dot-warn"></span>Opción A — En evaluación</h4>
+    <p><strong>4 vídeos formativos + 8 clips cortos · 4.800€ + IVA</strong><br><br>
+    Temáticas propuestas: EasySpin, Cortag PRIME, Sistemas de nivelación y Consejos de instalación. El contenido se produciría para uso en canal propio de Cortag, campañas de Ads y formación de distribuidores. Pendiente respuesta de Rubén sobre disponibilidad y timings con sus colaboraciones de Porcelanosa/Cosentino.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3 style="font-size:20px;font-weight:800;margin-bottom:20px;letter-spacing:-0.5px;color:#29235C">Nuevas colaboraciones · Pilotos pendientes de definir</h3>
+
+  <div class="two-col">
+    <div class="info-block">
+      <h4><span class="dot dot-warn"></span>Reformas Salva</h4>
+      <p>Perfil de instalador con enfoque en reformas. <strong>~39.000 seguidores</strong>. Perfil valorado para un piloto de colaboración. Pendiente de conversación para ver encaje y condiciones.</p>
+      <div class="tags"><span class="tag">Pendiente validar</span></div>
+    </div>
+    <div class="info-block">
+      <h4><span class="dot dot-warn"></span>Javier Sequera</h4>
+      <p>Perfil técnico de instalación. <strong>~22.000 seguidores</strong>. También valorado para piloto. Pendiente de conversación para ver encaje y condiciones.</p>
+      <div class="tags"><span class="tag">Pendiente validar</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 CORTAG EXPERT -->
+<section class="page-break">
+  <div class="section-label">07</div>
+  <h2 class="section-title">Cortag Expert — Comunidad &amp; CRM</h2>
+
+  <div class="alert">
+    <div class="alert-label">⚠ Pérdida de contactos — 17 de marzo</div>
+    <p>La lista <strong>Cortag Expert T4D</strong> y otras listas desaparecieron de RD Station tras modificaciones no comunicadas. Contaba con aproximadamente <strong>829 contactos</strong>, de los cuales ~630 eran leads nuevos captados desde diciembre 2025. Tras la incidencia, la lista conservaba solo <strong>~240 contactos</strong>. A fecha del informe estamos en <strong>303 miembros</strong> gracias a la campaña activa de recuperación.<br><br>
+    El 9 de abril se celebró una reunión con el equipo de Brasil (Lucas, Gabriela) y la agencia Desafío. Están intentando recuperar el backup previo al 17 de marzo, pero no hay confirmación de si será posible. Adicionalmente, faltan aún grupos de distribución subidos de forma incompleta: <strong>NEOPRO, SINERGAS, YMAS, ZENKO y Representantes Comerciales España</strong>.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Cortag Expert · Nuevos leads por trimestre</div>
+        <div class="chart-sub">Captación histórica</div>
+        <canvas id="chartExpertLeads"></canvas>
+      </div>
+    </div>
+    <div>
+      <div class="chart-wrap">
+        <div class="chart-title">Visitantes web Cortag Expert · por canal T1 2026</div>
+        <div class="chart-sub">516 visitas totales</div>
+        <canvas id="chartExpertCanal"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Canal</th><th>T1 2025</th><th>T2 2025</th><th>T3 2025</th><th>T4 2025</th><th>T1 2026</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Paid Media</strong></td><td>0</td><td>387</td><td>165</td><td>342</td><td>351</td></tr>
+      <tr><td><strong>Redes sociales</strong></td><td>298</td><td>245</td><td>71</td><td>94</td><td>52</td></tr>
+      <tr><td><strong>Tráfico directo</strong></td><td>230</td><td>203</td><td>235</td><td>156</td><td>111</td></tr>
+      <tr><td><strong>Búsqueda orgánica</strong></td><td>19</td><td>18</td><td>25</td><td>4</td><td>7</td></tr>
+      <tr><td><strong>Email</strong></td><td>13</td><td>1</td><td>7</td><td>6</td><td>3</td></tr>
+      <tr><td><strong>Nuevos leads</strong></td><td>116</td><td>192</td><td>105</td><td>422</td><td>292</td></tr>
+      <tr class="highlight"><td><strong>Total visitas</strong></td><td>559</td><td>866</td><td>510</td><td>615</td><td>516</td></tr>
+    </tbody>
+  </table>
+
+  <div class="info-block">
+    <h4><span class="dot dot-warn"></span>Acciones suspendidas hasta recuperación de contactos</h4>
+    <p>Las siguientes iniciativas quedan <strong>en pausa</strong> hasta que se confirme la recuperación en RD Station o la base de contactos alcance de nuevo un volumen suficiente: <strong>Barómetro del Colocador</strong> (encuesta sectorial a la comunidad Expert), tests de opinión sobre productos (discos y otros), y cualquier otra acción orientada a generar feedback o activación de la comunidad. Se retomará cuando haya confirmación de recuperación o crecimiento consolidado de la base.</p>
+  </div>
+</section>
+
+<!-- 08 NEWSLETTERS -->
+<section class="page-break">
+  <div class="section-label">08</div>
+  <h2 class="section-title">Email marketing — Newsletters</h2>
+
+  <p style="color:#374151;font-size:14px;margin-bottom:28px;max-width:720px;line-height:1.8">En T1 2026 se produjeron y enviaron <strong>13 newsletters</strong> desde RD Station, dirigidas a tres segmentos: la comunidad Cortag Expert, clientes de distribución y grupos específicos (ferias, distribuidoras, redes). Las newsletters de Cortag Expert mantienen tasas de apertura <strong>consistentemente por encima del 30–40%</strong>, muy por encima de la media del sector (~21%).</p>
+
+  <table>
+    <thead>
+      <tr><th>Newsletter</th><th>Segmento / Lista</th><th>Apertura</th><th>Clics</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Ganador Sorteo Cortag Expert</strong></td><td>Cortag Expert</td><td><span class="badge badge-up">24,05%</span></td><td>2,12%</td></tr>
+      <tr><td><strong>Newsletter General Enero</strong></td><td>Cortag Expert / Distribución</td><td><span class="badge badge-neutral">16,67%</span></td><td>2,85%</td></tr>
+      <tr><td><strong>Newsletter ExpoCofersa</strong></td><td>Distribución EHLIS</td><td><span class="badge badge-neutral">19,54%</span></td><td>0,88%</td></tr>
+      <tr><td><strong>Newsletter ExpoCofersa (Recordatorio)</strong></td><td>Distribución EHLIS</td><td><span class="badge badge-neutral">23,68%</span></td><td>0,48%</td></tr>
+      <tr><td><strong>Feria Jarama Industrial Pro</strong></td><td>Industrial Pro</td><td><span class="badge badge-up">44%</span></td><td>0,9%</td></tr>
+      <tr><td><strong>Virtual Ibrix Experience</strong></td><td>Distribución</td><td><span class="badge badge-up">28,72%</span></td><td>4,10%</td></tr>
+      <tr><td><strong>ExpoCofersa (17/03)</strong></td><td>Distribución / Cecofersa</td><td><span class="badge badge-up">25,71%</span></td><td>6,67%</td></tr>
+      <tr><td><strong>Newsletter Programa de Garantía</strong></td><td>Clientes garantía</td><td><span class="badge badge-up">28,40%</span></td><td>2,47%</td></tr>
+      <tr><td><strong>Newsletter Virtual Connect Neopro</strong></td><td>Neopro</td><td><span class="badge badge-up">27,91%</span></td><td>1,97%</td></tr>
+      <tr><td><strong>Recordatorio ExpoCofersa</strong></td><td>Distribución / Cecofersa</td><td><span class="badge badge-up">27,18%</span></td><td>2,91%</td></tr>
+      <tr><td><strong>Reactivación leads Campaña SMART</strong></td><td>Leads SMART (España)</td><td><span class="badge badge-up">35,85%</span></td><td>16,98%</td></tr>
+      <tr><td><strong>Newsletter Marzo Cortag Expert</strong></td><td>Cortag Expert</td><td><span class="badge badge-up">27,99%</span></td><td>1,85%</td></tr>
+      <tr class="highlight"><td><strong>Feria presencial BDB (25–26 mar)</strong></td><td>Distribución BDB</td><td><span class="badge badge-up">28,57%</span></td><td>2,72%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Tasa de apertura · Newsletters T1 2026</div>
+    <div class="chart-sub">Selección de newsletters clave vs media sector (~21%)</div>
+    <canvas id="chartNewsletters" style="max-height:200px"></canvas>
+  </div>
+</section>
+
+<!-- 09 PENDIENTES -->
+<section class="page-break">
+  <div class="section-label">09</div>
+  <h2 class="section-title">Próximas acciones Q2</h2>
+
+  <div class="pending-list">
+    <div class="pending-item">
+      <div class="icon icon-crit">!</div>
+      <div class="text">
+        <strong>Recuperación Cortag Expert y verificación listas distribución en RD Station</strong>
+        <span>Seguimiento con Lucas, Gabriela y agencia Desafío. Backup previo al 17 de marzo. ~538 contactos perdidos. Verificar y completar listas: NEOPRO, SINERGAS, YMAS, ZENKO, Representantes Comerciales España.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-med">·</div>
+      <div class="text">
+        <strong>Formaciones online con Rubén Baz</strong>
+        <span>Opción A: 4 vídeos + 8 clips cortos · 4.800€ + IVA. Pendiente de aprobación con Cortag, presupuesto y definición de detalles.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-med">·</div>
+      <div class="text">
+        <strong>Piloto nuevos influencers</strong>
+        <span>Reformas Salva (~39K) y Javier Sequera (~22K). Pendiente de conversación para validar encaje y condiciones.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-med">·</div>
+      <div class="text">
+        <strong>Barómetro del Colocador y otras acciones de comunidad</strong>
+        <span>Suspendido hasta recuperación de contactos en RD Station o crecimiento consolidado de la base. Incluye tests de opinión sobre producto y otras acciones de activación Expert.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-low">·</div>
+      <div class="text">
+        <strong>Estrategia de unificación Cortag Europe · Francia · Portugal</strong>
+        <span>Propuesta T4 2025 pendiente de ejecución. Supeditada a resolución de problemas operativos por parte de Cortag Brasil.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-brand">CORTAG EUROPE · TEAM4DIGITAL</div>
+  <div class="ft-note">Report T1 2026 · Enero–Marzo</div>
+</footer>
+
+<script>
+  Chart.defaults.font.family = "'Plus Jakarta Sans', sans-serif";
+  Chart.defaults.color = '#6B7280';
+
+  const gridColor = 'rgba(29,113,185,0.06)';
+  const blue = '#1d71b9';
+  const blueMid = 'rgba(29,113,185,0.15)';
+  const navy = '#29235C';
+  const red = '#C0392B';
+  const warn = '#D97706';
+  const green = '#16a34a';
+  const grayMid = '#9CA3AF';
+
+  function baseOptions(yLabel) {
+    return {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { backgroundColor: '#29235C', borderColor: 'rgba(29,113,185,0.3)', borderWidth: 1, titleColor: '#ffffff', bodyColor: '#9CA3AF', padding: 12, cornerRadius: 6 }
+      },
+      scales: {
+        x: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 11 } } },
+        y: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 11 } }, beginAtZero: true, title: yLabel ? { display: true, text: yLabel, color: '#9CA3AF', font: { size: 10 } } : undefined }
+      }
+    };
+  }
+
+  // IG Seguidores
+  new Chart(document.getElementById('chartIGSeg'), {
+    type: 'line',
+    data: {
+      labels: ['T1 24','T2 24','T3 24','T4 24','Ene 25','Feb 25','Mar 25','T2 25','T3 25','T4 25','Ene 26','Feb 26','Mar 26'],
+      datasets: [{ data: [1388,1410,1470,1509,1540,1732,1767,1869,1947,2452,2439,2472,2532], borderColor: blue, backgroundColor: blueMid, borderWidth: 2, fill: true, tension: 0.4, pointBackgroundColor: blue, pointRadius: 3 }]
+    },
+    options: baseOptions()
+  });
+
+  // IG Engagement
+  new Chart(document.getElementById('chartIGEng'), {
+    type: 'bar',
+    data: {
+      labels: ['T1 24','T2 24','T3 24','T4 24','T1 25','T2 25','T3 25','T4 25','Ene 26','Feb 26','Mar 26'],
+      datasets: [{ data: [10.6,11.3,9.2,8.5,2.1,1.0,0.45,1.16,3.97,3.29,22.6], backgroundColor: (ctx) => ctx.parsed.y > 5 ? 'rgba(29,113,185,0.85)' : 'rgba(29,113,185,0.35)', borderRadius: 3 }]
+    },
+    options: { ...baseOptions('%'), plugins: { ...baseOptions().plugins, tooltip: { ...baseOptions().plugins.tooltip, callbacks: { label: (c) => c.parsed.y + '%' } } } }
+  });
+
+  // IG Views T1
+  new Chart(document.getElementById('chartIGViews'), {
+    type: 'bar',
+    data: { labels: ['Enero','Febrero','Marzo'], datasets: [{ data: [10737,42534,29761], backgroundColor: ['rgba(192,57,43,0.5)','rgba(29,113,185,0.75)','rgba(29,113,185,0.45)'], borderRadius: 4 }] },
+    options: baseOptions()
+  });
+
+  // FB Views T1
+  new Chart(document.getElementById('chartFBViews'), {
+    type: 'bar',
+    data: { labels: ['Enero','Febrero','Marzo'], datasets: [{ data: [33373,63160,7722], backgroundColor: ['rgba(29,113,185,0.55)','rgba(29,113,185,0.85)','rgba(192,57,43,0.45)'], borderRadius: 4 }] },
+    options: baseOptions()
+  });
+
+  // LinkedIn Seguidores
+  new Chart(document.getElementById('chartLISeguidores'), {
+    type: 'line',
+    data: {
+      labels: ['T1 25','T2 25','T3 25','T4 25','T1 26'],
+      datasets: [{ data: [349,373,390,414,450], borderColor: blue, backgroundColor: blueMid, borderWidth: 2, fill: true, tension: 0.4, pointBackgroundColor: blue, pointRadius: 4 }]
+    },
+    options: baseOptions()
+  });
+
+  // LinkedIn Impresiones
+  new Chart(document.getElementById('chartLIImpresiones'), {
+    type: 'bar',
+    data: {
+      labels: ['T1 25','T2 25','T3 25','T4 25','T1 26'],
+      datasets: [{ data: [10574,5763,6729,5171,13005], backgroundColor: (ctx) => ctx.dataIndex === 4 ? 'rgba(29,113,185,0.9)' : 'rgba(29,113,185,0.3)', borderRadius: 4 }]
+    },
+    options: baseOptions()
+  });
+
+  // Francia Seguidores
+  new Chart(document.getElementById('chartFRSeg'), {
+    type: 'line',
+    data: { labels: ['T2 25','T3 25','T4 25','T1 26'], datasets: [{ data: [100,116,138,165], borderColor: warn, backgroundColor: 'rgba(217,119,6,0.1)', borderWidth: 2, fill: true, tension: 0.4, pointBackgroundColor: warn, pointRadius: 5 }] },
+    options: baseOptions()
+  });
+
+  // Portugal Seguidores
+  new Chart(document.getElementById('chartPTSeg'), {
+    type: 'line',
+    data: { labels: ['T2 25','T3 25','T4 25','T1 26'], datasets: [{ data: [13,14,15,17], borderColor: grayMid, backgroundColor: 'rgba(156,163,175,0.1)', borderWidth: 2, fill: true, tension: 0.4, pointBackgroundColor: grayMid, pointRadius: 5 }] },
+    options: baseOptions()
+  });
+
+  // Ads Leads
+  new Chart(document.getElementById('chartAdsLeads'), {
+    type: 'bar',
+    data: { labels: ['Sorteo T1 25','Sorteo T2 25','SMART T3 25','Sorteo T3 25','Sorteo T4 25','Sorteo T1 26'], datasets: [{ data: [221,93,81,81,422,222], backgroundColor: (ctx) => ctx.dataIndex === 5 ? 'rgba(29,113,185,0.9)' : 'rgba(29,113,185,0.3)', borderRadius: 4 }] },
+    options: baseOptions('Leads')
+  });
+
+  // Rubén views
+  new Chart(document.getElementById('chartRuben'), {
+    type: 'bar',
+    data: { labels: ['Ene — EasySpin','Feb — Baño','Mar — Ingletes'], datasets: [{ data: [33283,45800,62700], backgroundColor: ['rgba(29,113,185,0.4)','rgba(29,113,185,0.65)','rgba(29,113,185,0.9)'], borderRadius: 4 }] },
+    options: baseOptions('Views')
+  });
+
+  // Rubén engagement
+  new Chart(document.getElementById('chartRubenEng'), {
+    type: 'bar',
+    data: {
+      labels: ['Reel Enero','Reel Febrero','Reel Marzo'],
+      datasets: [
+        { label: 'Likes', data: [296,314,287], backgroundColor: 'rgba(29,113,185,0.75)', borderRadius: 2 },
+        { label: 'Shares', data: [42,46,74], backgroundColor: 'rgba(22,163,74,0.65)', borderRadius: 2 },
+        { label: 'Comentarios', data: [16,7,9], backgroundColor: 'rgba(217,119,6,0.65)', borderRadius: 2 }
+      ]
+    },
+    options: { ...baseOptions(), plugins: { legend: { display: true, labels: { color: '#6B7280', font: { size: 11 } } }, tooltip: baseOptions().plugins.tooltip } }
+  });
+
+  // Expert Leads
+  new Chart(document.getElementById('chartExpertLeads'), {
+    type: 'bar',
+    data: {
+      labels: ['T4 24','T1 25','T2 25','T3 25','T4 25','T1 26'],
+      datasets: [{ data: [164,116,192,105,422,292], backgroundColor: ['rgba(29,113,185,0.3)','rgba(29,113,185,0.3)','rgba(29,113,185,0.45)','rgba(29,113,185,0.3)','rgba(29,113,185,0.85)','rgba(192,57,43,0.55)'], borderRadius: 4 }]
+    },
+    options: baseOptions('Leads')
+  });
+
+  // Expert Canal donut
+  new Chart(document.getElementById('chartExpertCanal'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Paid Media','Directo','RRSS','Email','Orgánico','Otros'],
+      datasets: [{ data: [351,111,52,3,7,2], backgroundColor: ['rgba(29,113,185,0.9)','rgba(29,113,185,0.55)','rgba(217,119,6,0.7)','rgba(156,163,175,0.5)','rgba(22,163,74,0.55)','rgba(156,163,175,0.3)'], borderColor: '#ffffff', borderWidth: 2 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      plugins: { legend: { display: true, position: 'right', labels: { color: '#6B7280', font: { size: 11 }, boxWidth: 12, padding: 10 } }, tooltip: { backgroundColor: '#29235C', borderColor: 'rgba(29,113,185,0.3)', borderWidth: 1, titleColor: '#ffffff', bodyColor: '#9CA3AF', padding: 12, cornerRadius: 6 } }
+    }
+  });
+
+  // Newsletters apertura
+  new Chart(document.getElementById('chartNewsletters'), {
+    type: 'bar',
+    data: {
+      labels: ['SMART\nReactivación','Industrial\nPro','ExpoCofersa\n17/03','Prog.\nGarantía','Virtual\nIbrix','BDB\nMarzo','Recordatorio\nExpoCofersa','NL Virtual\nNeopro','NL Marzo\nExpert','Ganador\nSorteo','Media\nSector'],
+      datasets: [{ data: [35.85,44,25.71,28.40,28.72,28.57,27.18,27.91,27.99,24.05,21], backgroundColor: (ctx) => ctx.dataIndex === 10 ? 'rgba(156,163,175,0.4)' : 'rgba(29,113,185,0.75)', borderRadius: 4 }]
+    },
+    options: { ...baseOptions('%'), plugins: { ...baseOptions().plugins, tooltip: { ...baseOptions().plugins.tooltip, callbacks: { label: (c) => c.parsed.y.toFixed(2) + '%' } } } }
+  });
+</script>
+</body>
+</html>
