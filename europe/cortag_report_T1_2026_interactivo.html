@@ -130,61 +130,59 @@
   footer .ft-note { font-size: 11px; color: rgba(255,255,255,0.35); }
 
   @media print {
-    @page { size: A4; margin: 7mm 15mm; }
+    @page { size: A4; margin: 8mm 12mm; }
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     body { background: white !important; font-size: 11px !important; line-height: 1.4 !important; }
 
     /* ── COVER ─────────────────────────────── */
-    .cover { height: 283mm !important; min-height: unset !important; padding: 26px 4px !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; }
+    .cover { height: 277mm !important; min-height: unset !important; padding: 30px 10px !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; }
     .cover::before, .cover::after { display: none !important; }
-    .cover h1 { font-size: 50px !important; margin-bottom: 14px !important; letter-spacing: -2px !important; }
-    .cover-main { flex: 1 !important; padding: 16px 0 !important; justify-content: center !important; }
-    .cover-sub { font-size: 13px !important; max-width: 440px !important; }
+    .cover h1 { font-size: 52px !important; margin-bottom: 14px !important; letter-spacing: -2px !important; }
+    .cover-main { flex: 1 !important; padding: 18px 0 !important; justify-content: center !important; }
+    .cover-sub { font-size: 13px !important; max-width: 460px !important; }
     .cover-meta { padding-top: 14px !important; gap: 20px !important; }
     .cover-tag { margin-bottom: 16px !important; padding: 6px 12px !important; }
 
     /* ── SECTIONS ───────────────────────────── */
-    section { padding: 6px 0 !important; border-bottom: none !important; background: white !important; }
-    .section-title { font-size: 17px !important; margin-bottom: 5px !important; letter-spacing: -0.5px !important; }
-    .section-label { margin-bottom: 3px !important; font-size: 9px !important; }
+    section { padding: 10px 0 !important; border-bottom: none !important; background: white !important; }
+    .section-title { font-size: 18px !important; margin-bottom: 10px !important; letter-spacing: -0.5px !important; }
+    .section-label { margin-bottom: 4px !important; font-size: 9px !important; }
 
     /* ── STAT CARDS ─────────────────────────── */
-    .stat-grid { gap: 4px !important; margin-bottom: 5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .stat-card { padding: 5px !important; gap: 2px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .stat-value { font-size: 17px !important; line-height: 1 !important; }
+    .stat-grid { gap: 5px !important; margin-bottom: 10px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .stat-card { padding: 7px !important; gap: 3px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .stat-value { font-size: 11px !important; line-height: 1 !important; }
     .stat-label { font-size: 7.5px !important; }
-    .stat-sub { font-size: 9.5px !important; }
+    .stat-sub { font-size: 8.5px !important; }
 
     /* ── CHARTS ─────────────────────────────── */
+    .two-col { gap: 8px !important; }
+    .two-col > div { page-break-inside: avoid !important; break-inside: avoid !important; }
     .chart-wrap { padding: 5px !important; margin-bottom: 4px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .chart-wrap canvas { height: 55px !important; max-height: 55px !important; width: 100% !important; }
+    .chart-wrap canvas { height: 110px !important; max-height: 110px !important; width: 100% !important; }
     .chart-title { font-size: 9.5px !important; margin-bottom: 0 !important; }
     .chart-sub { font-size: 8.5px !important; margin-bottom: 2px !important; }
 
-    /* ── LAYOUT ─────────────────────────────── */
-    .two-col { gap: 7px !important; }
-    .two-col > div { page-break-inside: avoid !important; break-inside: avoid !important; }
-
     /* ── INFO BLOCKS ────────────────────────── */
-    .info-block { padding: 6px !important; margin-bottom: 4px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .info-block h4 { font-size: 10px !important; margin-bottom: 3px !important; }
-    .info-block p { font-size: 10px !important; line-height: 1.3 !important; }
+    .info-block { padding: 8px !important; margin-bottom: 5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .info-block h4 { font-size: 10px !important; margin-bottom: 4px !important; }
+    .info-block p { font-size: 10px !important; line-height: 1.4 !important; }
 
     /* ── ALERTS ─────────────────────────────── */
-    .alert { padding: 6px 10px !important; margin-bottom: 5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .alert p { font-size: 10px !important; line-height: 1.3 !important; }
-    .alert-label { font-size: 8px !important; margin-bottom: 2px !important; }
+    .alert { padding: 7px 11px !important; margin-bottom: 6px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .alert p { font-size: 10px !important; line-height: 1.4 !important; }
+    .alert-label { font-size: 8px !important; margin-bottom: 3px !important; }
 
     /* ── TABLES ─────────────────────────────── */
-    table { margin-bottom: 7px !important; font-size: 9.5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    th { padding: 5px 7px !important; font-size: 7.5px !important; }
-    td { padding: 1px 7px !important; font-size: 9px !important; }
+    table { margin-bottom: 8px !important; font-size: 9.5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    th { padding: 5px 8px !important; font-size: 8px !important; }
+    td { padding: 3px 8px !important; font-size: 9px !important; }
     tr { page-break-inside: avoid !important; break-inside: avoid !important; }
 
     /* ── MISC ────────────────────────────────── */
-    .divider { margin: 4px 0 !important; }
+    .divider { margin: 8px 0 !important; }
     .info-block br { display: none !important; line-height: 0 !important; }
-    h3 { font-size: 12px !important; margin-bottom: 8px !important; page-break-after: avoid !important; break-after: avoid !important; }
+    h3 { font-size: 13px !important; margin-bottom: 8px !important; page-break-after: avoid !important; break-after: avoid !important; }
     .tags { margin-top: 6px !important; }
     .tag { font-size: 9px !important; padding: 2px 6px !important; }
     .badge { font-size: 8.5px !important; padding: 1px 5px !important; }
@@ -199,14 +197,14 @@
     /* ── FOOTER ──────────────────────────────── */
     footer { display: none !important; }
 
-    /* ── RESUMEN intro text override ─────────── */
+    /* ── SECTION INTRO TEXT ─────────────────── */
     section > p[style] { font-size: 11px !important; margin-bottom: 10px !important; line-height: 1.45 !important; }
 
     /* ── INLINE-STYLED MINI-CARDS (IG/FB summary) ── */
-    .info-block > div[style*="grid-template-columns"] { margin-bottom: 4px !important; gap: 5px !important; }
-    .info-block > div[style*="grid-template-columns"] > div[style*="padding"] { padding: 5px 7px !important; }
-    .info-block [style*="font-size:22px"], .info-block [style*="font-size: 22px"] { font-size: 13px !important; line-height: 1 !important; }
-    .info-block [style*="letter-spacing:2px"], .info-block [style*="letter-spacing: 2px"] { font-size: 8px !important; margin-bottom: 4px !important; }
+    .info-block > div[style*="grid-template-columns"] { margin-bottom: 5px !important; gap: 5px !important; }
+    .info-block > div[style*="grid-template-columns"] > div[style*="padding"] { padding: 6px 8px !important; }
+    .info-block [style*="font-size:22px"], .info-block [style*="font-size: 22px"] { font-size: 14px !important; line-height: 1 !important; }
+    .info-block [style*="letter-spacing:2px"], .info-block [style*="letter-spacing: 2px"] { font-size: 8px !important; margin-bottom: 3px !important; }
     .info-block [style*="font-size:11px"], .info-block [style*="font-size: 11px"] { font-size: 9px !important; }
     .info-block [style*="margin-top:6px"], .info-block [style*="margin-top: 6px"] { margin-top: 3px !important; }
   }
@@ -245,7 +243,7 @@
 <!-- 01 RESUMEN EJECUTIVO -->
 <section class="page-break">
   <div class="section-label">01</div>
-  <h2 class="section-title">Resumen ejecutivo</h2>
+  <h2 class="section-title">Observaciones generales</h2>
 
   <div class="info-block" style="margin-bottom:28px;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;">
     <p style="font-size:14px;color:#374151;line-height:1.8">El T1 de 2026 ha sido un trimestre con resultados modestos condicionados por factores externos a la estrategia: la <strong>falta de fondos de ads</strong> durante prácticamente todo el trimestre ha limitado el alcance y las visualizaciones, y una <strong>incidencia en RD Station a finales de marzo</strong> ha supuesto la <strong>pérdida de la mayor parte de los contactos de la comunidad Cortag Expert</strong> que habíamos conseguido recuperar. A pesar de ello, <strong>Instagram y Facebook han seguido creciendo de forma orgánica</strong>, la colaboración con Rubén Baz ha mantenido una presencia técnica sólida y constante, y se han producido y enviado <strong>13 newsletters</strong> a lo largo del trimestre dirigidas a distribución, ferias, grupos específicos y la comunidad Expert.</p>
@@ -301,6 +299,47 @@
       <div class="stat-label">Newsletters enviadas</div>
       <div class="stat-value">13</div>
       <div class="stat-sub">Distribución, ferias y Expert</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3 style="font-size:20px;font-weight:800;margin-bottom:20px;letter-spacing:-0.5px;color:#29235C">Próximas acciones Q2</h3>
+
+  <div class="pending-list">
+    <div class="pending-item">
+      <div class="icon icon-crit">!</div>
+      <div class="text">
+        <strong>Recuperación Cortag Expert y verificación listas distribución en RD Station</strong>
+        <span>Seguimiento con Lucas, Gabriela y agencia Desafío. Backup previo al 17 de marzo. ~538 contactos perdidos. Verificar y completar listas: NEOPRO, SINERGAS, YMAS, ZENKO, Representantes Comerciales España.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-med">·</div>
+      <div class="text">
+        <strong>Formaciones online con Rubén Baz</strong>
+        <span>Opción A: 4 vídeos + 8 clips cortos · 4.800€ + IVA. Pendiente de aprobación con Cortag, presupuesto y definición de detalles.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-med">·</div>
+      <div class="text">
+        <strong>Piloto nuevos influencers</strong>
+        <span>Reformas Salva (~39K) y Javier Sequera (~22K). Pendiente de conversación para validar encaje y condiciones.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-med">·</div>
+      <div class="text">
+        <strong>Barómetro del Colocador y otras acciones de comunidad</strong>
+        <span>Suspendido hasta recuperación de contactos en RD Station o crecimiento consolidado de la base. Incluye tests de opinión sobre producto y otras acciones de activación Expert.</span>
+      </div>
+    </div>
+    <div class="pending-item">
+      <div class="icon icon-low">·</div>
+      <div class="text">
+        <strong>Estrategia de unificación Cortag Europe · Francia · Portugal</strong>
+        <span>Propuesta T4 2025 pendiente de ejecución. Supeditada a resolución de problemas operativos por parte de Cortag Brasil.</span>
+      </div>
     </div>
   </div>
 </section>
@@ -747,50 +786,6 @@
     <div class="chart-title">Tasa de apertura · Newsletters T1 2026</div>
     <div class="chart-sub">Selección de newsletters clave vs media sector (~21%)</div>
     <canvas id="chartNewsletters" style="max-height:200px"></canvas>
-  </div>
-</section>
-
-<!-- 09 PENDIENTES -->
-<section>
-  <div class="section-label">09</div>
-  <h2 class="section-title">Próximas acciones Q2</h2>
-
-  <div class="pending-list">
-    <div class="pending-item">
-      <div class="icon icon-crit">!</div>
-      <div class="text">
-        <strong>Recuperación Cortag Expert y verificación listas distribución en RD Station</strong>
-        <span>Seguimiento con Lucas, Gabriela y agencia Desafío. Backup previo al 17 de marzo. ~538 contactos perdidos. Verificar y completar listas: NEOPRO, SINERGAS, YMAS, ZENKO, Representantes Comerciales España.</span>
-      </div>
-    </div>
-    <div class="pending-item">
-      <div class="icon icon-med">·</div>
-      <div class="text">
-        <strong>Formaciones online con Rubén Baz</strong>
-        <span>Opción A: 4 vídeos + 8 clips cortos · 4.800€ + IVA. Pendiente de aprobación con Cortag, presupuesto y definición de detalles.</span>
-      </div>
-    </div>
-    <div class="pending-item">
-      <div class="icon icon-med">·</div>
-      <div class="text">
-        <strong>Piloto nuevos influencers</strong>
-        <span>Reformas Salva (~39K) y Javier Sequera (~22K). Pendiente de conversación para validar encaje y condiciones.</span>
-      </div>
-    </div>
-    <div class="pending-item">
-      <div class="icon icon-med">·</div>
-      <div class="text">
-        <strong>Barómetro del Colocador y otras acciones de comunidad</strong>
-        <span>Suspendido hasta recuperación de contactos en RD Station o crecimiento consolidado de la base. Incluye tests de opinión sobre producto y otras acciones de activación Expert.</span>
-      </div>
-    </div>
-    <div class="pending-item">
-      <div class="icon icon-low">·</div>
-      <div class="text">
-        <strong>Estrategia de unificación Cortag Europe · Francia · Portugal</strong>
-        <span>Propuesta T4 2025 pendiente de ejecución. Supeditada a resolución de problemas operativos por parte de Cortag Brasil.</span>
-      </div>
-    </div>
   </div>
 </section>
 
