@@ -162,62 +162,87 @@
   .highlight-box p { font-size: 13px; color: #374151; line-height: 1.7; }
 
   @media print {
-    @page { size: A4; margin: 7mm 15mm; }
+    @page { size: A4; margin: 12mm 14mm; }
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-    body { background: white !important; font-size: 11px !important; line-height: 1.4 !important; }
-    .cover { height: 283mm !important; min-height: unset !important; padding: 26px 4px !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; }
+    body { background: white !important; font-size: 11px !important; line-height: 1.5 !important; }
+
+    /* PORTADA */
+    .cover { height: 273mm !important; min-height: unset !important; padding: 32px 10px !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; }
     .cover::before, .cover::after { display: none !important; }
-    .cover h1 { font-size: 50px !important; margin-bottom: 14px !important; letter-spacing: -2px !important; }
-    .cover-main { flex: 1 !important; padding: 16px 0 !important; justify-content: center !important; }
-    .cover-sub { font-size: 13px !important; max-width: 440px !important; }
-    .cover-meta { padding-top: 14px !important; gap: 20px !important; }
-    .cover-tag { margin-bottom: 16px !important; padding: 6px 12px !important; }
-    section { padding: 6px 0 !important; border-bottom: none !important; background: white !important; }
-    .section-title { font-size: 17px !important; margin-bottom: 5px !important; letter-spacing: -0.5px !important; }
-    .section-label { margin-bottom: 3px !important; font-size: 9px !important; }
-    .stat-grid { gap: 4px !important; margin-bottom: 5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .stat-card { padding: 5px !important; gap: 2px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .stat-value { font-size: 17px !important; line-height: 1 !important; }
-    .stat-label { font-size: 7.5px !important; }
-    .stat-sub { font-size: 9.5px !important; }
-    .chart-wrap { padding: 5px !important; margin-bottom: 4px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .chart-wrap canvas { height: 55px !important; max-height: 55px !important; width: 100% !important; }
-    .chart-title { font-size: 9.5px !important; margin-bottom: 0 !important; }
-    .chart-sub { font-size: 8.5px !important; margin-bottom: 2px !important; }
-    .two-col { gap: 7px !important; }
-    .three-col { gap: 7px !important; }
+    .cover h1 { font-size: 52px !important; margin-bottom: 14px !important; letter-spacing: -2px !important; }
+    .cover-main { flex: 1 !important; padding: 20px 0 !important; justify-content: center !important; }
+    .cover-sub { font-size: 14px !important; }
+    .cover-meta { padding-top: 16px !important; gap: 24px !important; }
+    .cover-tag { margin-bottom: 20px !important; }
+
+    /* SECCIONES */
+    section { padding: 10px 0 !important; border-bottom: none !important; background: white !important; }
+    .section-title { font-size: 20px !important; margin-bottom: 8px !important; }
+    .section-label { margin-bottom: 4px !important; font-size: 9px !important; }
+
+    /* STAT CARDS */
+    .stat-grid { gap: 6px !important; margin-bottom: 10px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .stat-card { padding: 8px 10px !important; gap: 3px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .stat-value { font-size: 20px !important; line-height: 1 !important; }
+    .stat-label { font-size: 8px !important; }
+    .stat-sub { font-size: 10px !important; }
+
+    /* GRÁFICAS — canvas oculto, imagen a tamaño natural con aspect-ratio preservado */
+    .chart-wrap { padding: 8px !important; margin-bottom: 8px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .chart-wrap canvas { display: none !important; }
+    .chart-wrap img.chart-img { display: block !important; width: 100% !important; height: auto !important; max-width: 100% !important; }
+    .chart-title { font-size: 11px !important; margin-bottom: 2px !important; font-weight: 700 !important; }
+    .chart-sub { font-size: 9.5px !important; margin-bottom: 6px !important; }
+
+    /* LAYOUTS */
+    .two-col { gap: 10px !important; }
+    .three-col { display: grid !important; grid-template-columns: 1fr 1fr 1fr !important; gap: 8px !important; }
     .two-col > div, .three-col > div { page-break-inside: avoid !important; break-inside: avoid !important; }
-    .info-block { padding: 6px !important; margin-bottom: 4px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .info-block h4 { font-size: 10px !important; margin-bottom: 3px !important; }
-    .info-block p { font-size: 10px !important; line-height: 1.3 !important; }
-    .alert { padding: 6px 10px !important; margin-bottom: 5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .alert p { font-size: 10px !important; line-height: 1.3 !important; }
-    .alert-label { font-size: 8px !important; margin-bottom: 2px !important; }
-    table { margin-bottom: 7px !important; font-size: 9.5px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    th { padding: 5px 7px !important; font-size: 7.5px !important; }
-    td { padding: 1px 7px !important; font-size: 9px !important; }
+
+    /* INFO BLOCKS */
+    .info-block { padding: 9px 11px !important; margin-bottom: 6px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .info-block h4 { font-size: 11px !important; margin-bottom: 4px !important; }
+    .info-block p { font-size: 10.5px !important; line-height: 1.45 !important; }
+
+    /* ALERTS */
+    .alert { padding: 8px 12px !important; margin-bottom: 7px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .alert p { font-size: 10.5px !important; line-height: 1.4 !important; }
+    .alert-label { font-size: 8.5px !important; margin-bottom: 3px !important; }
+
+    /* TABLAS */
+    table { margin-bottom: 10px !important; font-size: 10px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    th { padding: 6px 8px !important; font-size: 8.5px !important; }
+    td { padding: 4px 8px !important; font-size: 10px !important; }
     tr { page-break-inside: avoid !important; break-inside: avoid !important; }
-    .divider { margin: 4px 0 !important; }
-    .emb-card { padding: 8px !important; margin-bottom: 4px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .emb-stat-value { font-size: 13px !important; }
-    .emb-name { font-size: 11px !important; margin-bottom: 6px !important; }
-    .pending-list { gap: 5px !important; }
-    .pending-item { padding: 7px 10px !important; gap: 10px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .pending-item .text strong { font-size: 10px !important; margin-bottom: 1px !important; }
-    .pending-item .text span { font-size: 9.5px !important; }
-    .pending-item .icon { width: 18px !important; height: 18px !important; font-size: 9px !important; flex-shrink: 0 !important; }
-    footer { display: none !important; }
-    section > p[style] { font-size: 11px !important; margin-bottom: 10px !important; line-height: 1.45 !important; }
-    h3 { font-size: 12px !important; margin-bottom: 8px !important; page-break-after: avoid !important; break-after: avoid !important; }
-    .tags { margin-top: 6px !important; }
-    .tag { font-size: 9px !important; padding: 2px 6px !important; }
-    .badge { font-size: 8.5px !important; padding: 1px 5px !important; }
-    .highlight-box { padding: 8px !important; margin-bottom: 6px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
-    .highlight-box p { font-size: 10px !important; }
-    .emb-stats { gap: 5px !important; }
-    .emb-stat { padding: 5px 7px !important; }
+    .divider { margin: 6px 0 !important; }
+
+    /* EMBAJADOR CARDS — compactas en 3 columnas */
+    .emb-card { padding: 7px 8px !important; margin-bottom: 0 !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .emb-handle { font-size: 8px !important; margin-bottom: 2px !important; }
+    .emb-name { font-size: 10.5px !important; margin-bottom: 5px !important; }
+    .emb-verdict { font-size: 8.5px !important; padding: 3px 7px !important; margin-bottom: 5px !important; }
+    .emb-stats { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 4px !important; margin-bottom: 7px !important; }
+    .emb-stat { padding: 4px 5px !important; }
     .emb-stat-label { font-size: 7px !important; }
-    .emb-note { font-size: 10px !important; }
+    .emb-stat-value { font-size: 12px !important; }
+    .emb-note { font-size: 9px !important; line-height: 1.35 !important; }
+    .tags { margin-top: 5px !important; gap: 3px !important; }
+    .tag { font-size: 8.5px !important; padding: 2px 5px !important; }
+
+    /* PENDING / PRÓXIMAS ACCIONES */
+    .pending-list { gap: 6px !important; }
+    .pending-item { padding: 8px 11px !important; gap: 10px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .pending-item .text strong { font-size: 11px !important; margin-bottom: 2px !important; }
+    .pending-item .text span { font-size: 10.5px !important; }
+    .pending-item .icon { width: 20px !important; height: 20px !important; font-size: 9px !important; flex-shrink: 0 !important; }
+
+    footer { display: none !important; }
+    section > p[style] { font-size: 11px !important; margin-bottom: 10px !important; line-height: 1.5 !important; }
+    h3 { font-size: 13px !important; margin-bottom: 8px !important; page-break-after: avoid !important; break-after: avoid !important; }
+    .badge { font-size: 8.5px !important; padding: 1px 5px !important; }
+    .highlight-box { padding: 10px !important; margin-bottom: 8px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .highlight-box h3 { font-size: 12px !important; }
+    .highlight-box p { font-size: 10.5px !important; }
   }
   @media (max-width: 768px) {
     .cover, section { padding: 32px 20px; }
@@ -239,7 +264,7 @@
     <div class="cover-meta">
       <div class="cover-meta-item">
         <span class="label">Mercado</span>
-        <span class="value">USA — Nationwide</span>
+        <span class="value">USA</span>
       </div>
       <div class="cover-meta-item">
         <span class="label">Periodo</span>
@@ -256,18 +281,18 @@
   </div>
 </div>
 
-<!-- 01 RESUMEN EJECUTIVO -->
+<!-- 01 OBSERVACIONES GENERALES -->
 <section class="page-break">
   <div class="section-label">01</div>
-  <h2 class="section-title">Resumen ejecutivo</h2>
+  <h2 class="section-title">Observaciones generales</h2>
 
   <div class="info-block" style="margin-bottom:28px;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;">
-    <p style="font-size:14px;color:#374151;line-height:1.8">El T1 de 2026 en USA ha estado marcado por <strong>dos condicionantes principales</strong>: la ausencia total de inversión en Meta Ads —el presupuesto disponible de $50/mes se mantuvo en reserva para una acción estratégica— y una gestión de embajadores con <strong>resultados muy desiguales</strong>. A pesar de ello, tanto Instagram como Facebook han mantenido <strong>crecimiento orgánico constante en seguidores</strong>, y los 3 embajadores activos generaron <strong>26.418 views en 8 reels</strong> a lo largo del trimestre. El punto álgido del periodo fue <strong>Coverings 2026</strong> (Las Vegas, 30 mar – 2 abr), con la presencia activa de Dumitru Guleac en el booth de Cortag y contenido generado en directo. La situación actual evidencia la necesidad estructural de una <strong>fuente estable y profesional de contenido USA</strong>, lo que sustenta la propuesta de pilotar una colaboración remunerada en T2 2026.</p>
+    <p style="font-size:14px;color:#374151;line-height:1.8">El T1 de 2026 en USA ha estado marcado por <strong>dos condicionantes principales</strong>: la recarga tardía del presupuesto de ads y una gestión de embajadores con <strong>resultados muy desiguales</strong>. Durante este trimestre, pese a que se aprobó la subida de presupuesto a <strong>800 BRL mensuales</strong> (equivalentes a ~$160), la recarga no se realizó hasta el <strong>1 de abril</strong>, por lo que durante estos meses, con tan solo $50/mes disponibles, no fue posible activar ninguna campaña de ads. Esto también afectó a Cortag Brasil, que igualmente estuvo sin inversión en paid media, lo que repercutió directamente en visualizaciones, alcance y demás métricas. A pesar de ello, tanto Instagram como Facebook han mantenido <strong>crecimiento orgánico constante en seguidores</strong>, y los 3 embajadores activos generaron <strong>40.425 views en 13 reels</strong> a lo largo del trimestre. A fecha <strong>1 de abril</strong> se realizó la recarga con <strong>800 + 500 BRL extras</strong>, contando actualmente con <strong>1.599 BRL (~320 USD)</strong> con los que se reactivarán nuevas campañas. La situación actual evidencia la necesidad estructural de una <strong>fuente estable y profesional de contenido USA</strong>, lo que sustenta la propuesta de pilotar una colaboración remunerada en T2 2026.</p>
   </div>
 
   <div class="alert alert-warning">
     <div class="alert-label">⚡ Ausencia total de Meta Ads en T1 2026</div>
-    <p>El presupuesto disponible ($50/mes) se mantuvo en reserva durante todo T1. <strong>Las caídas de -94,2% en visualizaciones de Instagram y -99,5% en Facebook no reflejan deterioro del contenido orgánico, sino la ausencia de inversión en paid media</strong>. Los datos confirman que la visibilidad de la cuenta depende en gran medida del apoyo publicitario. Para T2 se propone retomar ads con presupuesto analizado para amplificar contenido clave.</p>
+    <p>El presupuesto disponible ($50/mes) se mantuvo en reserva durante todo T1. <strong>Las caídas de -94,2% en visualizaciones de Instagram y -99,5% en Facebook no reflejan deterioro del contenido orgánico, sino la ausencia de inversión en paid media</strong>. Para T2 se propone retomar ads con presupuesto analizado para amplificar contenido clave.</p>
   </div>
 
   <div class="stat-grid">
@@ -293,23 +318,13 @@
     </div>
     <div class="stat-card">
       <div class="stat-label">Views embajadores</div>
-      <div class="stat-value warn">26.418</div>
-      <div class="stat-sub">8 reels · 3 embajadores activos</div>
+      <div class="stat-value warn">40.425</div>
+      <div class="stat-sub">13 reels · 3 embajadores activos</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Reels publicados</div>
-      <div class="stat-value">8</div>
-      <div class="stat-sub">Dumitru 3 · Phillip 4 · Daniel 1</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Meta Ads T1</div>
-      <div class="stat-value red">$0</div>
-      <div class="stat-sub">Sin inversión · Presupuesto reservado</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Coverings 2026</div>
-      <div class="stat-value green">✓</div>
-      <div class="stat-sub">Las Vegas · Booth #6079 · Dumitru</div>
+      <div class="stat-value">13</div>
+      <div class="stat-sub">Dumitru 8 · Phillip 4 · Daniel 1</div>
     </div>
   </div>
 </section>
@@ -321,7 +336,7 @@
 
   <div class="alert alert-warning" style="margin-bottom:32px;">
     <div class="alert-label">⚡ Contexto clave para interpretar los datos</div>
-    <p>Las visualizaciones y el alcance de T1 2026 muestran caídas drásticas respecto a trimestres anteriores. Esto es <strong>100% consecuencia de la ausencia de Meta Ads</strong>, que en trimestres anteriores multiplicaban el reach de forma exponencial. El crecimiento orgánico de seguidores e interacciones es real y positivo. La comparativa histórica refleja claramente el impacto del paid media en los trimestres que sí tuvieron inversión.</p>
+    <p>Las visualizaciones y el alcance de T1 2026 muestran caídas drásticas respecto a trimestres anteriores. Esto es <strong>100% consecuencia de la ausencia de Meta Ads</strong>, que en trimestres anteriores multiplicaban el reach de forma exponencial. El crecimiento orgánico de seguidores e interacciones es real y positivo. La comparativa histórica refleja claramente el impacto del paid media en los trimestres que sí tuvieron inversión. Esto es consecuencia directa de la falta de inversión en ads: durante T1 2026 no hubo inversión publicitaria por parte de Cortag Brasil, lo que afectó a ambos mercados.</p>
   </div>
 
   <div class="two-col">
@@ -358,28 +373,12 @@
     </div>
   </div>
 
-  <div class="two-col" style="margin-bottom:32px;">
+  <div class="two-col" style="margin-bottom:12px;">
     <div>
       <div class="chart-wrap">
         <div class="chart-title">Instagram · Visualizaciones mensuales T1 2026</div>
         <div class="chart-sub">Enero · Febrero · Marzo — Sin ads</div>
         <canvas id="chartIGViewsT1"></canvas>
-      </div>
-      <div class="info-block">
-        <h4><span class="dot dot-green"></span>Instagram · Resumen T1 2026</h4>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
-          <div style="background:var(--blue-light);border-radius:6px;padding:12px 14px;">
-            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:6px;">Seguidores</div>
-            <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">2.310 <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">end T1</span></div>
-            <div style="margin-top:6px;"><span class="badge badge-up">+5,0% vs T4</span></div>
-          </div>
-          <div style="background:#f0fdf4;border-radius:6px;padding:12px 14px;">
-            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#15803d;font-weight:700;margin-bottom:6px;">Interacciones</div>
-            <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">947 <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">T1 total</span></div>
-            <div style="margin-top:6px;"><span class="badge badge-down">-18,6% vs T4</span></div>
-          </div>
-        </div>
-        <p>Instagram mantiene un <strong>crecimiento constante de seguidores</strong> a pesar de la ausencia de ads. Las interacciones (947 en T1) son sólidas dado el alcance mínimo. El <strong>engagement rate del 14,7%</strong> refleja la alta calidad de la audiencia orgánica: quienes ven el contenido, interactúan.</p>
       </div>
     </div>
     <div>
@@ -388,23 +387,41 @@
         <div class="chart-sub">Enero · Febrero · Marzo — Sin ads</div>
         <canvas id="chartFBViewsT1"></canvas>
       </div>
-      <div class="info-block">
-        <h4><span class="dot dot-green"></span>Facebook · Resumen T1 2026</h4>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
-          <div style="background:var(--blue-light);border-radius:6px;padding:12px 14px;">
-            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:6px;">Seguidores</div>
-            <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">391 <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">end T1</span></div>
-            <div style="margin-top:6px;"><span class="badge badge-up">+2,4% vs T4</span></div>
-          </div>
-          <div style="background:#f0fdf4;border-radius:6px;padding:12px 14px;">
-            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#15803d;font-weight:700;margin-bottom:6px;">Engagement Rate</div>
-            <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">3,75% <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">media T1</span></div>
-            <div style="margin-top:6px;"><span class="badge badge-up">muy por encima de media</span></div>
-          </div>
-        </div>
-        <p>Facebook mantiene un <strong>crecimiento sostenido de seguidores</strong> (391, +2,4% vs T4). Las visualizaciones caen a 3.314 sin inversión publicitaria, pero el <strong>engagement rate orgánico del 3,75%</strong> es notablemente alto, indicando audiencia de calidad. La cuenta funciona como canal de acompañamiento al IG principal.</p>
+    </div>
+  </div>
+
+  <div class="info-block" style="margin-bottom:12px;">
+    <h4><span class="dot dot-green"></span>Instagram · Resumen T1 2026</h4>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+      <div style="background:var(--blue-light);border-radius:6px;padding:12px 14px;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:6px;">Seguidores</div>
+        <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">2.310 <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">end T1</span></div>
+        <div style="margin-top:6px;"><span class="badge badge-up">+5,0% vs T4</span></div>
+      </div>
+      <div style="background:#f0fdf4;border-radius:6px;padding:12px 14px;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#15803d;font-weight:700;margin-bottom:6px;">Interacciones</div>
+        <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">947 <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">T1 total</span></div>
+        <div style="margin-top:6px;"><span class="badge badge-down">-18,6% vs T4</span></div>
       </div>
     </div>
+    <p>Instagram mantiene un <strong>crecimiento constante de seguidores</strong> a pesar de la ausencia de ads. Las interacciones (947 en T1) son sólidas dado el alcance mínimo. El <strong>engagement rate del 14,7%</strong> refleja la alta calidad de la audiencia orgánica: quienes ven el contenido, interactúan.</p>
+  </div>
+
+  <div class="info-block" style="margin-bottom:32px;">
+    <h4><span class="dot dot-green"></span>Facebook · Resumen T1 2026</h4>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+      <div style="background:var(--blue-light);border-radius:6px;padding:12px 14px;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:6px;">Seguidores</div>
+        <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">391 <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">end T1</span></div>
+        <div style="margin-top:6px;"><span class="badge badge-up">+2,4% vs T4</span></div>
+      </div>
+      <div style="background:#f0fdf4;border-radius:6px;padding:12px 14px;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#15803d;font-weight:700;margin-bottom:6px;">Engagement Rate</div>
+        <div style="font-size:22px;font-weight:800;color:var(--black);letter-spacing:-0.5px;line-height:1.1;">3,75% <span style="font-size:11px;font-weight:400;color:var(--gray-mid);">media T1</span></div>
+        <div style="margin-top:6px;"><span class="badge badge-up">muy por encima de media</span></div>
+      </div>
+    </div>
+    <p>Facebook mantiene un <strong>crecimiento sostenido de seguidores</strong> (391, +2,4% vs T4). Las visualizaciones caen a 3.314 sin inversión publicitaria, pero el <strong>engagement rate orgánico del 3,75%</strong> es notablemente alto, indicando audiencia de calidad. La cuenta funciona como canal de acompañamiento al IG principal.</p>
   </div>
 
   <table>
@@ -443,20 +460,10 @@
 
   <div class="alert">
     <div class="alert-label">⚠ Sin actividad en T1 2026</div>
-    <p>El presupuesto mensual aprobado para Meta Ads USA es de <strong>$50/mes</strong> (extremadamente limitado). Durante T1 2026, este presupuesto <strong>no se activó</strong> en ninguna campaña, reservándolo para una acción de mayor impacto. La estrategia de lead generation a través de Meta Ads (Juan deriva leads a distribuidores locales) queda por tanto pausada hasta nuevo presupuesto aprobado.</p>
+    <p>Este presupuesto <strong>no se activó en ninguna campaña</strong>, por el motivo explicado anteriormente: el mínimo para obtener resultados muy modestos son ~<strong>$40</strong> por campaña, y hasta el <strong>1 de abril</strong> no se aprobaron ni recargaron los fondos provistos por Cortag Brasil (no hubo campaña y se guardaron los fondos para acumular). Actualmente disponemos de <strong>~$320 equivalentes</strong> para campañas. Este presupuesto lo reservamos para campaña de <strong>PRIME</strong> y para explorar alguna otra campaña de ofertas o promociones con generación de leads, como hemos hecho en el trimestre T4 2025 anterior.</p>
   </div>
 
   <div class="two-col">
-    <div>
-      <div class="info-block">
-        <h4><span class="dot dot-warn"></span>Modelo de negocio y limitaciones</h4>
-        <p>Cortag USA opera en modelo <strong>B2B exclusivo sin e-commerce</strong>. La venta se realiza 100% vía distribuidores autorizados. Meta Ads en USA tiene como objetivo principal la <strong>generación de leads</strong> que Juan Arronte (National Sales Manager) redirige a distribuidores por zona geográfica. Con solo $50/mes disponibles, el presupuesto es <strong>insuficiente para campañas sostenidas</strong>. El equipo ha optado por acumular el presupuesto para acciones puntuales de mayor impacto.</p>
-      </div>
-      <div class="info-block">
-        <h4><span class="dot dot-warn"></span>Solicitud de aumento presupuestario</h4>
-        <p>La solicitud de aumento de presupuesto fue <strong>denegada por la dirección en Brasil</strong>. La situación limita significativamente la capacidad de amplificación del contenido orgánico y el alcance a nuevos instaladores profesionales en USA. <strong>Para T2 2026 se propone retomar la solicitud</strong> con un análisis de ROI fundamentado en los resultados históricos de campañas anteriores, especialmente la MEGA 125 (102 leads con R$683 invertidos).</p>
-      </div>
-    </div>
     <div>
       <div class="chart-wrap">
         <div class="chart-title">Historial de campañas Meta Ads USA</div>
@@ -480,7 +487,7 @@
 
   <div class="alert alert-success">
     <div class="alert-label">✓ Propuesta T2 2026 — Retoma de Ads</div>
-    <p>Para T2 se propone <strong>retomar Meta Ads con presupuesto analizado</strong>, aprovechando el aprendizaje de campañas anteriores. La campaña MEGA 125 demostró un CPR competitivo de R$6,70/lead con inversión contenida. Se priorizará la amplificación de <strong>contenido de embajadores</strong> (especialmente Coverings y nuevo contenido de calidad) y el apoyo a las <strong>nuevas referencias del catálogo 2026</strong> (Remendadores Carsco MDD). Objetivo: presentar propuesta de presupuesto revisado a dirección Brasil con proyección de leads y ROI estimado.</p>
+    <p>Para T2 usaremos <strong>contenido generado por embajadores</strong> para ads de campaña <strong>PRIME/MEGA</strong> y para dar apoyo a las <strong>nuevas referencias del catálogo 2026</strong>.</p>
   </div>
 </section>
 
@@ -490,15 +497,15 @@
   <h2 class="section-title">Colaboraciones — Plan Embajadores T1 2026</h2>
 
   <div class="info-block" style="margin-bottom:28px;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;">
-    <p style="font-size:14px;color:#374151;line-height:1.8">El programa de embajadores USA opera bajo un modelo <strong>producto gratuito por contenido</strong> (sin inversión monetaria). Con una base combinada de <strong>~30.261 seguidores</strong> entre los 3 embajadores activos, se generaron en T1 2026 un total de <strong>26.418 views en 8 reels</strong>. Los resultados son <strong>muy desiguales</strong> en compromiso, calidad y consistencia, evidenciando la limitación estructural del modelo actual y la necesidad de una fuente de contenido más estable y profesional.</p>
+    <p style="font-size:14px;color:#374151;line-height:1.8">El programa de embajadores USA opera bajo un modelo <strong>producto gratuito por contenido</strong> (sin inversión monetaria). Con una base combinada de <strong>~30.261 seguidores</strong> entre los 3 embajadores activos, se generaron en T1 2026 un total de <strong>40.425 views en 13 reels</strong>. Los resultados son <strong>muy desiguales</strong> en compromiso, calidad y consistencia, evidenciando la limitación estructural del modelo actual y la necesidad de una fuente de contenido más estable y profesional.</p>
   </div>
 
   <!-- Stat overview embajadores -->
   <div class="stat-grid" style="margin-bottom:36px;">
     <div class="stat-card">
       <div class="stat-label">Total views T1</div>
-      <div class="stat-value gold">26.418</div>
-      <div class="stat-sub">8 reels · 3 embajadores</div>
+      <div class="stat-value gold">40.425</div>
+      <div class="stat-sub">13 reels · 3 embajadores</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Seguidores combinados</div>
@@ -506,9 +513,9 @@
       <div class="stat-sub">Alcance potencial total</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Views / reel promedio</div>
-      <div class="stat-value warn">3.302</div>
-      <div class="stat-sub">Media global T1 2026</div>
+      <div class="stat-label">Reels totales</div>
+      <div class="stat-value warn">13</div>
+      <div class="stat-sub">mínimo 2 requeridos</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Cumplimiento real</div>
@@ -538,18 +545,18 @@
         </div>
         <div class="emb-stat">
           <div class="emb-stat-label">Reels T1</div>
-          <div class="emb-stat-value">3</div>
+          <div class="emb-stat-value">8</div>
         </div>
         <div class="emb-stat">
           <div class="emb-stat-label">Total Views</div>
-          <div class="emb-stat-value">17.072</div>
+          <div class="emb-stat-value">31.014</div>
         </div>
         <div class="emb-stat">
           <div class="emb-stat-label">Avg Views/reel</div>
-          <div class="emb-stat-value">5.691</div>
+          <div class="emb-stat-value">3.101</div>
         </div>
       </div>
-      <div class="emb-note">2 reels mínimos requeridos + 1 extra. <strong>Mejor ratio views/seguidor (0,39x)</strong>. Contenido profesional, buena edición, aprovechable para repost. Cumple plazos y mantiene comunicación activa. Asistió a Coverings. <strong>Único consistente en T1.</strong></div>
+      <div class="emb-note">2 reels mínimos requeridos + 6 extras. Contenido profesional, buena edición, aprovechable para repost. Cumple plazos y mantiene comunicación activa. Asistió a Coverings. <strong>Único consistente en T1.</strong></div>
       <div class="tags">
         <span class="tag tag-green">Alto rendimiento</span>
         <span class="tag tag-green">Calidad profesional</span>
@@ -573,14 +580,14 @@
         </div>
         <div class="emb-stat">
           <div class="emb-stat-label">Total Views</div>
-          <div class="emb-stat-value">7.264</div>
+          <div class="emb-stat-value">7.286</div>
         </div>
         <div class="emb-stat">
           <div class="emb-stat-label">Avg Views/reel</div>
-          <div class="emb-stat-value">1.816</div>
+          <div class="emb-stat-value">1.822</div>
         </div>
       </div>
-      <div class="emb-note">4 reels (supera mínimo voluntariamente). <strong>Mejor engagement relativo (1,44x views/seguidor)</strong>, pero base de audiencia muy pequeña. Calidad deficiente: edición básica, ángulos poco profesionales. Muy comprometido y proactivo. Candidato para Formaciones Neolith Florida (junio).</div>
+      <div class="emb-note">4 reels (supera mínimo voluntariamente). Base de audiencia muy pequeña pero alto compromiso. Calidad deficiente: edición básica, ángulos poco profesionales. Muy comprometido y proactivo. Candidato para Formaciones futuras en el área de Florida.</div>
       <div class="tags">
         <span class="tag tag-warn">Baja calidad</span>
         <span class="tag tag-warn">Alto compromiso</span>
@@ -604,14 +611,14 @@
         </div>
         <div class="emb-stat">
           <div class="emb-stat-label">Total Views</div>
-          <div class="emb-stat-value">2.082</div>
+          <div class="emb-stat-value">2.125</div>
         </div>
         <div class="emb-stat">
           <div class="emb-stat-label">Avg Views/reel</div>
-          <div class="emb-stat-value">2.082</div>
+          <div class="emb-stat-value">2.125</div>
         </div>
       </div>
-      <div class="emb-note">Solo 1 reel de 2 requeridos (<strong>50% incumplimiento</strong>). Ghosting total: 3+ intentos de contacto sin respuesta. Bajo rendimiento (0,14x views/seguidor). Pese a tener el mayor potencial teórico (14.300 seguidores), el alcance sin compromiso no genera valor real. Pendiente de revisión post-Coverings.</div>
+      <div class="emb-note">Solo 1 reel de 2 requeridos (<strong>50% incumplimiento</strong>). Ghosting total: 3+ intentos de contacto sin respuesta. Pese a tener el mayor potencial teórico (14.300 seguidores), el alcance sin compromiso no genera valor real. Aún no ha subido el segundo video pendiente, aún pasado Coverings.</div>
       <div class="tags">
         <span class="tag tag-red">Incumplimiento 50%</span>
         <span class="tag tag-red">Sin respuesta</span>
@@ -623,20 +630,38 @@
   <!-- Detalle resultados -->
   <table>
     <thead>
-      <tr><th>Embajador</th><th>Seguidores</th><th>Reels cumplidos</th><th>Views totales</th><th>Views/reel</th><th>Views/seguidor</th><th>Calidad</th><th>Compromiso</th></tr>
+      <tr><th>Embajador</th><th>Seguidores</th><th>Reels cumplidos</th><th>Views totales</th><th>Views/reel</th><th>Calidad</th><th>Compromiso</th></tr>
     </thead>
     <tbody>
-      <tr class="highlight"><td><strong>Dumitru Guleac</strong></td><td>14.700</td><td>3 <span class="badge badge-up">✓</span></td><td><strong>17.072</strong></td><td><strong>5.691</strong></td><td>0,39x</td><td><span class="badge badge-up">Alta</span></td><td><span class="badge badge-up">Excelente</span></td></tr>
-      <tr><td><strong>Phillip Harms</strong></td><td>1.261</td><td>4 <span class="badge badge-up">+2 extra</span></td><td>7.264</td><td>1.816</td><td><strong>1,44x</strong></td><td><span class="badge badge-down">Baja</span></td><td><span class="badge badge-up">Muy alto</span></td></tr>
-      <tr><td><strong>Daniel Becerra</strong></td><td>14.300</td><td>1 <span class="badge badge-down">50% ✗</span></td><td>2.082</td><td>2.082</td><td>0,14x</td><td><span class="badge badge-neutral">Media</span></td><td><span class="badge badge-down">Nulo</span></td></tr>
-      <tr style="background:var(--blue-light);"><td><strong>TOTALES</strong></td><td><strong>30.261</strong></td><td><strong>8 reels</strong></td><td><strong>26.418</strong></td><td><strong>3.302 avg</strong></td><td>0,87x avg</td><td>—</td><td>~75% cumpl.</td></tr>
+      <tr class="highlight"><td><strong>Dumitru Guleac</strong></td><td>14.700</td><td>8 <span class="badge badge-up">✓</span></td><td><strong>31.014</strong></td><td><strong>3.101</strong></td><td><span class="badge badge-up">Alta</span></td><td><span class="badge badge-up">Excelente</span></td></tr>
+      <tr><td><strong>Phillip Harms</strong></td><td>1.261</td><td>4 <span class="badge badge-up">+2 extra</span></td><td>7.286</td><td>1.822</td><td><span class="badge badge-down">Baja</span></td><td><span class="badge badge-up">Muy alto</span></td></tr>
+      <tr><td><strong>Daniel Becerra</strong></td><td>14.300</td><td>1 <span class="badge badge-down">50% ✗</span></td><td>2.125</td><td>2.125</td><td><span class="badge badge-neutral">Media</span></td><td><span class="badge badge-down">Nulo</span></td></tr>
+      <tr style="background:var(--blue-light);"><td><strong>TOTALES</strong></td><td><strong>30.261</strong></td><td><strong>13 reels</strong></td><td><strong>40.425</strong></td><td><strong>3.110 avg</strong></td><td>—</td><td>~75% cumpl.</td></tr>
     </tbody>
   </table>
 
   <div class="divider"></div>
 
+  <!-- Nueva prospección -->
+  <h3 style="font-size:18px;font-weight:800;margin-bottom:16px;letter-spacing:-0.5px;color:var(--black);">Nueva prospección — Missy McMaster</h3>
+
+  <div class="info-block" style="border-left:3px solid var(--blue);border-radius:0 8px 8px 0;margin-bottom:8px;">
+    <h4><span class="dot"></span>Contactada el 8 de abril · Pendiente de respuesta</h4>
+    <p>Perfil conocido en <strong>Coverings 2026</strong> — contacto facilitado por el propio equipo de Cortag durante la feria. Se le envió la <strong>propuesta de Plan Embajador el 8 de abril</strong>, sin respuesta hasta la fecha. Disponemos de sus datos de contacto para retomar el contacto si se considera oportuno.<br><br>
+    Perfil de instaladora profesional, similar en escala a Dumitru/Phillip: <strong>~1.298 seguidores</strong>, promedio de <strong>1.000–3.000 views</strong> por publicación. Trabaja junto al propietario de su empresa, <strong>Trueline Tile and Stone</strong> (~1.204 seguidores), con quien colabora habitualmente en vídeos — lo que podría ampliar el alcance combinado.<br><br>
+    Este perfil <strong>no compensaría la falta de una fuente de contenido profesional</strong>, pero serviría para incorporar un nuevo embajador activo dado que se descarta continuar con Daniel Becerra.</p>
+    <div class="tags" style="margin-top:12px;">
+      <span class="tag tag-warn">Pendiente de respuesta</span>
+      <span class="tag">1.298 seguidores</span>
+      <span class="tag">Trueline Tile and Stone</span>
+      <span class="tag">1.000–3.000 views/pub.</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
   <!-- Análisis y propuesta -->
-  <h3 style="font-size:22px;font-weight:800;margin-bottom:20px;letter-spacing:-0.5px;color:var(--black);">¿Por qué necesitamos una fuente estable de contenido?</h3>
+  <h3 style="font-size:22px;font-weight:800;margin-bottom:20px;letter-spacing:-0.5px;color:var(--black);">Necesidad de fuente estable de contenido</h3>
 
   <div class="highlight-box">
     <h3>El modelo "producto por contenido" tiene un límite estructural</h3>
@@ -648,7 +673,7 @@
       <div class="info-block">
         <h4><span class="dot dot-warn"></span>Gap identificado · Comparativa con España</h4>
         <p><strong>Rubén Baz (España, €600/mes):</strong> 76.100 seguidores, 3 reels en T1 → 141.783 views, 100% cumplimiento, calidad excepcional, contenido reutilizable para ads. <strong>CPR: 0,0042€/view.</strong><br><br>
-        <strong>3 embajadores USA (sin pago):</strong> 30.261 seguidores combinados, 8 reels → 26.418 views, ~75% cumplimiento, calidad mixta. La comparativa evidencia que una inversión moderada en un perfil profesional USA generaría un retorno muy superior al modelo gratuito multi-embajador actual.</p>
+        <strong>3 embajadores USA (sin pago):</strong> 30.261 seguidores combinados, 13 reels → 40.425 views, ~75% cumplimiento, calidad mixta.</p>
       </div>
     </div>
     <div>
@@ -666,84 +691,38 @@
 
   <div class="alert alert-info">
     <div class="alert-label">→ Propuesta Piloto T2 2026 — Creador profesional pagado</div>
-    <p>Se propone buscar <strong>1 creador profesional USA</strong> (15K–50K seguidores, contenido técnico instalación) para un piloto de <strong>modelo híbrido: producto + compensación económica ajustada ($400–600/mes)</strong>, por debajo de las tarifas de mercado ($800–1.200/mes), a cambio de exclusividad y compromiso durante 3 meses (Q2 piloto). Objetivo: <strong>2–3 reels/mes de calidad garantizada</strong>, profesionalmente editados, con presentación a cámara, reutilizables para ads y web. Si el piloto funciona, se mantiene; si no, solo 3 meses de inversión moderada.</p>
+    <p>Se propone buscar <strong>1 creador profesional USA</strong> (15K–50K seguidores, contenido técnico instalación) para un piloto de <strong>modelo híbrido: producto + compensación económica ajustada ($400–600/mes)</strong>, por debajo de las cifras actuales, a cambio de exclusividad y compromiso durante 3 meses (Q2 piloto). Objetivo: <strong>2 reels mínimo con calidad garantizada</strong>, profesionalmente editados, con presentación a cámara, reutilizables para ads y web. Si el piloto funciona, se mantiene; si no, solo 3 meses de inversión moderada.</p>
   </div>
 
-  <!-- Eventos T1 -->
-  <div class="divider"></div>
-
-  <h3 style="font-size:20px;font-weight:800;margin-bottom:20px;letter-spacing:-0.5px;color:var(--black);">Coverings 2026 — Las Vegas · 30 mar – 2 abr</h3>
-
-  <div class="two-col">
-    <div class="info-block">
-      <h4><span class="dot dot-green"></span>Activación en feria · Booth #6079</h4>
-      <p>Coverings 2026 fue el evento clave de Q1. <strong>Dumitru Guleac</strong> estuvo presente durante los 4 días del evento generando contenido desde el booth de Cortag. El CEO <strong>Leandro Pitzeta</strong> también estuvo presente. Se organizó un <strong>raffle con Cortadora PRIME + merch</strong> (gorra/camiseta), con mecánica de papeletas físicas y seguimiento de @cortagusa en Instagram. Promoción mediante stories y cartel A4 físico en booth (sin inversión en ads).</p>
-      <div class="tags">
-        <span class="tag tag-green">Dumitru presente todos los días</span>
-        <span class="tag tag-green">Raffle PRIME</span>
-        <span class="tag">Demos en vivo</span>
-      </div>
-    </div>
-    <div class="info-block">
-      <h4><span class="dot dot-warn"></span>Formación Neolith GPTP · Florida · 8–10 jun</h4>
-      <p><strong>Hands-on training Large Format Tile</strong> en Pembroke Park, Florida. Al finalizar, los asistentes reciben <strong>certificación ANSI + Neolith</strong>. Se está valorando la participación de <strong>Phillip Harms</strong> (días 9–10) como oportunidad de: <em>(1)</em> generar contenido formativo de calidad, <em>(2)</em> encuentro presencial para feedback de mejora de calidad, y <em>(3)</em> aprovechar su ubicación estratégica en Florida. Respuesta pendiente de confirmación (contexto duelo familiar).</p>
-      <div class="tags">
-        <span class="tag tag-warn">Pendiente confirmación Phillip</span>
-        <span class="tag">Certificación ANSI + Neolith</span>
-        <span class="tag">Contenido formativo</span>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- 05 PRÓXIMAS ACCIONES T2 2026 -->
-<section>
+<section class="page-break">
   <div class="section-label">05</div>
   <h2 class="section-title">Próximas acciones — T2 2026</h2>
 
-  <p style="color:#374151;font-size:14px;margin-bottom:28px;max-width:720px;line-height:1.8">El T2 2026 se articula en <strong>cuatro ejes estratégicos</strong> que buscan superar las limitaciones identificadas en T1: activar paid media con criterio, profesionalizar el modelo de embajadores, capitalizar las nuevas referencias de catálogo y aprovechar los eventos del trimestre.</p>
+  <p style="color:#374151;font-size:14px;margin-bottom:28px;max-width:720px;line-height:1.8">El T2 2026 se articula en <strong>tres ejes estratégicos</strong> que buscan superar las limitaciones identificadas en T1: activar paid media con criterio, profesionalizar el modelo de embajadores y capitalizar las nuevas referencias de catálogo.</p>
 
   <div class="pending-list">
     <div class="pending-item">
       <div class="icon icon-crit">!</div>
       <div class="text">
         <strong>Retoma de Meta Ads con presupuesto analizado</strong>
-        <span>Preparar propuesta de presupuesto revisado con proyección de leads y ROI basada en historial de campañas (MEGA 125: 102 leads / R$683). Objetivo: obtener aprobación de Brasil para presupuesto ampliado. Priorizar amplificación de contenido embajadores de calidad (Coverings, Dumitru) y soporte a nuevas referencias de catálogo 2026.</span>
+        <span>Recarga de fondos completada — <b>~$320 disponibles para campañas</b>. Se accionará campaña sobre la <b>PRIME o MEGA</b> y alguna acción adicional de generación de leads. Pendiente de validar con el equipo comercial si hay alguna referencia a destacar u oferta/promoción de interés para incluir.</span>
       </div>
     </div>
     <div class="pending-item">
       <div class="icon icon-crit">!</div>
       <div class="text">
         <strong>Ampliación Plan Embajadores — Nuevos perfiles + piloto remunerado</strong>
-        <span>Presentar resultados del estudio de nuevos perfiles USA (5K–50K seguidores, contenido técnico instalación). Proponer piloto colaboración híbrida pagada ($400–600/mes · 3 meses Q2). Decisión sobre Daniel Becerra post-Coverings. Evaluación condicional de Phillip según mejora de calidad o participación en Formaciones Florida. Mantener y priorizar a Dumitru como embajador principal.</span>
+        <span>Mantener a <b>Phillip Harms</b> para invitarle a formaciones y participación en eventos en Florida. Mantener a <b>Dumitru Guleac</b> como embajador principal (proponer envío ocasional en T2 de alguna referencia con bajo valor o referencia interesante, sin pack grande). <b>Discontinuar a Daniel Becerra</b>. Missy McMaster contactada — pendiente de respuesta.</span>
       </div>
     </div>
     <div class="pending-item">
       <div class="icon icon-med">·</div>
       <div class="text">
         <strong>Implementación y apoyo a nuevas referencias catálogo 2026</strong>
-        <span>Pendiente recepción de specs técnicas del equipo de Brasil para los Remendadores Eléctricos Carsco MDD (lanzamiento previsto abril 2026). Creación de contenido de presentación, integración en calendario RRSS y posible soporte de ads para el lanzamiento. Coordinación con Juan y Raúl para material comercial disponible.</span>
-      </div>
-    </div>
-    <div class="pending-item">
-      <div class="icon icon-med">·</div>
-      <div class="text">
-        <strong>Formación Neolith GPTP — Pembroke Park, Florida (8–10 jun)</strong>
-        <span>Confirmar participación de Phillip Harms (días 9–10). En caso de asistencia: briefing de contenido previo, acompañamiento en objetivos de grabación, feedback directo sobre calidad. Oportunidad para contenido formativo certificado (ANSI + Neolith) aprovechable en canales Cortag USA y posibles ads.</span>
-      </div>
-    </div>
-    <div class="pending-item">
-      <div class="icon icon-low">·</div>
-      <div class="text">
-        <strong>Activación red de distribuidores para UGC y testimonios</strong>
-        <span>Explorar la red de distribuidores USA como fuente de contenido orgánico (testimonios, demos en instalaciones reales). Aprovechar perfiles como @dbtile, @americas_supplies, @rigotile (Florida) para menciones y repost. Sin coste adicional, refuerza la credibilidad B2B en el mercado americano.</span>
-      </div>
-    </div>
-    <div class="pending-item">
-      <div class="icon icon-green">✓</div>
-      <div class="text">
-        <strong>Continuidad de contenido orgánico — Calendario publicaciones Q2</strong>
-        <span>Mantener el ritmo de publicación semanal en Instagram y Facebook con mix de contenido: reels de producto, repost de embajadores, carruseles técnicos y stories de activación. Priorizar contenido reutilizable de Coverings y generar teasers para lanzamiento Carsco MDD. Monitorización mensual de métricas IG + FB para ajuste de estrategia.</span>
+        <span>Apoyo en RRSS sobre nuevas referencias a potenciar (pendiente saber novedades y nuevo catálogo). Implementación y apoyo a nuevas referencias catálogo 2026.</span>
       </div>
     </div>
   </div>
@@ -772,6 +751,7 @@
     return {
       responsive: true,
       maintainAspectRatio: false,
+      layout: { padding: { left: 4, right: 4 } },
       plugins: {
         legend: { display: false },
         tooltip: {
@@ -785,12 +765,12 @@
         }
       },
       scales: {
-        x: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 11 } } },
+        x: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 8 }, maxRotation: 0 } },
         y: {
           grid: { color: gridColor },
-          ticks: { color: '#9CA3AF', font: { size: 11 } },
+          ticks: { color: '#9CA3AF', font: { size: 8 } },
           beginAtZero: true,
-          title: yLabel ? { display: true, text: yLabel, color: '#9CA3AF', font: { size: 10 } } : undefined
+          title: yLabel ? { display: true, text: yLabel, color: '#9CA3AF', font: { size: 8 } } : undefined
         }
       }
     };
@@ -906,14 +886,14 @@
       datasets: [
         {
           label: 'Views totales',
-          data: [17072, 7264, 2082],
+          data: [31014, 7286, 2125],
           backgroundColor: ['rgba(22,163,74,0.75)', 'rgba(217,119,6,0.65)', 'rgba(192,57,43,0.65)'],
           borderRadius: 4,
           yAxisID: 'y'
         },
         {
           label: 'Views/reel promedio',
-          data: [5691, 1816, 2082],
+          data: [3101, 1822, 2125],
           backgroundColor: ['rgba(22,163,74,0.3)', 'rgba(217,119,6,0.3)', 'rgba(192,57,43,0.3)'],
           borderRadius: 4,
           yAxisID: 'y'
@@ -940,10 +920,10 @@
         }
       },
       scales: {
-        x: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 11 } } },
+        x: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 8 }, maxRotation: 0 } },
         y: {
           grid: { color: gridColor },
-          ticks: { color: '#9CA3AF', font: { size: 11 } },
+          ticks: { color: '#9CA3AF', font: { size: 8 } },
           beginAtZero: true
         }
       }
@@ -990,10 +970,26 @@
         }
       },
       scales: {
-        x: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 10 } } },
-        y: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 11 } }, beginAtZero: true }
+        x: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 8 }, maxRotation: 0 } },
+        y: { grid: { color: gridColor }, ticks: { color: '#9CA3AF', font: { size: 8 } }, beginAtZero: true }
       }
     }
+  });
+
+  // Genera imágenes estáticas de cada gráfica al cargar la página,
+  // a tamaño natural (antes de que @media print aplique ningún estilo).
+  // En impresión: canvas oculto vía CSS, imagen visible con height:auto.
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.querySelectorAll('.chart-wrap canvas').forEach(function(canvas) {
+        if (canvas.nextElementSibling && canvas.nextElementSibling.classList.contains('chart-img')) return;
+        var img = document.createElement('img');
+        img.src = canvas.toDataURL('image/png');
+        img.className = 'chart-img';
+        img.style.display = 'none'; // invisible en vista web normal
+        canvas.parentNode.insertBefore(img, canvas.nextSibling);
+      });
+    }, 600); // espera a que Chart.js termine de renderizar
   });
 </script>
 </body>

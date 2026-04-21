@@ -24,7 +24,13 @@
       "Bash(unzip -o cortag_usa.xlsx -d cortag_usa_xl)",
       "Read(//tmp/cortag_usa_xl/xl/**)",
       "Bash(sed 's/<[^>]*>//g')",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(where chrome:*)",
+      "Bash(where chromium:*)",
+      "Bash(pip show:*)",
+      "Bash(python -c \"import weasyprint\")",
+      "Bash(python generate_pdf.py)",
+      "Bash(python:*)"
     ]
   }
 }
