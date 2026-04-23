@@ -6,6 +6,12 @@ Fuente: cortag.com/es + distribuidores España
 ## 1. CORTADORAS MANUALES
 ===========================================
 
+### Infinity Plus (gran formato - nuevo modelo)
+- Cortadora de suelo gran formato, última innovación de la línea Infinity
+- Corta grandes formatos con facilidad, comodidad y alta precisión
+- Diferencial: Diseño estructural optimizado para gran formato en suelo
+- Web: https://cortag.com/es/producto/cortador-infinity-plus/
+
 ### Línea PRIME (gama alta)
 - PRIME 180: Cortadora manual 180cm gran formato
 - PRIME 125: Cortadora manual 125cm
@@ -84,6 +90,15 @@ Fuente: cortag.com/es + distribuidores España
 - Sistema aluminio con soportes acero carbono alta resistencia
 - Uso: Mover piezas gran formato sin riesgo roturas
 
+### Infinity Single Bar (sistema manipulación - nuevo)
+- 2 ventosas con capacidad de carga hasta 110 lb (50 kg)
+- Estructura aluminio: ligera, resistente y fácil de manipular
+- Apoyos engomados protegen la pieza durante el movimiento
+- Capacidad aplicación: piezas hasta 47.24" (1,20 m)
+- Empuñadura ergonómica revestida de goma
+- Componentes reforzados acero al carbono — alta durabilidad uso profesional diario
+- Diferencial: Agarre seguro + ligereza + protección pieza en un solo sistema
+
 ### Pinzas
 - Pinzas transporte placas cerámica
 - Distintas capacidades de carga
@@ -161,3 +176,4 @@ MENSAJES CLAVE POR PRODUCTO:
 - Sistema SMART → "nivelación para todos, precio sin excusas"
 
 WEB PRODUCTOS: https://cortag.com/es/categoria/herramientas-y-accesorios-para-construccion/
+WEB PRINCIPAL: https://cortag.com/es/
