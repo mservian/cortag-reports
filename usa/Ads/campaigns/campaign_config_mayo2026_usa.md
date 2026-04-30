@@ -8,11 +8,12 @@
 
 ## ⚠️ NOTAS PREVIAS AL LANZAMIENTO
 
-- **Verificar antes de lanzar:** Cuánto ha gastado webcompany en abril (acceder a Ads Manager y ver todas las campañas activas)
-- **Confirmar recarga 1 mayo:** ¿Llegan 800 R$ nuevamente? ¿Se acumula el saldo de abril?
-- **Webcompany activa:** Monitorizar que su gasto no afecte nuestro presupuesto
-- **Presupuesto conservador:** Campaña de 600 R$ — dejamos 150 R$ reserva seguridad
-- **Asset:** Vídeo presencia ferias (mismo que Europe, sin voz en off — válido para USA)
+- **Saldo cuenta hoy (30/04):** 1.030 R$ confirmados
+- **Webcompany:** Campaña activa desde 31 marzo, sin fin, 2 conjuntos de anuncios, ~16,50 R$/día — llevan gastados 492 R$ (casi han agotado su carga de ~500 R$)
+- **Confirmar 01/05:** ¿Llegan 800 R$ de recarga T4D? ¿Recarga webcompany o sus campañas se pausan?
+- **Presupuesto campaña:** 600 R$ — viable en ambos escenarios (ver `budget/monthly_budget.md`)
+- **Reserva seguridad:** 150 R$ sin tocar
+- **Asset:** Vídeo presencia ferias (mismo que Europe, sin voz en off — válido para USA sin modificaciones)
 
 ---
 

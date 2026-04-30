@@ -23,50 +23,68 @@ Esta cuenta Meta Ads USA la comparten **dos equipos con presupuestos cargados po
 
 ---
 
-## 📊 RESUMEN PRESUPUESTO ABRIL 2026
+## 📊 ESTADO CUENTA — 30 ABRIL 2026 (DATOS REALES)
 
 | Concepto | Monto (R$) | Monto (USD) | Estado |
 |----------|-----------|------------|---------|
-| **Recarga Team4Digital (01/04)** | 800 | ~140 | ✅ Confirmada |
-| **Recarga Webcompany (01/04)** | 500 | ~88 | ✅ Confirmada (no controlamos) |
-| **Gastado Marta (Team4Digital)** | 0 | 0 | Sin campañas lanzadas en abril |
-| **Gastado Webcompany (estimado)** | ? | ? | ⚠️ Verificar en Ads Manager |
-| **Disponible Team4Digital** | ~800 | ~140 | ✅ Usable (pendiente verificar) |
+| **Saldo cuenta hoy (30/04)** | **1.030** | **~181** | ✅ Confirmado |
+| **Recarga Team4Digital (01/04)** | 800 | ~140 | ✅ Cargada |
+| **Recarga Webcompany** | 500 | ~88 | ✅ Cargada (no controlamos) |
+| **Gastado Team4Digital** | 0 | 0 | Sin campañas en abril |
+| **Gastado Webcompany (real)** | 492 | ~86 | En curso desde 31/03 |
 | **Reserva seguridad** | 150 | ~26 | 🔒 No tocar |
 
 **Tasa conversión referencia:** 1 USD ≈ 5,70 R$ / 1€ ≈ 6,15 R$ (variable)
 
-**⚠️ NOTA ABRIL:** No se lanzó ninguna campaña desde Team4Digital en abril. El presupuesto de 800 R$ está disponible pero el mes termina hoy (30/04). Verificar si el saldo no gastado se acumula o se pierde al cambiar de mes según cómo está configurada la recarga en la cuenta.
-
 ---
 
-## 💸 DETALLE GASTO ABRIL 2026
+## 💸 DETALLE GASTO — WEBCOMPANY (CAMPAÑA ACTIVA)
+
+### Campaña Webcompany
+- **Inicio:** 31 marzo 2026
+- **Fin:** Sin definir (indefinida ⚠️)
+- **Conjuntos de anuncios:** 2 (entre los dos suman 16,50 R$/día)
+- **Gasto diario real:** ~16,50 R$/día (~$2,90 USD) total entre ambos conjuntos
+- **Gastado hasta 30/04 (confirmado):** **492 R$** (≈ 30 días × 16,40 R$/día)
+- **Su presupuesto cargado (~500 R$) casi agotado:** quedan ~8 R$ de su carga inicial
+- **Proyección mayo (si recargan):** ~16,50 × 30 = ~495 R$ adicionales mes completo
+- **Proyección durante nuestra campaña (14 días):** ~16,50 × 14 = ~231 R$
+
+**⚠️ RIESGO:** Campaña sin fecha de fin. Si webcompany NO recarga para mayo, sus campañas se pausarán solas (su saldo está casi a 0). Si SÍ recargan, seguirán consumiendo ~16,50 R$/día. Verificar el 1 de mayo qué hacen.
 
 ### Campañas Team4Digital (Marta)
 - **Ninguna campaña lanzada en abril**
-- Motivo: Primer mes con presupuesto real, pendiente definir estrategia
-- Gasto: **0 R$**
-
-### Campañas Webcompany
-- Estado: **Por verificar en Ads Manager**
-- Presupuesto webcompany: 500 R$
-- **⚠️ Acción urgente:** Revisar en la cuenta cuánto han gastado y si tienen campañas sin fecha de fin activas
+- **Gasto: 0 R$**
 
 ---
 
 ## 📈 PROYECCIÓN MAYO 2026
 
-### Presupuesto Disponible Mayo
+### Presupuesto Disponible para Campaña Mayo
+
+**Escenario A — Webcompany NO recarga (probable, casi sin saldo)**
 ```
-Recarga Team4Digital mayo:      800 R$ (pendiente confirmar si es mensual recurrente)
-Saldo pendiente de abril:       ~800 R$ (si acumula)
-Campañas webcompany activas:    ??? R$ (verificar, riesgo)
-Reserva seguridad:             -150 R$
---------------------------------------------
-DISPONIBLE ESTIMADO:           ~650 R$ (~114 USD)
+Saldo cuenta hoy (30/04):       1.030 R$
+Recarga T4D mayo (01/05):        +800 R$ (pendiente confirmar)
+Webcompany gasto restante:         -8 R$ (casi agotados)
+Reserva seguridad:               -150 R$
+-----------------------------------------------
+DISPONIBLE TEAM4DIGITAL:       ~1.672 R$ — con holgura
 ```
 
-**⚠️ CONSERVADOR:** Planificar campaña con 600 R$ máximo. Dejar margen por incertidumbre webcompany.
+**Escenario B — Webcompany SÍ recarga para mayo**
+```
+Saldo cuenta hoy (30/04):       1.030 R$
+Recarga T4D mayo (01/05):        +800 R$ (pendiente confirmar)
+Webcompany 14 días campaña:      -231 R$ (16,50 R$/día × 14 días)
+Reserva seguridad:               -150 R$
+-----------------------------------------------
+DISPONIBLE TEAM4DIGITAL:       ~1.449 R$ — igualmente viable
+```
+
+**Estado ambos escenarios:** 🟢 VERDE — 600 R$ para campaña Branding Ferias es perfectamente viable
+
+**⚠️ Acción 01/05:** Verificar si webcompany recargó y si su campaña sigue activa. Actualizar proyección según lo que hagan.
 
 ---
 
