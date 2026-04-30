@@ -30,7 +30,9 @@
       "Bash(pip show:*)",
       "Bash(python -c \"import weasyprint\")",
       "Bash(python generate_pdf.py)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
