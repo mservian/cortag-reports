@@ -22,7 +22,7 @@
 ## VARIACIÓN 1 — Trade show presence / Pro trust ⭐ RECOMENDADA PARA TEST
 
 **Primary Text:**
-Where the tile industry gathers, Cortag is always in the room. 🏆 Tools built for the pros who take their craft seriously.
+Where the tile industry gathers, Cortag is always in the room. 🏆 Tools built for the pros who take their craft seriously. Available at pro tile supply stores near you — DM us to find your closest dealer. 📍
 
 **Headline:**
 Built for tile pros.
@@ -37,7 +37,7 @@ Follow @cortagusa
 ## VARIACIÓN 2 — Global brand, American job sites
 
 **Primary Text:**
-From international trade shows to your job site — Cortag tools are where the pros are. 🌎 Check out what the industry is talking about.
+From international trade shows to your job site — Cortag tools are where the pros are. 🌎 Find us at your local tile supply store or DM us for your nearest location. 📍
 
 **Headline:**
 The global tile tool brand.
@@ -52,7 +52,7 @@ Learn more
 ## VARIACIÓN 3 — Craft & quality aspirational
 
 **Primary Text:**
-Great installs start with the right tools. That's why tile pros worldwide trust Cortag to deliver — every cut, every time. ✨
+Great installs start with the right tools. That's why tile pros worldwide trust Cortag to deliver — every cut, every time. ✨ Available at pro construction supply stores near you. DM us to find your closest dealer.
 
 **Headline:**
 Pro-level precision. Every time.
@@ -67,7 +67,7 @@ Discover Cortag
 ## VARIACIÓN 4 — Social proof sector
 
 **Primary Text:**
-Tile contractors don't pick their tools by accident. Cortag has been the go-to choice for professionals who know the difference. 🔧 Do you know Cortag?
+Tile contractors don't pick their tools by accident. Cortag has been the go-to choice for professionals who know the difference. 🔧 Find us at your local construction supply store — DM us to locate your nearest dealer.
 
 **Headline:**
 The pro's choice.
@@ -82,7 +82,7 @@ See the full lineup
 ## VARIACIÓN 5 — Community / Follow growth ⭐ RECOMENDADA PARA TEST SEGUIDORES
 
 **Primary Text:**
-We were at the biggest tile industry events — and we're bringing it all to @cortagusa. 👋 Follow us and stay ahead of what's happening in the tile world.
+We were at the biggest tile industry events — and we're bringing it all to @cortagusa. 👋 Follow us and stay ahead of what's happening in the tile world. Available at pro tile supply stores near you — DM us for your nearest location. 📍
 
 **Headline:**
 Follow the tile pros' brand.
@@ -111,7 +111,8 @@ Tras 4-5 días, pausar la de peor rendimiento en CTR y coste por seguidor.
 
 - "Where the tile industry gathers" → evoca ferias sin nombrarlas (Coverings etc.)
 - "Tile pros" / "tile contractors" → terminología americana correcta
-- No se menciona ningún distribuidor → cumple restricción legal
+- "Available at pro tile/construction supply stores near you" → genérico, sin nombrar distribuidores → cumple restricción legal
+- "DM us to find your nearest dealer/location" → dirige tráfico al DM de @cortagusa, no a e-commerce
 - No CTA de compra → cumple modelo B2B sin e-commerce
 - Copies cortos y directos → hook fuerte en primeras palabras (regla USA)
 - Emojis moderados (🏆 🌎 ✨ 🔧 👋) → correcto para sector profesional
