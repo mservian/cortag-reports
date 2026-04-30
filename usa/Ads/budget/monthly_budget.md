@@ -1,144 +1,134 @@
 # 💰 PRESUPUESTO MENSUAL META ADS - CORTAG USA
 
-**Mes:** Mayo 2026  
+**Mes:** Abril–Mayo 2026  
 **Última actualización:** 30 abril 2026  
 **Responsable:** Marta Servián (Team4Digital)
 
 ---
 
-## 📊 RESUMEN PRESUPUESTO MAYO 2026
+## ⚠️ CONTEXTO CRÍTICO — DOS EQUIPOS EN MISMA CUENTA
+
+Esta cuenta Meta Ads USA la comparten **dos equipos con presupuestos cargados por separado:**
+
+| Equipo | Presupuesto cargado | Control | Riesgo |
+|--------|-------------------|---------|--------|
+| **Team4Digital (Marta)** | 800 R$/mes | ✅ Nuestro | — |
+| **Webcompany** | 500 R$/mes | ❌ Sin control | ⚠️ Alto |
+
+**⚠️ RIESGO WEBCOMPANY:**
+- Ejecutan campañas "a su bola" — sin coordinación
+- Lanzan campañas a veces sin fecha de fin → pueden sobrepasar su presupuesto de 500 R$
+- Si se quedan sin presupuesto propio, pueden afectar el balance general de la cuenta
+- **Acción:** Revisar semanalmente qué campañas hay activas en la cuenta (todas, no solo las nuestras)
+
+---
+
+## 📊 RESUMEN PRESUPUESTO ABRIL 2026
 
 | Concepto | Monto (R$) | Monto (USD) | Estado |
 |----------|-----------|------------|---------|
-| **Presupuesto mensual** | Hasta 800 | ~140 | ⏳ Confirmar recarga |
-| **Gastado hasta hoy** | 0 | 0 | — |
-| **Comprometido pendiente** | 0 | 0 | — |
-| **Disponible real** | ~800 | ~140 | ⏳ Pendiente confirmar |
-| **Reserva seguridad** | 100 | ~18 | 🔒 No tocar |
+| **Recarga Team4Digital (01/04)** | 800 | ~140 | ✅ Confirmada |
+| **Recarga Webcompany (01/04)** | 500 | ~88 | ✅ Confirmada (no controlamos) |
+| **Gastado Marta (Team4Digital)** | 0 | 0 | Sin campañas lanzadas en abril |
+| **Gastado Webcompany (estimado)** | ? | ? | ⚠️ Verificar en Ads Manager |
+| **Disponible Team4Digital** | ~800 | ~140 | ✅ Usable (pendiente verificar) |
+| **Reserva seguridad** | 150 | ~26 | 🔒 No tocar |
 
 **Tasa conversión referencia:** 1 USD ≈ 5,70 R$ / 1€ ≈ 6,15 R$ (variable)
 
----
-
-## 💸 CONTEXTO PRESUPUESTO USA
-
-### Situación Anterior
-- **Presupuesto histórico:** ~$50/mes (equivalente a ~285 R$) — extremadamente limitado
-- **Uso anterior:** Guardado para acciones grandes, sin inversión en sorteos/amplificación habitual
-- **Resultado:** Presencia ads mínima hasta ahora
-
-### Situación Actual (Mayo 2026)
-- **Nuevo presupuesto:** Hasta 800 R$ (~140 USD) al mes
-- **Incremento:** +180% respecto a presupuesto anterior
-- **Oportunidad:** Primera campaña Ads real con presupuesto operativo
+**⚠️ NOTA ABRIL:** No se lanzó ninguna campaña desde Team4Digital en abril. El presupuesto de 800 R$ está disponible pero el mes termina hoy (30/04). Verificar si el saldo no gastado se acumula o se pierde al cambiar de mes según cómo está configurada la recarga en la cuenta.
 
 ---
 
-## 💸 DETALLE GASTO MAYO 2026
+## 💸 DETALLE GASTO ABRIL 2026
 
 ### Campañas Team4Digital (Marta)
+- **Ninguna campaña lanzada en abril**
+- Motivo: Primer mes con presupuesto real, pendiente definir estrategia
+- Gasto: **0 R$**
 
-*[Sin campañas activas aún — completar cuando se lancen]*
-
----
-
-### Campañas Brasil / Otros
-
-*[Verificar semanalmente si Brasil lanza campañas paralelas en cuenta USA]*
-
-**⚠️ IMPORTANTE:** Aunque es menos frecuente que en Europe, Brasil puede lanzar campañas sin aviso. Revisar estado cuenta semanalmente.
+### Campañas Webcompany
+- Estado: **Por verificar en Ads Manager**
+- Presupuesto webcompany: 500 R$
+- **⚠️ Acción urgente:** Revisar en la cuenta cuánto han gastado y si tienen campañas sin fecha de fin activas
 
 ---
 
-## 📈 GASTO ACUMULADO Y PROYECCIÓN
+## 📈 PROYECCIÓN MAYO 2026
 
-### Gasto Confirmado
+### Presupuesto Disponible Mayo
 ```
-Total gastado:         0 R$
+Recarga Team4Digital mayo:      800 R$ (pendiente confirmar si es mensual recurrente)
+Saldo pendiente de abril:       ~800 R$ (si acumula)
+Campañas webcompany activas:    ??? R$ (verificar, riesgo)
+Reserva seguridad:             -150 R$
+--------------------------------------------
+DISPONIBLE ESTIMADO:           ~650 R$ (~114 USD)
 ```
 
-### Presupuesto Disponible
-```
-Presupuesto mes:      ~800 R$
-Campañas activas:        0 R$
-Reserva seguridad:    -100 R$
----------------------------------
-DISPONIBLE:           ~700 R$ (~123 USD)
-```
+**⚠️ CONSERVADOR:** Planificar campaña con 600 R$ máximo. Dejar margen por incertidumbre webcompany.
 
 ---
 
-## 🎯 PROPUESTA CAMPAÑA MAYO 2026
+## 🎯 CAMPAÑA PLANIFICADA MAYO 2026
 
-*[Completar una vez Marta defina el objetivo y asset disponible]*
-
-### Propuesta 1: [NOMBRE CAMPAÑA]
-- Presupuesto: [X] R$
-- Duración: [X] días
-- Asset: [Video UGC / Foto producto / Otro]
-- Objetivo: [Awareness / Traffic / Engagement]
-- **Estado:** ⏳ Por definir
+### Campaña: Branding Ferias USA — Brand Awareness
+- **Presupuesto:** 600 R$ (~105 USD)
+- **Duración:** 14 días
+- **Asset:** Vídeo presencia ferias (mismo que Europe, universal sin voz)
+- **Objetivo:** Reconocimiento marca + ganar seguidores @cortagusa
+- **Estado:** ⏳ Pendiente lanzar — ver `campaigns/campaign_config_mayo2026_usa.md`
 
 ---
 
 ## 📅 HISTORIAL RECARGAS
 
-| Mes | Fecha Recarga | Monto (R$) | Monto (USD) | Estado |
-|-----|--------------|-----------|------------|--------|
-| Histórico | — | ~285 R$ equiv. | ~$50 | ✅ Completado |
-| Mayo 2026 | [01/05/2026?] | Hasta 800 | ~140 | ⏳ Confirmar |
+| Mes | Fecha Recarga T4D | Monto T4D | Monto Webcompany | Estado |
+|-----|------------------|-----------|-----------------|--------|
+| Abril 2026 | 01/04/2026 | 800 R$ | 500 R$ | ✅ Confirmado |
+| Mayo 2026 | 01/05/2026? | 800 R$? | 500 R$? | ⏳ Por confirmar |
 
-**Responsable recarga:** Cortag Brasil  
-**⚠️ Confirmar con Juan Luis / Brasil:** Fecha exacta, monto exacto y proceso recarga cuenta USA
+**⚠️ Confirmar con Brasil/Juan Luis:** ¿La recarga de 800 R$ es mensual recurrente o fue un único cargo?
 
 ---
 
 ## 🔔 ALERTAS PRESUPUESTO USA
 
-### Semáforo
+### Semáforo (Team4Digital)
 - 🟢 **Verde:** >500 R$ disponibles → OK lanzar campaña estándar
 - 🟡 **Amarillo:** 200-500 R$ disponibles → Solo campaña pequeña o test
 - 🔴 **Rojo:** <200 R$ disponibles → Solo emergencias, esperar recarga
 
-**Estado actual:** ⏳ Pendiente confirmar recarga
+**Estado actual Team4Digital:** 🟢 VERDE (~800 R$ disponibles — ninguna campaña activa)  
+**Estado webcompany:** ⚠️ DESCONOCIDO — verificar Ads Manager
 
 ### Recordatorios
-- [ ] Confirmar fecha y monto exacto recarga cuenta USA con Brasil/Juan Luis
+- [ ] **URGENTE 30/04:** Revisar en Ads Manager qué campañas tiene activas webcompany y cuánto han gastado
+- [ ] **01/05:** Confirmar si llega recarga mensual de 800 R$
 - [ ] Revisar gasto semanalmente (cada lunes)
-- [ ] Verificar si Brasil tiene campañas activas en cuenta USA
-- [ ] Actualizar este archivo al lanzar cualquier campaña
+- [ ] Actualizar este archivo al lanzar campaña
 
 ---
 
 ## 📊 HISTÓRICO GASTOS 2026 (USA)
 
 ### T1 2026 (Enero - Marzo)
-- **Gasto total:** ~$50/mes × 3 meses = ~$150 (~855 R$)
-- **Campañas:** Principalmente gestión mínima, sin campañas pagas significativas
+- **Presupuesto anterior:** ~$50/mes (equivalente ~285 R$)
+- **Uso:** Mínimo, sin campañas pagas significativas
 
-### Abril 2026
-- **Gasto total:** ~$50 (~285 R$)
-- **Campañas:** [Completar si hubo alguna]
+### Abril 2026 (Team4Digital)
+- **Gasto Team4Digital:** 0 R$
+- **Gasto Webcompany:** Por verificar
 
 ---
 
 ## 📝 NOTAS IMPORTANTES
 
-1. **Presupuesto mucho más limitado que Europe** (800 R$ vs 2.470 R$): Priorizar UNA campaña bien hecha
-2. **Sin Cortag Expert USA:** No hay programa de fidelización, sin sorteos/leads complejos
-3. **Dependencia UGC:** Sin producción propia — confirmar asset disponible antes de planificar
-4. **Coordinación Juan Luis:** Consultar con National Sales Manager para alinear objetivos campaña con ventas
-5. **Reserva seguridad:** Mantener siempre 100 R$ sin asignar
-
----
-
-## 🎯 ACCIONES SIGUIENTES
-
-- [ ] **[URGENTE]** Confirmar monto exacto y fecha recarga presupuesto USA con Brasil
-- [ ] Definir objetivo campaña mayo con Juan Luis Arronte
-- [ ] Confirmar qué asset/contenido UGC está disponible
-- [ ] Lanzar primera campaña con presupuesto real
-- [ ] Actualizar este archivo al lanzar campaña
+1. **Presupuesto USA mucho más limitado que Europe:** 800 R$ vs 2.470 R$ — priorizar UNA campaña bien ejecutada
+2. **Webcompany es riesgo:** Verificar semanalmente su actividad en la cuenta compartida
+3. **Sin Cortag Expert USA:** No hay programa fidelización ni sorteos como en Europe
+4. **Reserva seguridad 150 R$:** Siempre mantener sin asignar, especialmente por incertidumbre webcompany
+5. **Confirmar mensualidad:** ¿800 R$ es recurrente cada 1 de mes?
 
 ---
 

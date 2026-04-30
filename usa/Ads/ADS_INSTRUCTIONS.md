@@ -17,9 +17,17 @@
 - **Conversión aproximada:** 1 USD ≈ 5,7 R$ / 1€ ≈ 6,15 R$ (variable)
 
 ### Presupuesto Actual
-- **Presupuesto mensual disponible:** Hasta 800 R$ (~140 USD / ~130€)
-- **Presupuesto anterior:** ~$50/mes (era muy limitado, ahora se amplía)
+- **Recarga mensual Team4Digital:** 800 R$ (~140 USD) — Brasil carga el día 1 de cada mes
+- **Recarga mensual Webcompany:** 500 R$ adicionales (misma cuenta, sin nuestro control)
+- **Primera recarga real:** 1 abril 2026
 - **Estado:** Verificar en `budget/monthly_budget.md`
+
+### ⚠️ SITUACIÓN WEBCOMPANY — CRÍTICO
+- **Webcompany** gestiona también esta cuenta Meta Ads USA con presupuesto propio de 500 R$/mes
+- **Sin coordinación:** Lanzan campañas sin avisar, a veces sin fecha de fin definida
+- **Riesgo:** Pueden sobrepasar su presupuesto o generar confusión en el Ads Manager
+- **Acción semanal OBLIGATORIA:** Revisar en Ads Manager qué campañas están activas (todas, no solo las nuestras)
+- **Nunca asumir** que todo el saldo disponible en la cuenta es nuestro — verificar gasto real primero
 
 ---
 
@@ -27,10 +35,10 @@
 
 ### Reglas Presupuestarias
 1. **SIEMPRE** verificar presupuesto disponible antes de proponer campañas
-2. **SIEMPRE** considerar si Brasil tiene campañas activas paralelas en esta cuenta
+2. **SIEMPRE** revisar campañas activas de webcompany en la cuenta (pueden consumir saldo sin aviso)
 3. **Presupuesto mínimo por campaña:** 200 R$ (~35 USD) — campañas test
 4. **Presupuesto estándar:** 400-600 R$ (~70-105 USD)
-5. **Reserva seguridad:** Mantener 100-150 R$ sin asignar (imprevistos Brasil)
+5. **Reserva seguridad:** Mantener 150 R$ sin asignar (buffer webcompany + imprevistos)
 
 ### Cálculo Presupuesto Disponible
 ```
