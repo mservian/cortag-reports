@@ -1,7 +1,7 @@
 # 💰 PRESUPUESTO MENSUAL META ADS - CORTAG USA
 
 **Mes:** Abril–Mayo 2026  
-**Última actualización:** 30 abril 2026  
+**Última actualización:** 4 mayo 2026  
 **Responsable:** Marta Servián (Team4Digital)
 
 ---
@@ -38,19 +38,37 @@ Esta cuenta Meta Ads USA la comparten **dos equipos con presupuestos cargados po
 
 ---
 
+## 📊 ESTADO CUENTA — 4 MAYO 2026 (DATOS REALES)
+
+| Concepto | Monto (R$) | Estado |
+|----------|-----------|--------|
+| **Saldo cuenta hoy (04/05)** | **736,59** | ✅ Confirmado |
+| **Recarga T4D mayo (800 R$)** | — | ⏳ No recibida aún |
+| **Recarga Webcompany mayo (500 R$)** | — | ⏳ No recibida aún |
+| **Gastado Webcompany acumulado** | 636,36 | ⚠️ Supera límite 500 R$ |
+| **Exceso Webcompany sobre su cuota** | ~136 R$ | ⚠️ Comido de nuestro saldo |
+| **Campaña May Awareness T4D activa** | 600 R$ comprometidos | 🟡 En curso 30/04–17/05 |
+
+---
+
 ## 💸 DETALLE GASTO — WEBCOMPANY (CAMPAÑA ACTIVA)
 
 ### Campaña Webcompany
 - **Inicio:** 31 marzo 2026
 - **Fin:** Sin definir (indefinida ⚠️)
-- **Conjuntos de anuncios:** 2 (entre los dos suman 16,50 R$/día)
-- **Gasto diario real:** ~16,50 R$/día (~$2,90 USD) total entre ambos conjuntos
-- **Gastado hasta 30/04 (confirmado):** **492 R$** (≈ 30 días × 16,40 R$/día)
-- **Su presupuesto cargado (~500 R$) casi agotado:** quedan ~8 R$ de su carga inicial
-- **Proyección mayo (si recargan):** ~16,50 × 30 = ~495 R$ adicionales mes completo
-- **Proyección durante nuestra campaña (14 días):** ~16,50 × 14 = ~231 R$
+- **Conjuntos de anuncios:** 2, cada uno con 16,50 R$/día = **33 R$/día en total**
+- **Nota:** Hace unos días estaban a 11 R$/conjunto → van haciendo ajustes al alza sin avisar
+- **Gastado hasta 30/04:** 492 R$
+- **Gastado acumulado a 04/05:** **636,36 R$** → supera los 500 R$ acordados en **136 R$**
+- **Proyección mensual al ritmo actual:** 33 × 30 = **~990 R$/mes** (vs 500 R$ acordados)
+- **Proyección durante nuestra campaña restante (~13 días):** 33 × 13 = ~429 R$
 
-**⚠️ RIESGO:** Campaña sin fecha de fin. Si webcompany NO recarga para mayo, sus campañas se pausarán solas (su saldo está casi a 0). Si SÍ recargan, seguirán consumiendo ~16,50 R$/día. Verificar el 1 de mayo qué hacen.
+**⚠️ RIESGO CONFIRMADO:** Ya han consumido ~136 R$ de nuestro saldo. Meta no pausa automáticamente al llegar a 500 R$ — el saldo es un fundo único. Sin fecha de fin ni límite de campaña configurado, seguirán consumiendo mientras haya fondos.
+
+**📧 ACCIÓN TOMADA 04/05:** Email enviado a Lucas (Brasil) planteando 3 opciones:
+1. Garantizar recargas puntuales
+2. Webcompany ajusta a ≤16,50 R$/día total o pone límite de campaña
+3. Separar cuentas (una por agencia) si no es posible garantizar control
 
 ### Campañas Team4Digital (Marta)
 - **Ninguna campaña lanzada en abril**
@@ -82,9 +100,7 @@ Reserva seguridad:               -150 R$
 DISPONIBLE TEAM4DIGITAL:       ~1.449 R$ — igualmente viable
 ```
 
-**Estado ambos escenarios:** 🟢 VERDE — 600 R$ para campaña Branding Ferias es perfectamente viable
-
-**⚠️ Acción 01/05:** Verificar si webcompany recargó y si su campaña sigue activa. Actualizar proyección según lo que hagan.
+**⚠️ ACTUALIZACIÓN 04/05:** Webcompany NO controló su gasto en abril — gastaron 636 R$ vs 500 acordados. Ambas recargas de mayo pendientes. Escenarios anteriores invalidados hasta confirmar recarga y respuesta de Brasil.
 
 ---
 

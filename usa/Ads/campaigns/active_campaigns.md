@@ -1,18 +1,25 @@
 # 📊 CAMPAÑAS ACTIVAS META ADS - CORTAG USA
 
-**Última actualización:** 30 abril 2026  
+**Última actualización:** 4 mayo 2026  
 **Gestión:** Marta Servián (Team4Digital) + Brasil (si aplica)
 
 ---
 
 ## 🔴 CAMPAÑAS EN CURSO
 
-*Sin campañas activas aún — pendiente lanzar el 2 mayo*
+### ✅ Campaña T4D — Brand Awareness May (Ferias)
+- **Inicio:** 30 abril 2026
+- **Fin:** 17 mayo 2026
+- **Presupuesto total:** 600 R$
+- **Presupuesto diario:** ~43 R$/día
+- **Estado:** 🟢 Activa
 
-### ⚠️ CAMPAÑAS WEBCOMPANY (VERIFICAR)
-- Webcompany tiene presupuesto de 500 R$ en la misma cuenta
-- Pueden tener campañas activas sin coordinación
-- **Acción:** Revisar en Ads Manager qué campañas están activas en la cuenta completa
+### ⚠️ CAMPAÑAS WEBCOMPANY (ACTIVAS SIN CONTROL)
+- **1 campaña, 2 conjuntos de anuncios** activos desde 31 marzo 2026
+- **Sin fecha de fin definida**
+- **Gasto diario:** 33 R$/día total (16,50 R$ × 2 conjuntos) — hace unos días estaba a 11 R$/conjunto
+- **Gastado acumulado a 04/05:** 636,36 R$ (superan límite de 500 R$/mes en 136 R$)
+- **📧 Email enviado a Brasil (Lucas) el 04/05** para resolver la situación — pendiente respuesta
 
 ---
 
@@ -20,8 +27,8 @@
 
 | Campaña | Responsable | Inicio | Fin | Presupuesto | Estado |
 |---------|------------|--------|-----|-------------|--------|
-| Branding Ferias USA | Marta (T4D) | 02/05/2026 | 16/05/2026 | 600 R$ | 📅 Planificada |
-| Campañas Webcompany | Webcompany | ? | ? (sin fecha fin) | 500 R$/mes | ⚠️ Sin control |
+| Brand Awareness May (Ferias) | Marta (T4D) | 30/04/2026 | 17/05/2026 | 600 R$ | 🟢 Activa |
+| Campañas Webcompany | Webcompany | 31/03/2026 | Sin fecha fin ⚠️ | 33 R$/día (~990 R$/mes) | ⚠️ Supera límite |
 
 ---
 
@@ -34,9 +41,12 @@
 - Reserva seguridad: 150 R$
 - **Total comprometido:** 750 R$
 
-**PRESUPUESTO DISPONIBLE TEAM4DIGITAL:** ~50 R$ margen (ajustado)
+**Saldo cuenta 04/05:** 736,59 R$ (recargas de mayo aún no recibidas)
+**Comprometido campaña activa:** ~557 R$ restantes (13 días × 43 R$/día)
+**Reserva seguridad:** 150 R$
+**Margen real sin recarga:** ~30 R$ — no lanzar nuevas campañas hasta confirmar recarga
 
-**⚠️ Webcompany:** 500 R$ adicionales en cuenta — verificar su actividad semanalmente
+**⚠️ Webcompany:** Ya superaron su límite (636 R$ vs 500 acordados). Email enviado a Brasil el 04/05.
 
 ---
 
@@ -62,7 +72,7 @@
 ## 📝 HISTORIAL ACTUALIZACIONES
 
 - **30/04/2026:** Archivo creado. Sin campañas activas al inicio.
-- **[FECHA]:** [Actualización]
+- **04/05/2026:** Campaña Brand Awareness activa desde 30/04. Webcompany supera límite (636 R$). Email a Lucas enviado. Recargas mayo pendientes de confirmar.
 
 ---
 
