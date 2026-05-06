@@ -32,7 +32,11 @@
       "Bash(python generate_pdf.py)",
       "Bash(python:*)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(powershell -Command \"Expand-Archive -Path 'BlackFriday-Tempate1.zip' -DestinationPath 'BlackFriday' -Force; Expand-Archive -Path 'version-release.zip' -DestinationPath 'version-release' -Force; Expand-Archive -Path 'ebooks.zip' -DestinationPath 'ebooks' -Force\")",
+      "Bash(dir /s /b *.html)",
+      "Bash(powershell -Command \"Expand-Archive -Path 'BlackFriday-Tempate1.zip' -DestinationPath 'BlackFriday' -Force; Expand-Archive -Path 'version-release.zip' -DestinationPath 'version-release' -Force; Expand-Archive -Path 'ebooks.zip' -DestinationPath 'ebooks' -Force; Get-ChildItem -Recurse -Filter '*.html' | Select-Object FullName\")",
+      "Bash(powershell *)"
     ]
   }
 }

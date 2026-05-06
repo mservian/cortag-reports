@@ -1,7 +1,7 @@
 # 💰 PRESUPUESTO MENSUAL META ADS - CORTAG EUROPE
 
-**Mes:** Abril 2026  
-**Última actualización:** 27 abril 2026  
+**Mes:** Abril–Mayo 2026  
+**Última actualización:** 6 mayo 2026  
 **Responsable:** Marta Servián (Team4Digital)
 
 ---
@@ -20,6 +20,20 @@
 
 ---
 
+## 📊 ESTADO CUENTA — 6 MAYO 2026 (DATOS REALES)
+
+| Concepto | Monto (R$) | Estado |
+|----------|-----------|--------|
+| **Saldo cuenta hoy (06/05)** | **4.463,70** | ✅ Confirmado |
+| **Recarga T4D (04/05)** | +2.400 | ✅ Recibida |
+| **Recarga Webcompany (04/05)** | +1.000 | ✅ Recibida |
+| **Presupuesto asignado T4D** | 2.400 | 🟢 Disponible para gastar |
+| **Presupuesto asignado Webcompany** | 500 | ⚠️ Sin control (de los 1.000 cargados) |
+
+**Situación Webcompany:** Sin cambios respecto a abril — siguen gestionando sin coordinación con T4D. De los 1.000 R$ cargados, su presupuesto acordado es 500 R$.
+
+---
+
 ## 💸 DETALLE GASTO ABRIL 2026
 
 ### Campañas Team4Digital (Marta)
@@ -35,7 +49,7 @@
 
 ### Campañas Brasil (Jorge Tiago / Otros)
 
-**2. Campaña Brasil (Jorge Tiago)**
+**2. Campaña Webcompany (Jorge Tiago)**
 - Presupuesto diario: 11 R$/día
 - Inicio: 16 abril 2026
 - Fin: Sin definir (en curso)
@@ -57,7 +71,7 @@
 ### Gasto Confirmado (Hasta 27/04)
 ```
 Sorteo Expert:        751 R$
-Campaña Brasil:      ~121 R$
+Campaña Webcompany:      ~121 R$
 ------------------------
 TOTAL GASTADO:       ~872 R$ (~142€)
 ```
@@ -65,7 +79,7 @@ TOTAL GASTADO:       ~872 R$ (~142€)
 ### Gasto Comprometido (Resto Abril)
 ```
 Sorteo Expert:        449 R$
-Campaña Brasil:      ~154 R$
+Campaña Webcompany:      ~154 R$
 ------------------------
 TOTAL PENDIENTE:     ~603 R$ (~98€)
 ```
@@ -120,13 +134,13 @@ Presupuesto disponible conservador (~695 R$) NO cubre ambas campañas.
 
 ## 📅 CALENDARIO RECARGA FONDOS
 
-| Mes | Fecha Recarga | Monto | Estado |
-|-----|--------------|-------|--------|
-| Marzo 2026 | 01/03/2026 | 2.470 R$ | ✅ Completada |
-| Abril 2026 | 01/04/2026 | 2.470 R$ | ✅ Completada |
-| Mayo 2026 | 01/05/2026 | 2.470 R$ | 📅 Pendiente |
+| Mes | Fecha Recarga | Monto T4D | Monto Webcompany | Estado |
+|-----|--------------|-----------|--------------|--------|
+| Marzo 2026 | 01/03/2026 | 2.470 R$ | — | ✅ Completada |
+| Abril 2026 | 01/04/2026 | 2.470 R$ | — | ✅ Completada |
+| Mayo 2026 | 04/05/2026 | **2.400 R$** | **1.000 R$** | ✅ Confirmada |
 
-**Responsable recarga:** Cortag Brasil  
+**Responsable recarga:** Cortag Brasil / Webcompany  
 **Proceso:** Automático día 1 cada mes
 
 ---
@@ -157,6 +171,12 @@ Presupuesto disponible conservador (~695 R$) NO cubre ambas campañas.
 - Recarga: 2.470 R$
 - Gasto proyectado: ~1.475 R$
 - Disponible estimado fin mes: ~995 R$
+
+### Mayo 2026 (En curso)
+- Recarga T4D: 2.400 R$ (04/05)
+- Recarga Webcompany (04/05): 1.000 R$ (presupuesto asignado para gastar: 500 R$)
+- Saldo total cuenta a 06/05: **4.463,70 R$**
+- Presupuesto T4D disponible: 2.400 R$
 
 ---
 

@@ -1,7 +1,7 @@
 # 💰 PRESUPUESTO MENSUAL META ADS - CORTAG USA
 
 **Mes:** Abril–Mayo 2026  
-**Última actualización:** 4 mayo 2026  
+**Última actualización:** 6 mayo 2026  
 **Responsable:** Marta Servián (Team4Digital)
 
 ---
@@ -48,6 +48,19 @@ Esta cuenta Meta Ads USA la comparten **dos equipos con presupuestos cargados po
 | **Gastado Webcompany acumulado** | 636,36 | ⚠️ Supera límite 500 R$ |
 | **Exceso Webcompany sobre su cuota** | ~136 R$ | ⚠️ Comido de nuestro saldo |
 | **Campaña May Awareness T4D activa** | 600 R$ comprometidos | 🟡 En curso 30/04–17/05 |
+
+---
+
+## 📊 ESTADO CUENTA — 6 MAYO 2026 (DATOS REALES)
+
+| Concepto | Monto (R$) | Estado |
+|----------|-----------|--------|
+| **Saldo cuenta hoy (06/05)** | **570** | ✅ Confirmado |
+| **Recarga T4D mayo (04/05)** | +800 | ⚠️ Recibida con error en el pago |
+| **Presupuesto asignado T4D** | 800 | 🟡 Pendiente resolver error |
+| **Presupuesto asignado Webcompany** | 500 | ⚠️ Ellos gestionan (sin control nuestro) |
+
+**⚠️ ALERTA:** Recarga de 800 R$ llegó el 04/05 pero con error en el pago — pendiente verificar/resolver con Brasil.**Saldo disponible real limitado a 570 R$ hasta aclarar la incidencia.**
 
 ---
 
@@ -120,9 +133,9 @@ DISPONIBLE TEAM4DIGITAL:       ~1.449 R$ — igualmente viable
 | Mes | Fecha Recarga T4D | Monto T4D | Monto Webcompany | Estado |
 |-----|------------------|-----------|-----------------|--------|
 | Abril 2026 | 01/04/2026 | 800 R$ | 500 R$ | ✅ Confirmado |
-| Mayo 2026 | 01/05/2026? | 800 R$? | 500 R$? | ⏳ Por confirmar |
+| Mayo 2026 | 04/05/2026 | **800 R$** | — | ⚠️ Error en el pago — pendiente resolver |
 
-**⚠️ Confirmar con Brasil/Juan Luis:** ¿La recarga de 800 R$ es mensual recurrente o fue un único cargo?
+**⚠️ Nota mayo 2026:** Recarga de 800 R$ recibida el 04/05 pero con error en el pago. Saldo real en cuenta a 06/05: 570 R$. Pendiente confirmar resolución con Brasil.
 
 ---
 
@@ -133,8 +146,8 @@ DISPONIBLE TEAM4DIGITAL:       ~1.449 R$ — igualmente viable
 - 🟡 **Amarillo:** 200-500 R$ disponibles → Solo campaña pequeña o test
 - 🔴 **Rojo:** <200 R$ disponibles → Solo emergencias, esperar recarga
 
-**Estado actual Team4Digital:** 🟢 VERDE (~800 R$ disponibles — ninguna campaña activa)  
-**Estado webcompany:** ⚠️ DESCONOCIDO — verificar Ads Manager
+**Estado actual Team4Digital:** 🔴 ROJO (570 R$ disponibles — error en recarga mayo, pendiente resolver)  
+**Estado webcompany:** ⚠️ VIGILAR — 500 R$ presupuesto activo, sin control nuestro
 
 ### Recordatorios
 - [ ] **URGENTE 30/04:** Revisar en Ads Manager qué campañas tiene activas webcompany y cuánto han gastado
@@ -167,4 +180,4 @@ DISPONIBLE TEAM4DIGITAL:       ~1.449 R$ — igualmente viable
 ---
 
 **Revisar este archivo:** Semanal (lunes) + Cuando cambien campañas  
-**Última actualización:** 30 abril 2026 — Marta Servián
+**Última actualización:** 6 mayo 2026 — Marta Servián
