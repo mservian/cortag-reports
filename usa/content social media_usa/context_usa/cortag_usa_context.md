@@ -77,6 +77,11 @@ Propuesta Q2: piloto creador pagado $300-500/mes para resolver gap.
 - Coverings (principal evento sector USA, Las Vegas) — anual
 - Formación Neolith GPTP (Pembroke Park, Florida, junio 2026)
 
+## Competidores y conflictos de marca
+- **Competidores directos (evitar o verificar exclusividad antes de contactar):** Rubi, Grabotools, y marcas similares de herramientas de corte de cerámica
+- **Marcas complementarias (sin conflicto):** Schluter Systems — sus productos (perfiles, sistemas de nivelación, membranas) son complementarios a las herramientas Cortag, no competidores. Un creador con vínculos con Schluter no es un problema en sí mismo.
+- En outreach a influencers: verificar si trabajan o tienen contrato de exclusividad con Rubi, Grabotools u otras marcas de herramientas de corte antes de contactar.
+
 ## Diferencias clave vs Cortag Europe
 - Sin e-commerce (B2B puro via distribuidores)
 - Presupuesto ads muy limitado ($50/mes vs ~400€ Europe)

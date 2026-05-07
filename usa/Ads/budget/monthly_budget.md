@@ -51,16 +51,18 @@ Esta cuenta Meta Ads USA la comparten **dos equipos con presupuestos cargados po
 
 ---
 
-## 📊 ESTADO CUENTA — 6 MAYO 2026 (DATOS REALES)
+## 📊 ESTADO CUENTA — 7 MAYO 2026 (DATOS REALES)
 
 | Concepto | Monto (R$) | Estado |
 |----------|-----------|--------|
-| **Saldo cuenta hoy (06/05)** | **570** | ✅ Confirmado |
-| **Recarga T4D mayo (04/05)** | +800 | ⚠️ Recibida con error en el pago |
-| **Presupuesto asignado T4D** | 800 | 🟡 Pendiente resolver error |
+| **Saldo base (06/05)** | 570 | ✅ Confirmado |
+| **Recarga T4D mayo** | +800 | ✅ Confirmada 06/05 — error resuelto |
+| **Saldo total disponible estimado** | ~1.370 | ✅ Operativo |
+| **Campaña Awareness activa (restante ~10 días)** | ~430 R$ comprometidos | 🟢 En curso hasta 17/05 |
+| **Reserva seguridad** | 150 | 🔒 No tocar |
 | **Presupuesto asignado Webcompany** | 500 | ⚠️ Ellos gestionan (sin control nuestro) |
 
-**⚠️ ALERTA:** Recarga de 800 R$ llegó el 04/05 pero con error en el pago — pendiente verificar/resolver con Brasil.**Saldo disponible real limitado a 570 R$ hasta aclarar la incidencia.**
+**Margen disponible tras campaña activa y reserva:** ~790 R$ (~138 USD) — suficiente para una campaña adicional si se aprueba.
 
 ---
 
@@ -146,7 +148,7 @@ DISPONIBLE TEAM4DIGITAL:       ~1.449 R$ — igualmente viable
 - 🟡 **Amarillo:** 200-500 R$ disponibles → Solo campaña pequeña o test
 - 🔴 **Rojo:** <200 R$ disponibles → Solo emergencias, esperar recarga
 
-**Estado actual Team4Digital:** 🔴 ROJO (570 R$ disponibles — error en recarga mayo, pendiente resolver)  
+**Estado actual Team4Digital:** 🟢 VERDE (recarga 800 R$ confirmada 06/05 — error resuelto. Saldo operativo ~1.370 R$)  
 **Estado webcompany:** ⚠️ VIGILAR — 500 R$ presupuesto activo, sin control nuestro
 
 ### Recordatorios

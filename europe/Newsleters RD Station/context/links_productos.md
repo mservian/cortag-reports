@@ -23,6 +23,14 @@
 
 ---
 
+## Catálogos y documentación
+
+| Recurso | URL |
+|---------|-----|
+| Catálogo Cortag Europe 2026 (PDF) | https://email-editor-production.s3.amazonaws.com/images/959370/CATALOGO%20CORTAG%20EUROPE%202026%20PDF_compressed_1.pdf |
+
+---
+
 ## Programa y servicios
 
 | Recurso | URL |
