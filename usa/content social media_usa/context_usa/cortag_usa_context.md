@@ -1,5 +1,5 @@
 # Cortag USA — Contexto de marca
-Última actualización: abril 2026
+Última actualización: mayo 2026
 
 ## Qué es Cortag USA
 Marca brasileña de herramientas profesionales para instalación cerámica/porcelánico.
@@ -12,6 +12,16 @@ CEO: Leandro Pitzeta (Brasil).
 - Juan Luis Arronte: National Sales Manager USA (contacto principal)
 - Raúl: Equipo comercial USA
 - Marta Servián (Team4Digital): Gestión contenido y social media
+
+## Perfil Juan Luis Arronte — cómo trabajar con él
+- Perfil muy analítico y orientado a ventas — toma decisiones basadas en números concretos
+- Equipo USA muy reducido: Juan + 2 personas + 1 customer service incorporándose
+- **Qué valora:** campañas de lead generation con resultados medibles (leads en Excel que trabaja su equipo comercial), crecimiento de seguidores, raffles
+- **Referencia de éxito para él:** campaña MEGA 125 → 102 leads a ~$1,18/lead (~$120 USD total) — cerró ventas con esos leads
+- **Objetivo seguidores 2026:** 3.500 IG a final de año (actual ~2.323)
+- Está de parte de T4D — si se demuestran resultados puede conseguir más presupuesto de Brasil
+- Hay que explicarle por qué visualizaciones/alcance importan, no solo seguidores
+- **Siempre presentar propuestas con números y métricas**, referenciando campañas anteriores como benchmark
 
 ## Canal principal
 Instagram: @cortagusa
@@ -49,8 +59,11 @@ Seguidores: ~2,500 aprox
 - Hashtags al final
 
 ## Presupuesto Meta Ads
-$50/mes — EXTREMADAMENTE limitado, guardado para acciones grandes.
-Sin inversión en ads para sorteos o amplificación de contenido habitual.
+- **Presupuesto actual (mayo 2026):** 800 R$/mes (~$140 USD) — subido desde $50/mes anteriores
+- Campaña awareness activa hasta 17 mayo 2026 (600 R$)
+- Margen disponible tras campaña: ~800 R$ (~$138 USD) para próxima acción
+- **Próxima campaña prioritaria:** lead generation (modelo MEGA 125) — productos PRIME y MEGA
+- Sin inversión en amplificación de contenido habitual ni sorteos pequeños
 
 ## Situación contenido
 - Sin equipo de grabación propio en USA
@@ -60,9 +73,9 @@ Sin inversión en ads para sorteos o amplificación de contenido habitual.
 
 ## Embajadores activos Q2 2026
 - Dumitru Guleac (@dg_pro_remodeling_llc): MANTENER ✅
-  14,700 seguidores, mejor performer, cumple compromisos
-- Missy McMaster (TrueLine Tile and Stone): NUEVA 🆕
-  Oregon, contrato firmado, selección productos pendiente
+  14,700 seguidores, ~3.000 views/reel promedio, mejor performer, cumple compromisos
+- Missy McMaster (@t.l.t.missy / TrueLine Tile and Stone): NUEVA 🆕
+  ~1.000 seguidores, Oregon, muy entusiasmada, productos enviados pendientes de recibir — a ver qué contenido genera
 - Phillip Harms (@versatile_llc): CONDICIONAL 🟡
   1,261 seguidores, muy proactivo pero calidad baja
 - Daniel Becerra (@yourtiledesignguy): DISCONTINUAR ❌
@@ -71,7 +84,24 @@ Sin inversión en ads para sorteos o amplificación de contenido habitual.
 ## Modelo embajadores
 Producto gratuito por contenido (sin compensación económica).
 Limitación: compromiso irregular sin incentivo económico.
-Propuesta Q2: piloto creador pagado $300-500/mes para resolver gap.
+Propuesta Q2: piloto creador pagado $400-600/mes para resolver gap (ver influencer_plan_usa.md).
+
+## Raffle — estado y condiciones (mayo 2026)
+- Juan aprueba hacer un raffle para ganar seguidores
+- **Condición clave:** el premio debe ser valioso — si es barato la gente no participa (lección de raffle anterior fallido)
+- **Preferencia:** hacerlo con el nuevo influencer seleccionado (mayor alcance), no con Dumitru
+- Si se hace con Dumitru: darle producto (pack para él + pack para sortear) como incentivo — es embajador no pagado
+- **Acción:** activar solo cuando se cierren los perfiles de influencers y Juan los revise
+- Necesitará apoyo de ads para amplificación
+
+## Productos prioritarios para campañas USA (mayo 2026)
+- **MEGA** — máxima prioridad
+- **PRIME** — máxima prioridad  
+- Zapp Titan (cortadora eléctrica)
+- Traditional Wedge & Cups (sistema de nivelación tradicional — nombre USA para el sistema de niveladores)
+
+## Ideas futuras anotadas
+- **Amazon Marketplace:** Juan mencionó explorar presencia en Amazon — no es acción inmediata, valorar en T3/T4 2026
 
 ## Ferias y eventos
 - Coverings (principal evento sector USA, Las Vegas) — anual
