@@ -120,13 +120,18 @@ El outreach y la gestión de estos perfiles la lleva Team4Digital (Marta). Juan 
 
 ---
 
-## Orden de contacto recomendado
+## Orden de contacto — ACTUALIZADO tras revisión de Juan (07/05/2026)
 
-1. **@jc_innovative** — Incluir propuesta de evento Neolith Florida en el pitch
-2. **@tilechica_** — Verificar exclusividad primero
-3. **@os_pro_tile** — Contacto fácil, expectativas manejables
-4. **@tilecoach** — Segunda ronda
-5. **@castillo_tile / @p2_paige** — Verificar situación Schluter antes de avanzar
+**Juan revisó el documento y señaló @tilecoach como su preferencia. T4D aclaró que no se descarta ningún perfil de la lista y que se contactarán 2-4 en paralelo — Juan de acuerdo.**
+
+1. **@tilecoach** ⭐ PRIMERA PRIORIDAD (preferencia de Juan)
+   - Requisito explícito de Juan: confirmar desde el primer contacto que cualquier contenido generado para YouTube pueda usarse también en IG y Facebook con mención al creador
+   - 37K IG + 320K YouTube — mayor alcance real de la lista
+
+2. **2-3 perfiles adicionales en paralelo** (a seleccionar internamente por T4D)
+   - Razón: necesitamos confirmar viabilidad de @tilecoach (presupuesto, exclusividades, disponibilidad) antes de cerrar opciones
+   - Tener datos comparativos de tarifas y condiciones da margen de maniobra y poder de negociación
+   - El resto de perfiles de la lista Tier 1 siguen vigentes como candidatos
 
 ---
 

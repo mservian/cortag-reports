@@ -9,9 +9,10 @@ Sede operativa Europa: Granollers, Barcelona (gestión Team4Digital).
 CEO: Leandro Pitzeta (Brasil).
 
 ## Contactos clave
-- Juan Luis Arronte: National Sales Manager USA (contacto principal)
-- Felipe Fábrega: nuevo Director de Ventas Internacional — mencionado por Juan en reuniones recientes, podría incorporarse a conversaciones futuras. Perfil probablemente similar al de Juan (visión comercial/ventas). Aún no hay contacto directo con él.
-- Raúl: Equipo comercial USA
+- **Juan Luis Arronte** (juan.arronte@cortagtools.com): National Sales Manager USA — contacto principal
+- **Felipe Fábrega Teixeira** (felipe.teixeira@cortag.com): Director de Ventas Internacional — incorporado al hilo de correos desde mayo 2026, ya en copia en reuniones y seguimientos. Perfil comercial/ventas, visión estratégica de mercados. No asistió a la reunión del 07/05 por conflicto de agenda pero Juan le puso al día.
+- **Raúl Rossi** (raul.rossi@cortag.com): Equipo comercial USA
+- **Viviane**: Equipo de ventas Cortag — mencionada por Juan en mayo 2026, podría pasar info sobre próximas jornadas demostrativas. Sin email confirmado aún.
 - Marta Servián (Team4Digital): Gestión contenido y social media
 
 ## Perfil Juan Luis Arronte — cómo trabajar con él
@@ -114,12 +115,13 @@ Propuesta Q2: piloto creador pagado $400-600/mes para resolver gap (ver influenc
 
 ## Ferias y eventos
 - Coverings (principal evento sector USA, Las Vegas) — anual
-- **Formación Neolith GPTP** (Pembroke Park, Florida, junio 2026, ~4 días)
-  - Evento semiprivado — Juan puede añadir embajadores/colaboradores a la lista de invitación si se le avisa
-  - Neolith compartirá material que graben durante el evento (formato por confirmar: ¿stories, etiquetas, vídeos profesionales?)
-  - Juan le da bastante importancia — considera que será un evento relevante para el sector
-  - Usar como palanca en el pitch a @jc_innovative (West Palm Beach, FL — proximidad geográfica)
-  - **A explorar:** ¿tiene sentido hacer ads para promocionar el evento? ¿Acción de contenido previa? Ver archivo ideas_explorar.md
+- **Formación Neolith GPTP** (Pembroke Park, FL — 8-10 junio 2026)
+  - Días 9-10: certificación ANSI + Neolith (Fabrication & Installation). Día 8: Design Professional Course
+  - Juan puede añadir embajadores/colaboradores al RSVP si se le avisa con tiempo — decisión urgente antes del 12/05
+  - Neolith compartirá material grabado. Segunda formación conjunta en planificación (fecha TBD)
+  - Candidato ideal: @jc_innovative (West Palm Beach, a 15 min) — usar como palanca en el pitch de colaboración
+  - Dumitru: segunda opción (DC/MD, requiere viaje). Phillip: mencionar por buenas relaciones, sin presión. Missy: demasiado lejos.
+  - Ver análisis completo y oportunidades en ideas_explorar.md
 
 ## Competidores y conflictos de marca
 - **Competidores directos (evitar o verificar exclusividad antes de contactar):** Rubi, Grabotools, y marcas similares de herramientas de corte de cerámica
@@ -131,6 +133,9 @@ Propuesta Q2: piloto creador pagado $400-600/mes para resolver gap (ver influenc
 - Instagram: ~13.000 seguidores (más avanzados que Cortag pero no muy fuertes en redes)
 - **Estrategia que usan:** colaboradores pagados. Cuando publican contenido de colaboración les suben las visualizaciones (80K–100K views en algunos vídeos), pero su contenido propio ronda los 5K–12K views
 - Conclusión: su fuerza en redes viene de los creadores que contratan, no de su propio contenido orgánico — es el mismo modelo que estamos explorando con el piloto de influencer pagado
+
+## Puntos de venta USA
+B2B puro — sin e-commerce directo. Venta vía distribuidores autorizados. Ejemplos de canales mencionados: Floor and Decor, Contractors Direct, distribuidores locales. El punto de conversión está en el punto de venta físico, no en web ni RRSS.
 
 ## Diferencias clave vs Cortag Europe
 - Sin e-commerce (B2B puro via distribuidores)

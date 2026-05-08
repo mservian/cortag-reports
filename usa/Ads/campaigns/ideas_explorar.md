@@ -7,29 +7,48 @@ Ideas pendientes de evaluar viabilidad, timing y presupuesto antes de activar.
 
 ## 1. Evento Neolith GPTP — junio 2026
 
-**Qué es:** Formación sobre GPTP (Gauged Porcelain Tile Panels), Pembroke Park, Florida. Evento semiprivado, ~4 días. Juan le da bastante importancia — será un evento relevante del sector.
+**Qué es:** Formación conjunta Cortag + Neolith sobre GPTP (Gauged Porcelain Tile Panels / Large Format Thin Gauge). Evento semiprivado, certificación ANSI + Neolith al finalizar.
+
+**Fechas y lugar confirmados (info de marzo 2026):**
+- **Días 1:** 8 junio 2026 — Design Professional Course (4-6h, demostración instructor)
+- **Días 2 y 3:** 9-10 junio 2026 — Fabrication & Installation Certification (requiere completar ambos días)
+- **Lugar:** 2500 Commerce Ctr Wy Unit 300, Pembroke Park, FL 33023 (sede Neolith)
+- ⚠️ Info de marzo 2026 — no hay actualizaciones desde entonces. Viviane (equipo ventas Cortag) podría pasar info de próximos eventos de jornada demostrativa (pendiente semana del 11/05/2026)
+
+**Contenido del curso — relevancia para Cortag:**
+El programa es directamente alineado con las herramientas Cortag:
+- Score & snap de paneles GPTP (MEGA, PRIME en acción)
+- Grinder edge finishing
+- Leveling systems y lippage control (Traditional Wedge & Cups)
+- Full shower mock-up assembly
+- Silica/OSHA safety awareness, mortars, thinset
+Cualquier creador que asista tiene material técnico de altísima calidad para demostración de producto en contexto profesional real.
+
+**Nota interna (⚠️ no compartir con Phillip ni externos):** la planificación detallada del evento es confidencial — solo para uso interno T4D/Cortag.
 
 **Lo que ya está confirmado:**
-- Juan puede añadir embajadores o colaboradores a la lista de invitación si se le avisa con tiempo
-- Neolith compartirá material que graben durante el evento (formato por confirmar: ¿stories, etiquetas, vídeos profesionales?)
+- Juan puede añadir embajadores o colaboradores a la lista de RSVP si se le avisa con tiempo
+- Neolith compartirá material grabado durante el evento (formato por confirmar)
+- Hay una segunda formación conjunta Cortag-Neolith en planificación (fecha TBD — Juan confirmará)
 
-**Ideas a explorar:**
+**Quién invitar — análisis actualizado (mayo 2026):**
 
-- **¿Invitar a algún embajador actual?**
-  - @jc_innovative (West Palm Beach FL) es el candidato más interesante — proximidad geográfica y es el perfil prioritario del piloto de influencer pagado. Usarlo como palanca en el pitch: "te invitamos al evento Neolith de junio" puede ser el gancho diferencial para cerrar el acuerdo
-  - Dumitru (DC/MD) — más lejos pero es el más comprometido; valorar si tiene sentido
-  - Decisión pendiente: avisar a Juan antes de que se llene la lista
+- **@jc_innovative** (West Palm Beach FL): candidato ideal. A ~15 min de Pembroke Park. El pitch sería: asistencia gratuita + certificación ANSI + Neolith + uso de herramientas Cortag. Esto vale más que cualquier fee económico como gancho para cerrar el acuerdo de colaboración. Si se cierra el outreach antes del 12/05, la invitación al evento puede sellar el trato.
+- **Dumitru** (@dg_pro_remodeling_llc): preferido en el contexto actual. Vive en DC/MD — hay costes de desplazamiento, pero es el más fiable y comprometido. Valorar si tiene sentido cubrirle el viaje como incentivo.
+- **Phillip** (@versatile_llc): mencionárselo por buenas relaciones (ya se le anticipó en marzo) y porque sigue siendo una opción condicional. Sin presionar — está pasando por un momento familiar muy difícil (falleció su madre en marzo 2026). Solo si él muestra interés o está en mejor situación.
+- **Missy** (@t.l.t.missy): Oregon → Florida, demasiado lejos. No tiene sentido geográficamente.
 
-- **¿Ads para promocionar el evento?**
-  - Presupuesto disponible post-campaña awareness (~790 R$) ya estará comprometido en lead gen PRIME/MEGA
-  - Hacer ads del evento significaría fragmentar el presupuesto — probablemente no vale la pena salvo que tengamos presupuesto adicional
-  - Si Neolith comparte vídeos/material del evento, podría usarse para amplificación orgánica o como asset en una campaña posterior
+**Oportunidades de contenido:**
+- Manos a la obra con herramientas Cortag en entorno formativo profesional = asset de credibilidad muy potente para reels orgánicos y para ads
+- Certificación ANSI + Neolith = hito de contenido ("este instalador se certificó usando Cortag")
+- Neolith compartiendo material del evento = distribución adicional sin coste
+- Potencial asset para campaña de ads post-evento (más potente que vídeo de producto estático)
 
-- **Contenido previo al evento**
-  - ¿Tiene sentido publicar algo en @cortagusa anticipando la participación en el evento? (stories, reel corto)
-  - Depende de qué material tengamos y si asiste alguien de nuestro lado
+**¿Ads para el evento?**
+- Presupuesto post-awareness (~790 R$) ya está comprometido en lead gen PRIME/MEGA
+- No fragmentar — los ads del evento solo si hay presupuesto adicional o en una campaña posterior usando el material generado
 
-**Estado:** pendiente decidir quién (si alguien) va a la lista de Neolith y si hacemos algo de contenido alrededor.
+**Estado:** pendiente decidir quién va a la lista de RSVP (avisar a Juan antes del 12/05) y confirmar si hay segunda formación.
 
 ---
 
