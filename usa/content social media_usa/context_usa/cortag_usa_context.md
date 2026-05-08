@@ -10,18 +10,27 @@ CEO: Leandro Pitzeta (Brasil).
 
 ## Contactos clave
 - Juan Luis Arronte: National Sales Manager USA (contacto principal)
+- Felipe Fábrega: nuevo Director de Ventas Internacional — mencionado por Juan en reuniones recientes, podría incorporarse a conversaciones futuras. Perfil probablemente similar al de Juan (visión comercial/ventas). Aún no hay contacto directo con él.
 - Raúl: Equipo comercial USA
 - Marta Servián (Team4Digital): Gestión contenido y social media
 
 ## Perfil Juan Luis Arronte — cómo trabajar con él
 - Perfil muy analítico y orientado a ventas — toma decisiones basadas en números concretos
+- No usa redes sociales personalmente — todos los conceptos de social media hay que explicarlos desde cero
 - Equipo USA muy reducido: Juan + 2 personas + 1 customer service incorporándose
 - **Qué valora:** campañas de lead generation con resultados medibles (leads en Excel que trabaja su equipo comercial), crecimiento de seguidores, raffles
 - **Referencia de éxito para él:** campaña MEGA 125 → 102 leads a ~$1,18/lead (~$120 USD total) — cerró ventas con esos leads
-- **Objetivo seguidores 2026:** 3.500 IG a final de año (actual ~2.323)
+- **Objetivo seguidores 2026:** 3.500 IG a final de año (actual ~2.310)
 - Está de parte de T4D — si se demuestran resultados puede conseguir más presupuesto de Brasil
-- Hay que explicarle por qué visualizaciones/alcance importan, no solo seguidores
 - **Siempre presentar propuestas con números y métricas**, referenciando campañas anteriores como benchmark
+
+### Mito recurrente de Juan: seguidores = visualizaciones
+- Juan piensa que más seguidores → más gente ve el contenido, y que los no-seguidores que ven el contenido hay que "transformarlos en seguidores"
+- **La realidad que hay que explicarle:** los algoritmos distribuyen contenido por engagement, no por seguir. Seguir no garantiza ver. No seguir no impide ver.
+- **Argumento que funciona con él:** ejemplo Nestlé — se conoce la marca, se compra, se ven sus ads, pero no se le sigue en redes. En B2B el instalador no sigue marcas de herramientas; el objetivo es el recuerdo de marca en el momento de compra.
+- **Concepto clave a transmitirle:** audiencia fantasma / audiencia inactiva — 300 seguidores con 15% engagement > 50.000 con 1%. @cortagusa tiene 14,7% de engagement rate en T1 2026, lo que es muy alto.
+- **Decisión de presupuesto:** NO hacer campañas de seguidores. El crecimiento orgánico (+5%/trimestre sin ads) ya ocurre solo. Todo el presupuesto va a lead generation.
+- Este tema se le explicó en reunión de mayo 2026 y por correo con datos del report T1 2026.
 
 ## Canal principal
 Instagram: @cortagusa
@@ -88,10 +97,10 @@ Propuesta Q2: piloto creador pagado $400-600/mes para resolver gap (ver influenc
 
 ## Raffle — estado y condiciones (mayo 2026)
 - Juan aprueba hacer un raffle para ganar seguidores
-- **Condición clave:** el premio debe ser valioso — si es barato la gente no participa (lección de raffle anterior fallido)
-- **Preferencia:** hacerlo con el nuevo influencer seleccionado (mayor alcance), no con Dumitru
-- Si se hace con Dumitru: darle producto (pack para él + pack para sortear) como incentivo — es embajador no pagado
-- **Acción:** activar solo cuando se cierren los perfiles de influencers y Juan los revise
+- **Condición clave:** el premio debe ser valioso — el raffle anterior falló porque el premio no era atractivo
+- **Opción ideal:** hacerlo con el nuevo influencer pagado seleccionado — mayor comunidad, más engagement real, más alcance
+- **Opción fallback (si el influencer tarda):** Dumitru — es el más factible por métricas (14.7K, ~3K views/reel), pero no es la opción preferida. Si se hace con él: darle producto doble (pack para él + pack para sortear) como incentivo, ya que es embajador no pagado
+- **Acción:** en pausa hasta que Juan haya revisado y cerrado los perfiles de influencers
 - Necesitará apoyo de ads para amplificación
 
 ## Productos prioritarios para campañas USA (mayo 2026)
@@ -105,12 +114,23 @@ Propuesta Q2: piloto creador pagado $400-600/mes para resolver gap (ver influenc
 
 ## Ferias y eventos
 - Coverings (principal evento sector USA, Las Vegas) — anual
-- Formación Neolith GPTP (Pembroke Park, Florida, junio 2026)
+- **Formación Neolith GPTP** (Pembroke Park, Florida, junio 2026, ~4 días)
+  - Evento semiprivado — Juan puede añadir embajadores/colaboradores a la lista de invitación si se le avisa
+  - Neolith compartirá material que graben durante el evento (formato por confirmar: ¿stories, etiquetas, vídeos profesionales?)
+  - Juan le da bastante importancia — considera que será un evento relevante para el sector
+  - Usar como palanca en el pitch a @jc_innovative (West Palm Beach, FL — proximidad geográfica)
+  - **A explorar:** ¿tiene sentido hacer ads para promocionar el evento? ¿Acción de contenido previa? Ver archivo ideas_explorar.md
 
 ## Competidores y conflictos de marca
 - **Competidores directos (evitar o verificar exclusividad antes de contactar):** Rubi, Grabotools, y marcas similares de herramientas de corte de cerámica
 - **Marcas complementarias (sin conflicto):** Schluter Systems — sus productos (perfiles, sistemas de nivelación, membranas) son complementarios a las herramientas Cortag, no competidores. Un creador con vínculos con Schluter no es un problema en sí mismo.
 - En outreach a influencers: verificar si trabajan o tienen contrato de exclusividad con Rubi, Grabotools u otras marcas de herramientas de corte antes de contactar.
+
+### QPI Tools — competidor a vigilar
+- Marca líder en USA según Juan — referencia del sector
+- Instagram: ~13.000 seguidores (más avanzados que Cortag pero no muy fuertes en redes)
+- **Estrategia que usan:** colaboradores pagados. Cuando publican contenido de colaboración les suben las visualizaciones (80K–100K views en algunos vídeos), pero su contenido propio ronda los 5K–12K views
+- Conclusión: su fuerza en redes viene de los creadores que contratan, no de su propio contenido orgánico — es el mismo modelo que estamos explorando con el piloto de influencer pagado
 
 ## Diferencias clave vs Cortag Europe
 - Sin e-commerce (B2B puro via distribuidores)
