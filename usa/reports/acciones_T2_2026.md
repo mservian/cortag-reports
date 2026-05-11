@@ -1,7 +1,7 @@
 # Cortag USA — Acciones T2 2026
 Última actualización: 08 mayo 2026
 
-Recoge las acciones acordadas y pendientes tras la reunión con Juan del 07/05/2026.
+Recoge las acciones acordadas y pendientes tras la reunión con Juan del 07/05/2026 y el seguimiento por email del 11/05/2026.
 
 ---
 
@@ -26,15 +26,22 @@ Recoge las acciones acordadas y pendientes tras la reunión con Juan del 07/05/2
 
 - [ ] **Esperar respuesta de Lucas (Brasil)** sobre el problema de Webcompany en la cuenta Meta Ads compartida
 - [ ] **Campaña awareness activa** (600 R$, vídeo ferias, 30 abril–17 mayo) — monitorizar rendimiento
-- [ ] **Tener lista la campaña lead gen PRIME/MEGA** para lanzar desde el 17/05 con los ~790 R$ disponibles. Modelo: campaña MEGA 125 (referencia de Juan: 102 leads a ~$1,18/lead)
+- [ ] **Campaña lead gen — lanzar desde el 17/05** con ~790 R$ disponibles. Modelo: campaña MEGA 125 (referencia de Juan: 102 leads a ~$1,18/lead)
+  - **Propuesta T4D (email 11/05):** orientarla a PRIME — contamos con los vídeos nuevos de Raúl, mejor material disponible para hacer algo efectivo
+  - **Si Juan prefiere Traditional Leveling o Easy Spin** (como sugirió en su email): trabajamos con el material disponible, pero necesitamos confirmar si hay vídeos adicionales — actualmente tenemos más material de cortadoras que de sistemas de nivelación
+  - **Gancho campaña:** preguntado a Juan si hay oferta especial, precio promocional o beneficio concreto que quieran comunicar en el formulario — pendiente respuesta
 
 ### 🟡 En proceso
 
 - [ ] **Influencers — outreach en paralelo (2-4 perfiles)**
-  - Juan señaló @tilecoach como su preferencia principal tras revisar el documento
-  - T4D aclaró a Juan que no se descarta ningún perfil de la lista y que se contactarán 2-4 en paralelo: necesitamos confirmar viabilidad (presupuesto, exclusividades, disposición real) antes de cerrar opciones, y tener datos comparativos de tarifas y condiciones — Juan de acuerdo con este enfoque
+  - Email enviado a Juan el 11/05: confirmado que la lista preseleccionada ya cubre el criterio (instaladores profesionales, perfil americano y habla hispana). Se contactarán @tilecoach + resto de perfiles de la lista. Si tras ese proceso ninguno es viable, se amplía la búsqueda.
+  - **Prioridad inmediata:** @tilecoach (Juan lo pidió explícitamente) + @tilechica_ (verificar exclusividad QEtools antes) + @os_pro_tile (contacto más fácil de cerrar)
+  - **@jc_innovative:** enviado mensaje, sin respuesta. Juan sospecha que está "casado" con QPE Tools (vio muchos elementos de marca en sus vídeos). Perfil de empresa, no instalador individual — posible descarte si no hay respuesta pronto.
+  - **Dumitru (@dg_pro_remodeling_llc):** contactado, sin respuesta.
+  - **Versatile (Phillip Harms):** interesado pero pendiente de cuadrar agenda personal (hijas esta semana). Pendiente confirmación.
+  - **Fernando y Gabriela** añadidos en copia del email del 11/05. Se incluirán en próximas convocatorias de reunión de forma flexible.
   - **Requisito de Juan para @tilecoach:** confirmar desde el primer contacto que cualquier contenido generado para YouTube pueda usarse también en IG y Facebook con mención al creador
-  - **Estado:** pendiente iniciar outreach — @tilecoach como primera prioridad + seleccionar los 2-3 perfiles adicionales para contactar en paralelo
+  - **Estado:** outreach @tilecoach pendiente de iniciar — PRIORIDAD ESTA SEMANA
 
 - [ ] **Seguidores vs No Seguidores — dato añadido al report T1 2026**
   - Bloque nuevo en la sección de Redes Sociales del report HTML y app React

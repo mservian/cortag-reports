@@ -11,6 +11,8 @@ CEO: Leandro Pitzeta (Brasil).
 ## Contactos clave
 - **Juan Luis Arronte** (juan.arronte@cortagtools.com): National Sales Manager USA — contacto principal
 - **Felipe Fábrega Teixeira** (felipe.teixeira@cortag.com): Director de Ventas Internacional — incorporado al hilo de correos desde mayo 2026, ya en copia en reuniones y seguimientos. Perfil comercial/ventas, visión estratégica de mercados. No asistió a la reunión del 07/05 por conflicto de agenda pero Juan le puso al día.
+- **Fernando Signori** (fernando.signori@cortag.com): Cortag Brasil — añadido en copia desde 11/05/2026 por petición de Juan. Se incluirá en convocatorias de reunión de forma flexible.
+- **Gabriela Massaro** (gabriela.massaro@cortag.com): Cortag Brasil — añadida en copia desde 11/05/2026. Mismas condiciones que Fernando.
 - **Raúl Rossi** (raul.rossi@cortag.com): Equipo comercial USA
 - **Viviane**: Equipo de ventas Cortag — mencionada por Juan en mayo 2026, podría pasar info sobre próximas jornadas demostrativas. Sin email confirmado aún.
 - Marta Servián (Team4Digital): Gestión contenido y social media

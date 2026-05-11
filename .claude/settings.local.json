@@ -36,7 +36,8 @@
       "Bash(powershell -Command \"Expand-Archive -Path 'BlackFriday-Tempate1.zip' -DestinationPath 'BlackFriday' -Force; Expand-Archive -Path 'version-release.zip' -DestinationPath 'version-release' -Force; Expand-Archive -Path 'ebooks.zip' -DestinationPath 'ebooks' -Force\")",
       "Bash(dir /s /b *.html)",
       "Bash(powershell -Command \"Expand-Archive -Path 'BlackFriday-Tempate1.zip' -DestinationPath 'BlackFriday' -Force; Expand-Archive -Path 'version-release.zip' -DestinationPath 'version-release' -Force; Expand-Archive -Path 'ebooks.zip' -DestinationPath 'ebooks' -Force; Get-ChildItem -Recurse -Filter '*.html' | Select-Object FullName\")",
-      "Bash(powershell *)"
+      "Bash(powershell *)",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\mserv\\\\Desktop\\\\Marta\\\\Github\\\\cortag-reports\\\\europe\\\\Cortag Expert\\\\\" -Recurse | Select-Object FullName *)"
     ]
   }
 }
